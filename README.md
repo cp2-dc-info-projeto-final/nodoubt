@@ -1,17 +1,16 @@
-# Nome do Meu Projeto
+# NoDoubt
 
 Projeto Final do Curso Técnico Integrado de Desenvolvimento de Sistemas - Colégio Pedro II - Campus Duque de Caxias
 
 **Integrantes:**
- - Fulano
- - Beltrano
- - Ciclano
+ - Vicky do nascimento wingler
+ - Julia Sena da Costa
+ - Caio Felipe de Oliveira Martins
+ - Vitoria Maria Sousa Pinto da Costa
 
  ## Descrição do Projeto
 
- Nunc aliquet lobortis tristique. In pretium nisi vitae viverra venenatis. Ut iaculis sem quis arcu ornare interdum. In id condimentum arcu, sed ornare sem. Aliquam consequat at dolor eget sagittis. Praesent nec ante eget felis porttitor cursus eget suscipit urna. Sed consequat consectetur tristique.
-
-Sed sit amet ante sem. Nunc id sapien metus. Etiam lobortis in purus ut porta. Vestibulum at libero euismod felis feugiat tempus eu sagittis lorem. Vestibulum ultrices, mi euismod eleifend viverra, odio enim volutpat tortor, sed condimentum odio est id purus. Sed at leo vel ligula luctus bibendum in sed justo. Duis sodales consectetur vestibulum. Morbi libero quam, varius ac sodales eget, bibendum eu quam. In accumsan ac turpis vitae porttitor. Nulla eget velit in nisl vulputate sagittis. Phasellus ligula mi, viverra id vehicula nec, varius eget diam. Vestibulum id ultricies nulla, vel sagittis lorem. Sed aliquam dictum lacus quis maximus.
+  O projeto cconsiste em uma rede social bem aberta ao esttilo forum para estudantes de todos os niveis de escolaridade postarem suas duvidas sobre conteudos diversos ou ate mesmo de suas areas de estudo, e outros usuarios possam responder essas duvidas, e com o auxilio de metodos de votação popular pelos priprios usuarios, as respostas mas votadas serão tidas como corretas. Dessa forma garantindo maior confiabilidade nas respostas e tornando assim a educação algo mais democrartico.
 
 ## Documentação
 
