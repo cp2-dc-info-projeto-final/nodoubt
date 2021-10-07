@@ -10,8 +10,7 @@ Projeto Final do Curso Técnico Integrado de Desenvolvimento de Sistemas - Colé
 
  ## Descrição do Projeto
 
-  O projeto cconsiste em uma rede social bem aberta ao esttilo forum para estudantes de todos os niveis de escolaridade postarem suas duvidas sobre conteudos diversos ou ate mesmo de suas areas de estudo, e outros usuarios possam responder essas duvidas, e com o auxilio de metodos de votação popular pelos priprios usuarios, as respostas mas votadas serão tidas como corretas. Dessa forma garantindo maior confiabilidade nas respostas e tornando assim a educação algo mais democrartico.
-
+  O projeto cconsiste em uma rede social bem aberta ao esttilo forum para estudantes de todos os niveis de escolaridade postarem suas duvidas sobre conteudos diversos ou ate mesmo de suas areas de estudo, e outros usuarios possam responder essas duvidas, e com o auxilio de metodos de votação popular pelos priprios usuarios, as respostas mas votadas serão tidas como corretas. Dessa forma garantindo maior confiabilidade nas respostas e tornando assim a educação algo mais democrartico
 ## Documentação
 
 - [Manual do Usuário](manual.md)
