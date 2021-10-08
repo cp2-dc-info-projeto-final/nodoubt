@@ -4,18 +4,33 @@
 
 ### RF 01
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec blandit nulla vel diam vehicula, eu porttitor nulla aliquam.
-
+O sistema deverá armazenar cadastro de usuári e administradores.
 ### RF 02
 
-Nullam laoreet, mauris ac tempor vulputate, orci metus aliquet augue, at accumsan odio mi eu sapien. Aliquam tincidunt metus ut aliquet vehicula. Aliquam vitae arcu sed lacus fermentum sagittis.
+O sistema deve fazer inclusão, exclusão e alteração de postagens e comentários.
+
+### RF 03
+
+O sistema deve ter  a busca do perfil do usuário com   chave de busca.
+
+### RF 04
+
+O sistema deverá proporcionar o usuário  o botão de curtir e descurtir postagens e comentários.
+
+### RF  05
+
+O sistema deve ter autenticação de controle de acessos com a utilização de criptografia.
+
 
 ## Requisitos Não-Funcionais
 
 ### RNF 01
 
-Nulla facilisi. Etiam tempus dolor et odio tincidunt fermentum. Donec pharetra nulla eu euismod maximus. Maecenas eu mauris tincidunt, pulvinar tellus sed, blandit eros.
+A linguagem de programação utilizada é PHP.
 
 ### RNF 02
 
-Nam id enim ut quam faucibus scelerisque at non diam. Morbi eget eleifend lectus, quis fringilla elit. Morbi iaculis, elit vel accumsan hendrerit, ipsum purus varius lacus, eget facilisis massa mauris ac ipsum.
+O Banco de Dados utilizado é mySQL
+### RNF 03
+
+O sistema deve ser desenvolvido como uma  plataforma WEB.
