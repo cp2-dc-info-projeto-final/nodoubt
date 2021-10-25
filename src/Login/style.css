@@ -20,11 +20,12 @@ body {
 
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
+    color:rgb(0, 0, 0)
 }
 
 .card {
 
-    background-color: rgba(21, 28, 126, 0.877);
+    background-color: rgba(255, 255, 255, 0.877);
 
     padding: 40px;
 
@@ -40,7 +41,7 @@ body {
 
     opacity: 0.8;
 
-    color: #fff;
+    color: rgb(3, 2, 2);
 
 }
 
@@ -64,7 +65,7 @@ body {
 
 .card-content label {
 
-    color: #fff;
+    color: rgb(2, 1, 1);
 
     font-size: 12px;
 
@@ -92,11 +93,11 @@ body {
 
     border:none;
 
-    border-bottom: 1px solid #e1e1e1;
+    border-bottom: 1px solid #0a0909;
 
     outline: none;
 
-    color: rgb(255, 255, 255);
+    color: rgb(3, 1, 1);
 
 }
 
