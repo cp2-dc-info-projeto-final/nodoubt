@@ -26,8 +26,7 @@
                 echo "Favor digitar sua idade corretamente.<br>";
                 $erro = 1;
                 }
-            if(strlen($email) < 8 || strstr($email,'@') == FA
-                LSE){
+            if(strlen($email) < 8 || strstr($email,'@') == FALSE){
                 echo "Favor digitar seu email corretamente. <
                 br>";
                 $erro = 1;
