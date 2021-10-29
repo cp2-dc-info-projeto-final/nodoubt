@@ -19,7 +19,7 @@
             session_start();
             $_SESSION["username"] = $username;
             $_SESSION["senha"] = $senha;
-            header("Location: index.php");
+            header("Location:src/index.php");
             }
         }
         mysqli_close($mysqli);
