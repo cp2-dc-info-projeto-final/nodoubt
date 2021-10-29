@@ -45,11 +45,10 @@
                 echo "Cadastro completo.";
                 
 
-                    echo "<p><a href='login.html'>Retornar ao login</a></p>";
-                    exit;
+                echo "<p><a href='login.html'>Retornar ao login</a></p>";
+                exit;
 
                 }
-                
 
                if($erro == 1) {
                     echo"<br>Cadastro incompleto.<br>";
