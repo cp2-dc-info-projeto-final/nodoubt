@@ -6,7 +6,7 @@
             $email = $_POST["email"];
             $erro = 0;
 
-            if(strlen($username) < 5){
+            if(strlen($username) < 5 or strlen($username) > 12){
                 
                 echo "O campo: Nome de Usuario deve possuir no mínimo 5 caracteres.<br>";
                 $erro = 1;
@@ -33,15 +33,17 @@
                 }
                 // VERIFICA SE NÃO HOUVE ERRO
              if($erro == 0) {
-                echo "Todos os dados foram digitados corretamente!<br>";
-                echo "Cadastro completo.";
-                mysqli_connect("localhost","estudante","12345","cadastro");
-                $sql ="INSERT INTO usuarios (username,senha,nome,idade,email)";
+                $mysqli = mysqli_connect("localhost","estudante","12345","cadastro");
+                $sql ="INSERT INTO cadastrousuarios (usernameusuario,senhausuario,nomeusuario,idadeusuario,emailusuario)";
+
                 $sql .= "VALUES ('$username','$senha','$nome',$idade,'$email')";
     
                 mysqli_query($mysqli,$sql);
                 mysqli_close ($mysqli);
 
+                echo "Todos os dados foram digitados corretamente!<br>";
+                echo "Cadastro completo.";
+                
 
                     echo "<p><a href='login.html'>Retornar ao login</a></p>";
                     exit;
