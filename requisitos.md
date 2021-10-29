@@ -11,7 +11,7 @@ O sistema deve fazer inclusão, exclusão e alteração de postagens e comentár
 
 ### RF 03
 
-O sistema deve ter  a busca do perfil do usuário com   chave de busca.
+O sistema deve ter a busca do perfil do usuário com chave de busca.
 
 ### RF 04
 

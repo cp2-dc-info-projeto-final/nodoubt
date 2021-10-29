@@ -35,9 +35,15 @@
              if($erro == 0) {
                 echo "Todos os dados foram digitados corretamente!<br>";
                 echo "Cadastro completo.";
+                    echo "<p><a href='login.html'>Retornar ao login</a></p>";
+                    exit;
+
                 }
+                
 
                if($erro == 1) {
                     echo"<br>Cadastro incompleto.<br>";
+                    echo "<p><a href='Cadastro.html'>Cadastro</a></p>";
+                    exit;
                }
         ?>
