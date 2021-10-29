@@ -39,7 +39,6 @@
                     exit;
 
                 }
-                
 
                if($erro == 1) {
                     echo"<br>Cadastro incompleto.<br>";
