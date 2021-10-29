@@ -35,6 +35,14 @@
              if($erro == 0) {
                 echo "Todos os dados foram digitados corretamente!<br>";
                 echo "Cadastro completo.";
+                mysqli_connect("localhost","estudante","12345","cadastro");
+                $sql ="INSERT INTO usuarios (username,senha,nome,idade,email)";
+                $sql .= "VALUES ('$username','$senha','$nome',$idade,'$email')";
+    
+                mysqli_query($mysqli,$sql);
+                mysqli_close ($mysqli);
+
+
                     echo "<p><a href='login.html'>Retornar ao login</a></p>";
                     exit;
 
