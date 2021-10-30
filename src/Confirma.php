@@ -3,7 +3,7 @@
         $senha = $_POST["senha"];
 
         include "conecta_mysql.inc";
-            $sql ="SELECT * FROM cadastrousuarios WHERE emailusuario ='$email';";
+            $sql ="SELECT * FROM cadastrousuarios WHERE emailusuario = '$email';";
             $res = mysqli_query($mysqli, $sql);
                 if(mysqli_num_rows($res) != 1){
                     echo "E-mail inválido!";
