@@ -1,9 +1,14 @@
+<?php
+ include "autentica.inc";
+?>
 <html>
- <head>
-   <title>Hello World</title>
- </head>
- <body>
-    <?php include "autentica.inc"; ?>
-        <h1>Hello World</h1>
- </body>
+  <head>
+    <title>Formulário</title>
+  </head>
+  <body>
+    <!-- FORMULÁRIOS QUE EXISTEM AQUI -->
+    <p><a href='EditaDados.php?emailusuario=". $_SESSION["emailusuario"]."'>Editar Dados</a><br>";
+    <p><a href="Logout.php">SAIR</a></p>
+  <body>
 </html>
+
