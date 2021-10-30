@@ -10,7 +10,7 @@ Projeto Final do Curso Técnico Integrado de Desenvolvimento de Sistemas - Colé
 
  ## Descrição do Projeto
 
-  O projeto consiste em uma rede social bem aberta ao estilo fórum para estudantes  de todos os níveis de escolaridade postarem suas dúvidas  sobre conteúds diversos ou até mesmo de suas áreas de estudos, e outros usuários poderão responder essas dúvidas. E com o auxílio de método de votação popular pelos usuásr , as respostas mais votadas serão tidas como correts. Dessa forma, garatindo maior confiabilidade nas respostas e tornando assim a educação algo mais democrático.
+  O projeto consiste em uma rede social bem aberta ao estilo fórum para estudantes  de todos os níveis de escolaridade postarem suas dúvidas  sobre conteúdos diversos ou até mesmo de suas áreas de estudos, e outros usuários poderão responder essas dúvidas. E com o auxílio de método de votação popular pelos usuário , as respostas mais votadas serão tidas como corretas. Dessa forma, garatindo maior confiabilidade nas respostas e tornando assim a educação algo mais democrático.
 ## Documentação
 
 - [Manual do Usuário](manual.md)
