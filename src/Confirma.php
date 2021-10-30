@@ -15,11 +15,11 @@
                     echo "Senha inválida!";
                     echo "<p><a href='login.html'>Página de login</a></p>";
         }
-            else{ // usuário e senha corretos, abre a sessão e registra as variáveis
+            else{ 
             session_start();
             $_SESSION["emailusuario"] = $email;
-            $_SESSION["senha"] = $senha;
-            header("Location:index.html");
+            $_SESSION["senhausuario"] = $senha;
+            header("Location:index.php");
             }
         }
         mysqli_close($mysqli);
