@@ -6,7 +6,28 @@
     <title>Formulário</title>
   </head>
   <body>
-    <!-- FORMULÁRIOS QUE EXISTEM AQUI -->
+      
+        <h3>Seu perfil</h3><p>
+
+      <h4> <?php 
+            $email = $_SESSION["emailusuario"];
+            include "conecta_mysql.inc";
+      $sql = "SELECT * FROM cadastrousuarios WHERE emailusuario like '%$email%';";
+      $res = mysqli_query($mysqli,$sql);
+      $linhas = mysqli_num_rows($res);
+      for($i=0; $i < $linhas; $i++){
+      $usuario = mysqli_fetch_array($res);
+      echo "Nome de usuario: ".$usuario["usernameusuario"]."<br>";
+      echo "Senha: ".$usuario["senhausuario"]."<br>";
+      echo "Nome: ".$usuario["nomeusuario"]."<br>";
+      echo "Idade: ".$usuario["idadeusuario"]."<br>";
+      echo "Email: ".$usuario["emailusuario"]."<br>";
+      echo "----------------------------------<br>";
+      }
+     
+      
+      ?></h3>
+  
     <p><a href='EditaDados.php?emailusuario=". $_SESSION["emailusuario"]."'>EDITAR DADOS</a><br>
     <p><a href="Logout.php">SAIR</a></p>
   <body>
