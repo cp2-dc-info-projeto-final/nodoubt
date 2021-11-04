@@ -2,13 +2,13 @@
 <?php
     include "conecta_mysql.inc";
     $emailusuario = $_GET["emailusuario"];
-    $sql = "SELECT * FROM cadastrousuarios WHERE emailusuario = $emailusuario;";
+    $sql = "SELECT * FROM cadastrousuarios WHERE emailusuario = '$emailusuario';";
     $res = mysqli_query($mysqli,$sql);
     $usuario = mysqli_fetch_array($res);
 ?>
 
 <p><strong>Editar Dados</strong></p>
-<form action="SalvaAlteracoes.php" method="POST">
+<form action="Recebedados.php" method="POST">
     <input type="hidden" name="operacao" value="atualizar">
     <input type="hidden" name="emailusuario" value="<?php echo $emailusuario?>">
     <p>Username: <input type="text" name="username" size="10" value="<?php echo $usuario["username"]?>"> </p>
