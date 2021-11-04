@@ -1,4 +1,12 @@
-<?php 
+<html>
+    <head>
+
+    
+</head>
+<body>
+
+        
+    <?php
 
     function Teste_form($non1, $sen, $non2, $id, $eml){
 
@@ -34,8 +42,9 @@
             }
             return $erro;
        }
-
-    $operacao = $_POST["operacao"];
+      
+     
+    $oeracao = $_POST["operacao"];
         include "conecta_mysql.inc";
         if  ($operacao == "cadastrar") {
             
@@ -65,8 +74,10 @@
              }
 
              if($erro == 1) {
+                
                 echo "<p><a href='Cadastro.html'>Cadastro</a></p>";
                 exit;
+                
             }
              
         }
