@@ -1,6 +1,6 @@
 <?php 
 
-    function Teste_form($non1, $sen, $non2, $id, $eml){
+    function Teste_form($non1, $sen, $non2, $id, $eml, $erro, $op){
 
             if(strlen($non1) < 5 or strlen($non1) > 12){
                     
@@ -24,13 +24,25 @@
             $erro = 1;
             }
             if(strlen($eml) < 8){
+            echo "O campo: E-mail esta muito curto e não foi digitado corretamente.<br>";
+            $erro = 1;
+            }
+
+            if(strstr($eml,'@') == FALSE){
             echo "O campo: E-mail não foi digitado corretamente.<br>";
             $erro = 1;
             }
 
-            if(strstr($eml,'@') or strstr($eml,'.') == FALSE){
-            echo "O campo: E-mail não foi digitado corretamente.<br>";
-            $erro = 1;
+            if ($erro = 0)
+                include "conecta_mysql.inc";
+                $sql ="SELECT * FROM cadastrousuarios WHERE emailusuario ='$eml';";
+                $res = mysqli_query($mysqli, $sql);
+        
+                    if(mysqli_num_rows($res) = 1){
+                    echo "Email já cadastrado!";
+                    $erro =1
+                }
+                mysqli_close ($mysqli);   
             }
             return $erro;
        }
@@ -46,7 +58,7 @@
             $email = $_POST["email"];
             $erro = 0;
 
-            $erro = Teste_form($username, $senha, $nome, $idade, $email);
+            $erro = Teste_form($username, $senha, $nome, $idade, $email, $erro);
             
             if($erro == 0) {
                 $sql ="INSERT INTO cadastrousuarios (usernameusuario,senhausuario,nomeusuario,idadeusuario,emailusuario)";        
@@ -82,15 +94,19 @@
                 $usuario = $_POST["email"];
                 $erro = 0;
 
-                $erro = Teste_form($username, $senha, $nome, $idade, $usuario);
+                $erro = Teste_form($username, $senha, $nome, $idade, $usuario, $erro);
 
                 if($erro == 0) {
-                    $sql = "UPDATE cadastrousuarios SET username ='$username', senha ='$senha',";
-                    $sql .= "nome = '$nome', idade = '$idade' ";
+                    $sql = "UPDATE cadastrousuarios SET usernameusuario ='$username', senhausuario ='$senha',";
+                    $sql .= "nomeusuario = '$nome', idadeusuario = $idade, emailusuario = '$usuario' ";
                     $sql .= "WHERE emailusuario = '$emailusuario';";
 
                     
                     mysqli_query($mysqli,$sql);
+                    if (!mysqli_query($mysqli,$sql)) {
+                        echo("Error description: " .mysqli_error($mysqli));
+                    }
+
                     mysqli_close ($mysqli);
 
                     echo "<br>Os dados foram atualizados com sucesso!";
