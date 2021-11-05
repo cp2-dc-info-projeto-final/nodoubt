@@ -1,6 +1,6 @@
 <?php 
 
-    function Teste_form($non1, $sen, $non2, $id, $eml, $erro, $op){
+    function Teste_form($non1, $sen, $non2, $id, $eml, $erro){
 
             if(strlen($non1) < 5 or strlen($non1) > 12){
                     
@@ -32,18 +32,6 @@
             echo "O campo: E-mail não foi digitado corretamente.<br>";
             $erro = 1;
             }
-
-            if ($erro = 0)
-                include "conecta_mysql.inc";
-                $sql ="SELECT * FROM cadastrousuarios WHERE emailusuario ='$eml';";
-                $res = mysqli_query($mysqli, $sql);
-        
-                    if(mysqli_num_rows($res) = 1){
-                    echo "Email já cadastrado!";
-                    $erro =1
-                }
-                mysqli_close ($mysqli);   
-            }
             return $erro;
        }
 
@@ -57,9 +45,21 @@
             $idade = $_POST["idade"];
             $email = $_POST["email"];
             $erro = 0;
+            $linhas = 0;
 
             $erro = Teste_form($username, $senha, $nome, $idade, $email, $erro);
             
+            if ($erro == 0){
+                $sql ="SELECT * FROM cadastrousuarios WHERE emailusuario ='$email';";
+                $res = mysqli_query($mysqli, $sql);
+                $linhas = mysqli_num_rows($res);
+        
+                if($linhas == 1){
+                echo "O Email inserido já esta cadastrado!!";
+                $erro = 1;
+                }
+            }
+
             if($erro == 0) {
                 $sql ="INSERT INTO cadastrousuarios (usernameusuario,senhausuario,nomeusuario,idadeusuario,emailusuario)";        
                 $sql .= "VALUES ('$username','$senha','$nome',$idade,'$email')";
@@ -77,6 +77,7 @@
              }
 
              if($erro == 1) {
+                 echo "<br>Cadastro imcompleto.";
                 echo "<p><a href='Cadastro.html'>Cadastro</a></p>";
                 exit;
             }
@@ -93,15 +94,26 @@
                 $idade = $_POST["idade"];
                 $usuario = $_POST["email"];
                 $erro = 0;
+                $linhas = 0;
 
                 $erro = Teste_form($username, $senha, $nome, $idade, $usuario, $erro);
+
+                if ($erro == 0){
+                    $sql ="SELECT * FROM cadastrousuarios WHERE emailusuario ='$usuario';";
+                    $res = mysqli_query($mysqli, $sql);
+                    $linhas = mysqli_num_rows($$res);
+            
+                    if($kinhas == 1){
+                        echo "O Email inserido já esta cadastrado!";
+                        $erro = 1;
+                    }
+                }
 
                 if($erro == 0) {
                     $sql = "UPDATE cadastrousuarios SET usernameusuario ='$username', senhausuario ='$senha',";
                     $sql .= "nomeusuario = '$nome', idadeusuario = $idade, emailusuario = '$usuario' ";
                     $sql .= "WHERE emailusuario = '$emailusuario';";
 
-                    
                     mysqli_query($mysqli,$sql);
                     if (!mysqli_query($mysqli,$sql)) {
                         echo("Error description: " .mysqli_error($mysqli));
@@ -116,7 +128,7 @@
 
                 if($erro == 1) {
 
-
+                    echo "<br>Cadastro incompleto.";
                     echo "<br><a href='Index.php'>Página Inicial</a>";
                     exit;
                 }
