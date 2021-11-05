@@ -4,7 +4,13 @@ body {
 
     margin: 0;
 
-    background-color: #095018ef;
+    background-image: url("imagem/nodoubt.png");
+
+    background-repeat: no-repeat;
+
+    background-position: center;
+
+    background-size: cover;
 
 }
 
@@ -39,7 +45,7 @@ body {
 
     padding-bottom: 10px;
 
-    opacity: 0.8;
+    opacity: 1.2;
 
     color: rgb(3, 2, 2);
 
