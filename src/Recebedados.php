@@ -1,4 +1,28 @@
-<?php 
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <meta name="viewport"content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="style.css">
+
+        <title>Cadastro</title>
+
+    </head>
+        <body> 
+            <div id="login">
+            <div class="card">
+            <div class="card-header">
+
+                <h2>Cadastro</h2>
+
+            </div>
+
+            <div class="card-content">
+                <div class="card-content-area">
+        <?php 
 
     function Teste_form($non1, $sen, $non2, $id, $eml, $erro){
 
@@ -70,15 +94,27 @@
                 echo "Todos os dados foram digitados corretamente!<br>";
                 echo "Cadastro completo.";
                 
-        
-                echo "<p><a href='login.html'>Retornar ao login</a></p>";
+                ?>
+                <div class="card-footer">
+                
+                <p><a href="login.html"><input type="submit" value="Pagina de login" class="submit"></a></p>
+
+                </div>
+    <?php
                 exit;
+                
         
              }
 
              if($erro == 1) {
-                 echo "<br>Cadastro imcompleto.";
-                echo "<p><a href='Cadastro.html'>Cadastro</a></p>";
+                 echo "<br>Cadastro incompleto.";
+
+                 ?>
+                 <div class="card-footer">
+
+                        <p><a href="Cadastro.html"><input type="submit" value="Retornar" class="submit"></a></p>
+                </div>
+                <?php 
                 exit;
             }
              
@@ -122,14 +158,23 @@
                     mysqli_close ($mysqli);
 
                     echo "<br>Os dados foram atualizados com sucesso!";
-                    echo "<br><a href='Index.php'>Página Inicial</a>";
+                    ?>
+                    <div class="card-footer">
+                    <p><a href="index.php"><input type="submit" value="Pagina inicial" class="submit"></a></p>
+                    </div>
+                <?php
                     exit;
                 }    
 
                 if($erro == 1) {
 
                     echo "<br>Cadastro incompleto.";
-                    echo "<br><a href='Index.php'>Página Inicial</a>";
+
+                    ?>
+                    <div class="card-footer">
+                    <p><a href="index.php"><input type="submit" value="Retornar" class="submit"></a></p>
+                    </div>
+                    <?php
                     exit;
                 }
 
