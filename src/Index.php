@@ -30,6 +30,7 @@
   
     <p><a href='EditaDados.php?emailusuario=". $_SESSION["emailusuario"]."'>EDITAR DADOS</a><br>
     <p><a href="Logout.php">SAIR</a></p>
+
   <body>
 </html>
 
