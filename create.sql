@@ -10,3 +10,5 @@ CREATE TABLE cadastrousuarios (
 
 CREATE USER'estudante'@'localhost'IDENTIFIED BY '12345';
 GRANT ALL PRIVILEGES ON cadastro.* TO 'estudante'@'localhost';
+
+ALTER TABLE cadastrousuarios ADD PermissAdm varchar(2);

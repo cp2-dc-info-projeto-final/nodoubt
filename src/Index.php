@@ -25,8 +25,13 @@
       echo "----------------------------------<br>";
       }
      
+      if($_SESSION["PermissAdm"] == 1){
+
+        echo "<p><a href='IndexAdm.php'>Usuarios";
+        exit;
+      }
       
-      ?></h3>
+      ?></h3> 
   
     <p><a href='EditaDados.php?emailusuario=". $_SESSION["emailusuario"]."'>EDITAR DADOS</a><br>
     <p><a href="Logout.php">SAIR</a></p>

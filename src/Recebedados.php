@@ -121,6 +121,7 @@
         }
             
          elseif($operacao == "atualizar"){
+             include "autentica.inc";
             include "conecta_mysql.inc";
 
                 $emailusuario = $_POST["emailusuario"];
@@ -131,17 +132,21 @@
                 $usuario = $_POST["email"];
                 $erro = 0;
                 $linhas = 0;
+                $fml;
 
                 $erro = Teste_form($username, $senha, $nome, $idade, $usuario, $erro);
 
                 if ($erro == 0){
                     $sql ="SELECT * FROM cadastrousuarios WHERE emailusuario ='$usuario';";
                     $res = mysqli_query($mysqli, $sql);
-                    $linhas = mysqli_num_rows($$res);
-            
-                    if($kinhas == 1){
+                    $linhas = mysqli_num_rows($res);
+                    $fml = $_SESSION["emailusuario"];
+
+                    if($linhas == 1){
+                        if($fml != $usuario){
                         echo "O Email inserido já esta cadastrado!";
                         $erro = 1;
+                        }
                     }
                 }
 
@@ -155,9 +160,12 @@
                         echo("Error description: " .mysqli_error($mysqli));
                     }
 
+                    else{
+                        echo "<br>Os dados foram atualizados com sucesso!";
+                    } 
                     mysqli_close ($mysqli);
 
-                    echo "<br>Os dados foram atualizados com sucesso!";
+                    
                     ?>
                     <div class="card-footer">
                     <p><a href="index.php"><input type="submit" value="Pagina inicial" class="submit"></a></p>
