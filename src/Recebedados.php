@@ -186,14 +186,16 @@
                     exit;
                 }
 
-            }    
+    
+            }
+            
+            
     ?>
 
-<!DOCTYPE html>
-<html lang="pt-br">
-    <head>
-    <link rel="stylesheet" href="RecebeDadosStyle.css">
-    <head>
-</html>
+    <html>
+        <head>
+        <link rel="stylesheet" href="RecebeDadosStyle.css">
+        <head>
+    </html>
 
 
