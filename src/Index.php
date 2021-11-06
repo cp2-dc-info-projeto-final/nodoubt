@@ -3,8 +3,9 @@
 ?>
 <html>
   <head>
-    <title>Formulário</title>
-  </head>
+        <link rel="stylesheet" href="IndexStyle.css"> 
+        <title>Formulário</title>
+</head>
   <body>
       
         <h3>Seu perfil</h3><p>
@@ -36,6 +37,6 @@
     <p><a href='EditaDados.php?emailusuario=". $_SESSION["emailusuario"]."'>EDITAR DADOS</a><br>
     <p><a href="Logout.php">SAIR</a></p>
 
-  <body>
+    </body>
 </html>
 
