@@ -38,7 +38,9 @@
                         echo "<p><a href='login.html'>Pagina de login</a></p>";
                         exit;
                   }   
+
          }
+
         mysqli_close($mysqli);
     }
 ?>    
