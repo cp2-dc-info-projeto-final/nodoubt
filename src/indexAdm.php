@@ -31,11 +31,16 @@
                 $linhas = mysqli_num_rows($res);
                 for($i=0; $i < $linhas; $i++){
                 $usuario = mysqli_fetch_array($res);
+                $permiss = $usuario["permissadm"];
+                
+
                 echo "Username: ".$usuario["usernameusuario"]."<br>";
                 echo "Senha: ".$usuario["senhausuario"]."<br>";
                 echo "Nome: ".$usuario["nomeusuario"]."<br>";
                 echo "Idade: ".$usuario["idadeusuario"]."<br>";
                 echo "Email: ".$usuario["emailusuario"]."<br>";
+                if ($permiss == 1){ echo"Permissão: Adm<br>"; }
+                elseif($permiss != 1){ echo"Permissão: comum <br>"; }
                 echo "<a href='EditaDados.php?emailusuario=".$usuario["emailusuario"]."'>Editar dados</a><br>";
 
                 echo "---------------------------------<br>";
