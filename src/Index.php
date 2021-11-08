@@ -13,7 +13,7 @@
       <h4> <?php 
             $email = $_SESSION["emailusuario"];
             include "conecta_mysql.inc";
-      $sql = "SELECT * FROM cadastrousuarios WHERE emailusuario like '%$email%';";
+      $sql = "SELECT * FROM cadastrousuarios WHERE emailusuario ='$email';";
       $res = mysqli_query($mysqli,$sql);
       $linhas = mysqli_num_rows($res);
       for($i=0; $i < $linhas; $i++){
@@ -26,17 +26,17 @@
       echo "----------------------------------<br>";
       }
      
-      if($_SESSION["PermissAdm"] == 1){
-
-        echo "<p><a href='IndexAdm.php'>Usuarios";
-        exit;
+      if($usuario["permissadm"] == 1){
+          ?>
+        <p><a href='IndexAdm.php'>Usuarios</a></p>
+          <?php
       }
+
       
       ?></h3> 
   
-    <p><a href='EditaDados.php?emailusuario=". $_SESSION["emailusuario"]."'>EDITAR DADOS</a><br>
+    <?php echo"<p><a href='EditaDados.php?emailusuario=". $_SESSION["emailusuario"]."'>EDITAR DADOS</a><br>";?>
     <p><a href="Logout.php">SAIR</a></p>
 
     </body>
 </html>
-

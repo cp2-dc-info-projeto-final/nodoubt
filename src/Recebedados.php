@@ -26,10 +26,15 @@
 
     function Teste_form($non1, $sen, $non2, $id, $eml, $erro){
 
-            if(strlen($non1) < 5 or strlen($non1) > 12){
+            if(strlen($non1) < 5){
                     
             echo "O campo: Nome de Usuario deve possuir no mínimo 5 caracteres.<br>";
             $erro = 1;
+            }
+            if(strlen($non1) > 12){
+                    
+                echo "O campo: Nome de Usuario deve possuir no maximo 12 caracteres.<br>";
+                $erro = 1;
             }
             if(strlen($sen) < 5 or strlen($sen) > 10){
             echo "O campo: Senha deve possuir no mínimo 5 caracteres.<br>";
