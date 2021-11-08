@@ -27,10 +27,10 @@
       }
      
       if($usuario["permissadm"] == 1){
-          ?>
-        <p><a href='IndexAdm.php'>Usuarios</a></p>
-          <?php
-      }
+        ?>
+      <p><a href='IndexAdm.php'>Usuarios</a></p>
+        <?php
+    }
 
       
       ?></h3> 
