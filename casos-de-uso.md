@@ -90,12 +90,24 @@ Editar dados
 
 **Fluxo Principal**
 
-1.
-2.
-3.
+1. O usuário precisa estar logado.
+2. O usuário clicla em editar dados e edita as informações que deseja mudar.
+3. O usuário retorna ao perfil e confere as informações alteradas.
 
 **Fluxo Alternativo A**
 
-1.
-2.
-3.
+1. O usuário clica em editar dados.
+2. O usuário mantêm os mesmos dados.
+3. O usuário retona ao perfil com as mesmas informações.
+
+**Fluxo Alternativo B**
+
+1. O usuário insere os dados.
+2. O sistema percebe erros em algum dos campos.
+3. O usuario retorna a página do perfil com as informações não alteradas.
+
+**Fluxo Alternativo C**
+
+1. O usuário insere os dados porem muda a permissão de 1 para 0.
+2. O usário retorna ao perfil mas sem a permissão de administrador.
+
