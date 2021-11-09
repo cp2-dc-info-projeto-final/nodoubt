@@ -206,8 +206,9 @@
 
     <html>
         <head>
-        <link rel="stylesheet" href="RecebeDadosStyle.css">
+        <link rel="stylesheet" href="estilo.css">
         <head>
     </html>
+
 
 
