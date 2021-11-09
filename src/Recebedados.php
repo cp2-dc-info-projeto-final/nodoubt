@@ -14,11 +14,6 @@
         <body> 
             <div id="login">
             <div class="card">
-            <div class="card-header">
-
-                <h2>Cadastro</h2>
-
-            </div>
 
             <div class="card-content">
                 <div class="card-content-area">
@@ -67,6 +62,12 @@
     $operacao = $_POST["operacao"];
         include "conecta_mysql.inc";
         if  ($operacao == "cadastrar") {
+
+           ?> <div class="card-header">
+
+            <h2>Cadastro</h2>
+
+        </div> <?php
             
             $username = $_POST["username"];
             $senha = $_POST["senha"];
@@ -126,6 +127,7 @@
         }
             
          elseif($operacao == "atualizar"){
+
              include "autentica.inc";
             include "conecta_mysql.inc";
 
@@ -135,6 +137,7 @@
                 $nome = $_POST["nome"];
                 $idade = $_POST["idade"];
                 $usuario = $_POST["email"];
+                $permiss = $_POST["permiss"];
                 $erro = 0;
                 $linhas = 0;
                 $fml;
@@ -147,22 +150,26 @@
                     $linhas = mysqli_num_rows($res);
                     $fml = $_SESSION["emailusuario"];
 
-                    if($linhas == 1){
-                        if($fml != $usuario){
-                        echo "O Email inserido já esta cadastrado!";
-                        $erro = 1;
+                        if($linhas == 1){
+                            if($Globalpermiss != 1){
+                            if($fml != $usuario ){
+                                
+                            echo "Não foi possivel!";
+                            $erro = 1;
+                            }
                         }
                     }
                 }
 
                 if($erro == 0) {
                     $sql = "UPDATE cadastrousuarios SET usernameusuario ='$username', senhausuario ='$senha',";
-                    $sql .= "nomeusuario = '$nome', idadeusuario = $idade, emailusuario = '$usuario' ";
+                    $sql .= "nomeusuario = '$nome', idadeusuario = $idade, emailusuario = '$usuario', permissadm = $permiss ";
                     $sql .= "WHERE emailusuario = '$emailusuario';";
 
                     mysqli_query($mysqli,$sql);
                     if (!mysqli_query($mysqli,$sql)) {
                         echo("Error description: " .mysqli_error($mysqli));
+                        exit;
                     }
 
                     else{
