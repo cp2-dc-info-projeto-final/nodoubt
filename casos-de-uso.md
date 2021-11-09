@@ -2,8 +2,10 @@
 
 ## Lista dos Casos de Uso
 
- - [CDU 01](#CDU-01): Efetuar login.
- - [CDU 02](#CDU-02): Se cadastrar.
+ - [CDU 01](#CDU-01): Se cadastrar.
+ - [CDU 02](#CDU-02): Efetuar login.
+ - [CDU 02](#CDU-03): Logout.
+ - [CDU 02](#CDU-04): Editar dados.
 
 ## Lista dos Atores
 
@@ -16,6 +18,25 @@
 ## Descrição dos Casos de Uso
 
 ### CDU 01
+
+Se cadastrar.
+
+**Fluxo Principal**
+
+1. O sistema apresenta um formulário com os campos do usuário a ser inserido.
+2. O usuário insere nome de usuário, nome, senha, idade, email.
+3. O sistema armazena o cadastro e informa ao usuário que a operação foi realizada.
+4. O sistema retorna ao início do caso de uso para inclusão de novo usuário. 
+
+**Fluxo Alternativo A**
+
+1. O sistema apresenta um formulário com os campos do usuário ser inserido
+2. O usuário insere nome de usuário, nome, senha, idade, email.
+3. O sistema informa que o campo data de nascimento não é válido.
+4. O usuário corrige a data de nascimento e clica no botão “Inserir”. 
+5. O sistema armazena o cadastro e informa ao usuário que a operação foi realizada.
+
+### CDU 02
 
 Efetuar login
 
@@ -44,32 +65,13 @@ Efetuar login
 está em análise.
 
 
-### CDU 02
-
-Se cadastrar.
-
-**Fluxo Principal**
-
-1. O sistema apresenta um formulário com os campos do usuário a ser inserido.
-2. O usuário insere nome de usuário, nome, senha, idade, email.
-3. O sistema armazena o cadastro e informa ao usuário que a operação foi realizada.
-4. O sistema retorna ao início do caso de uso para inclusão de novo usuário. 
-
-**Fluxo Alternativo A**
-
-1. O sistema apresenta um formulário com os campos do usuário ser inserido
-2. O usuário insere nome de usuário, nome, senha, idade, email.
-3. O sistema informa que o campo data de nascimento não é válido.
-4. O usuário corrige a data de nascimento e clica no botão “Inserir”. 
-5. O sistema armazena o cadastro e informa ao usuário que a operação foi realizada.
-
 ### CDU 03
 
-Duis nec orci quis velit faucibus hendrerit tempus vel libero.
+Logout 
 
 **Fluxo Principal**
 
-1. Praesent interdum lectus sit amet augue tincidunt imperdiet.
+1. O usuário deve 
 2. Duis ac dolor vel nisi imperdiet vehicula et non sem.
 3. Nunc imperdiet tortor consequat, lobortis purus non, interdum risus.
 
@@ -80,3 +82,20 @@ Duis nec orci quis velit faucibus hendrerit tempus vel libero.
 3. Mauris sed purus sit amet lectus efficitur placerat et eu diam.
 4. Aenean ullamcorper tellus quis nibh porttitor congue.
 5. Phasellus laoreet erat eget condimentum dictum.
+
+
+### CDU 04
+
+Editar dados
+
+**Fluxo Principal**
+
+1.
+2.
+3.
+
+**Fluxo Alternativo A**
+
+1.
+2.
+3.
