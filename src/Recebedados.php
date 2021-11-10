@@ -126,7 +126,7 @@
              
         }
             
-         elseif($operacao == "atualizar"){
+        elseif($operacao == "Editar!"){
 
              include "autentica.inc";
             include "conecta_mysql.inc";
@@ -199,9 +199,26 @@
                 }
 
     
+        }
+        elseif($operacao == "Excluir"){
+            include "autentica.inc";
+            include "conecta_mysql.inc";
+            
+            $email = $_POST["email"];
+            $sql ="DELETE FROM cadastrousuarios WHERE emailusuario ='$email'";
+            mysqli_query($mysqli,$sql);
+            if (!mysqli_query($mysqli,$sql)) {
+                echo("Error description: " .mysqli_error($mysqli));
+                exit;
             }
-            
-            
+
+            else{
+                echo "<br>Usuario excluido com exito!";
+                echo "<p><a href='Login.html'>Inicio";
+            } 
+            mysqli_close ($mysqli);
+
+        }
     ?>
 
     <html>

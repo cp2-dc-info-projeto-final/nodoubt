@@ -1,3 +1,6 @@
+CREATE DATABASE cadastro:
+use cadastro;
+
 CREATE TABLE cadastrousuarios (
     codusuario int NOT NULL AUTO_INCREMENT,
     usernameusuario varchar(12) NOT NULL,

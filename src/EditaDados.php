@@ -14,7 +14,6 @@
 
 <p><strong>Editar Dados</strong></p>
 <form action="Recebedados.php" method="POST">
-    <input type="hidden" name="operacao" value="atualizar">
     <input type="hidden" name="emailusuario" value="<?php echo $emailuser?>">
     <p>Nome de usuario: <input type="text" name="username" size="10" value="<?php echo $usuario["usernameusuario"]?>"> </p>
     <p>Senha: <input type="password" name="senha" size="10" value="<?php echo $usuario["senhausuario"]?>"> </p>
@@ -26,7 +25,8 @@
           <?php
         }
     ?>
-    <p><input type="submit" value="Editar!"></p>
+    <p><input type="submit" name="operacao" value="Editar!"></p>
+    <input type="submit" name="operacao" value="Excluir">
 </form>
 <?php
     mysqli_close($mysqli);
