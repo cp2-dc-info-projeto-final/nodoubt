@@ -3,7 +3,7 @@
 ?>
 <html>
   <head>
-        <link rel="stylesheet" href="IndexStyle.css"> 
+        <link rel="stylesheet" href="estilo.css"> 
         <title>Formulário</title>
 </head>
   <body>
