@@ -7,6 +7,6 @@
 
 <html>
     <head>
-        <link rel="stylesheet" href="LogoutStyle.css">  
+        <link rel="stylesheet" href="estilo.css">  
     </head>
 </html>

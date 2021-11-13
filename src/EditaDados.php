@@ -31,3 +31,14 @@
 <?php
     mysqli_close($mysqli);
 ?>
+
+<html>
+    <head>
+    <title>Editar Dados</title>
+    <head>
+    
+    <body>
+    <link rel="stylesheet" href="estilo.css">
+    </body>
+</html>
+
