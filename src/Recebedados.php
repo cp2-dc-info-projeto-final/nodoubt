@@ -100,7 +100,7 @@
                 $erro = 1;
                 }
             }
-
+            
             if($erro == 0) {
                 $sql ="INSERT INTO cadastrousuarios (usernameusuario,senhausuario,nomeusuario,idadeusuario,emailusuario)";        
                 $sql .= "VALUES ('$username','$senha','$nome',$idade,'$email')";
