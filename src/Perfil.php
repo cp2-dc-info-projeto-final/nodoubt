@@ -3,7 +3,6 @@
 ?>
 <html>
   <head>
-        <link rel="stylesheet" href="estilo.css"> 
         <title>Formulário</title>
 </head>
   <body>
@@ -37,6 +36,13 @@
   
     <?php echo"<p><a href='EditaDados.php?emailusuario=". $_SESSION["emailusuario"]."'>EDITAR DADOS</a><br>";?>
     <p><a href="Logout.php">SAIR</a></p>
+
+    <p><strong>Busca de Usuário</strong></p>
+<form action="Recebedados.php" method="POST">
+ <input type="hidden" name="operacao" value="buscar">
+ <p>Nickname: <input type="text" name="username" size="10"> </p>
+ <p><input type="submit" value="Buscar"></p>
+</form>
 
     </body>
 </html>

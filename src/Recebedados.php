@@ -90,6 +90,17 @@
                 }
             }
 
+            if ($erro == 0){
+                $sql ="SELECT * FROM cadastrousuarios WHERE usernameusuario ='$username';";
+                $res = mysqli_query($mysqli, $sql);
+                $linhas = mysqli_num_rows($res);
+        
+                if($linhas == 1){
+                echo "O Nome de usuario inserido já esta sendo usado!";
+                $erro = 1;
+                }
+            }
+
             if($erro == 0) {
                 $sql ="INSERT INTO cadastrousuarios (usernameusuario,senhausuario,nomeusuario,idadeusuario,emailusuario)";        
                 $sql .= "VALUES ('$username','$senha','$nome',$idade,'$email')";
@@ -161,6 +172,22 @@
                     }
                 }
 
+            if ($erro == 0){
+                $sql ="SELECT * FROM cadastrousuarios WHERE usernameusuario ='$username';";
+                $res = mysqli_query($mysqli, $sql);
+                $linhas = mysqli_num_rows($res);
+                $fml = $_SESSION["usernameusuario"];
+
+                if($linhas == 1){
+                    if($Globalpermiss != 1){
+                    if($fml != $username ){
+                echo "O Nome de usuario inserido já esta sendo usado!";
+                $erro = 1;
+                }
+            }
+        }
+    }
+                
                 if($erro == 0) {
                     $sql = "UPDATE cadastrousuarios SET usernameusuario ='$username', senhausuario ='$senha',";
                     $sql .= "nomeusuario = '$nome', idadeusuario = $idade, emailusuario = '$usuario', permissadm = $permiss ";
@@ -180,7 +207,7 @@
                     
                     ?>
                     <div class="card-footer">
-                    <p><a href="index.php"><input type="submit" value="Pagina inicial" class="submit"></a></p>
+                    <p><a href="Perfil.php"><input type="submit" value="Pagina inicial" class="submit"></a></p>
                     </div>
                 <?php
                     exit;
@@ -192,7 +219,7 @@
 
                     ?>
                     <div class="card-footer">
-                    <p><a href="index.php"><input type="submit" value="Retornar" class="submit"></a></p>
+                    <p><a href="Perfil.php"><input type="submit" value="Retornar" class="submit"></a></p>
                     </div>
                     <?php
                     exit;
@@ -215,6 +242,36 @@
             else{
                 echo "<br>Usuario excluido com exito!";
                 echo "<p><a href='Login.html'>Inicio";
+            } 
+            mysqli_close ($mysqli);
+
+        }
+
+        elseif($operacao == "buscar"){
+            include "conecta_mysql.inc";
+            
+            $nomedebusca = $_POST["username"];
+            $sql = "SELECT * FROM cadastrousuarios WHERE usernameusuario like'%$nomedebusca%';";
+             $res = mysqli_query($mysqli,$sql);
+            
+            if (!mysqli_query($mysqli,$sql)) {
+                echo("Error description: " .mysqli_error($mysqli));
+                exit;
+            }
+
+            else{
+                ?> <h3> <?php
+                $linhas = mysqli_num_rows($res);
+                for($i=0; $i < $linhas; $i++){
+                $usuario = mysqli_fetch_array($res);
+                echo " ".$usuario["usernameusuario"]."<br>";
+                ?> </h3> <h4> <?php
+                echo "Nome: ".$usuario["nomeusuario"]."<br>";
+                echo "Idade: ".$usuario["idadeusuario"]."<br>";
+                ?> </h4> <?php
+                }
+
+                echo "<p><a href='Perfil.php'>Retornar";
             } 
             mysqli_close ($mysqli);
 

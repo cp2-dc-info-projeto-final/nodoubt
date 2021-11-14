@@ -19,7 +19,7 @@
             session_start();
             $_SESSION["emailusuario"] = $email;
             $_SESSION["senhausuario"] = $senha;
-            header("Location:index.php");
+            header("Location:Perfil.php");
             }
         }
         mysqli_close($mysqli);
