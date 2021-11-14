@@ -29,7 +29,7 @@ Se cadastrar.
 1. O sistema apresenta um formulário com os campos do usuário a ser inserido.
 2. O usuário insere nome de usuário, nome, senha, idade, email.
 3. O sistema armazena o cadastro e informa ao usuário que a operação foi realizada.
-4. O sistema retorna ao início do caso de uso para inclusão de novo usuário. 
+4. O sistema retorna ao início do caso de uso para login do novo usuário. 
 
 **Fluxo Alternativo A**
 
@@ -54,18 +54,9 @@ Efetuar login
 
 1. O sistema apresenta um formulário com os campos login e senha.
 2. O usuário insere seu login e sua senha e clica no botão “Entrar”.
-3. O sistema informa que o login e a senha não coincidem.
+3. O sistema informa que o Email e/ou a senha não coincidem.
 4. O usuário corrige as informações de login e senha e clica no botão “Entrar”.
 5. O sistema encaminha o usuário para sua tela inicial.
-
-
-**Fluxo Alternativo B**
-
-1. O sistema apresenta um formulário com os campos login e senha.
-2. O usuário clica no botão “Não possuo cadastro”.
-3. O sistema abre uma solicitação de criação de conta.
-4. O sistema informa ao usuário que a solicitação de criação de conta foi feita e
-está em análise.
 
 
 ### CDU 03
@@ -85,25 +76,28 @@ Editar dados
 
 **Fluxo Principal**
 
-1. O usuário precisa estar logado.
-2. O usuário clicla em editar dados e edita as informações que deseja mudar.
-3. O usuário retorna ao perfil e confere as informações alteradas.
+1. O usuário precisa estar logado clica no botão de editar dados.
+2. O usuário edita as informações que deseja mudar, não mexe nas que não deseja e clica em enviar.
+3. O sistema informa que as informações foram salvas.
+4. O usuário retorna ao perfil e confere as informações alteradas.
 
 **Fluxo Alternativo A**
 
 1. O usuário clica em editar dados.
-2. O usuário mantêm os mesmos dados.
-3. O usuário retona ao perfil com as mesmas informações.
+2. O usuário não altera nenhuma informação dos campos e clica em enviar.
+3. O sistema informa que as informações foram salvas.
+4. O usuário retona ao perfil com as mesmas informações.
 
 **Fluxo Alternativo B**
 
-1. O usuário insere os dados.
-2. O sistema percebe erros em algum dos campos.
+1. O usuário clica em editar dados e altera as informaçõees que deseja.
+2. O sistema informa erros em algum dos campos.
 3. O usuario retorna a página do perfil com as informações não alteradas.
 
 **Fluxo Alternativo C**
 
-1. O usuário insere os dados porem muda a permissão de 1 para 0.
+1. O usuario clica em editar dados.
+1. O usuário altera a permissão de 1 para 0.
 2. O usário retorna ao perfil mas sem a permissão de administrador.
 
 
@@ -113,23 +107,18 @@ Busca
 
 **Fluxo Principal**
 
-1. O usuário precisa estar logado.
-2. O usuário se direciona até a barra de busca e digita o ursername que deseja encontrar.
-3. O sistema mostra os resultados dos usernames encontrados.
+1. O usuário entra no site e visualiza o perfil.
+2. O usuário se direciona até a barra de busca e digita o ursername do usuario que deseja encontrar.
+3. O sistema mostra os resultados dos perfis dos usuarios encontrados.
 
 **Fluxo Alternativo A**
 
-1. O usuário precisa estar logado.
+1. O usuário entra no site e visualiza o perfil.
 2. O usuário se direciona até a barra de busca e digita o ursername que deseja encontrar.
 3. O sistema exibe uma mensagem de "usuário não encontrado".
 
 **Fluxo Alternativo B**
 
 1. O usuário precisa estar logado.
-2. O usuário se direciona até a barra de busca e digita o ursername que deseja encontrar.
+2. O usuário se direciona até a barra de busca e digita o proprio username.
 3. O sistema exibe os resultados encontrados.
-
-
-
-
-

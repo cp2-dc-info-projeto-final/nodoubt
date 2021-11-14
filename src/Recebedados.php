@@ -253,10 +253,14 @@
             $nomedebusca = $_POST["username"];
             $sql = "SELECT * FROM cadastrousuarios WHERE usernameusuario like'%$nomedebusca%';";
              $res = mysqli_query($mysqli,$sql);
-            
+
             if (!mysqli_query($mysqli,$sql)) {
                 echo("Error description: " .mysqli_error($mysqli));
                 exit;
+            }
+
+            if( $res == 0){
+                echo "Nenhum usuario encontrado...";
             }
 
             else{
@@ -270,9 +274,9 @@
                 echo "Idade: ".$usuario["idadeusuario"]."<br>";
                 ?> </h4> <?php
                 }
-
+            }
                 echo "<p><a href='Perfil.php'>Retornar";
-            } 
+
             mysqli_close ($mysqli);
 
         }
