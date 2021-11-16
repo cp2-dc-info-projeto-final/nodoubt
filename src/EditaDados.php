@@ -39,54 +39,12 @@
     
     <body>
     <link rel="stylesheet" href="estilo.css">
-    <nav class="navbar navbar-fixed-top navbar-dark main-nav">
-<div class="container">
-    <ul class="nav navbar-nav pull-left">
-        <li class="nav-item active">
-            <a class="nav-link" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Download</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Register</a>
-        </li>
-    </ul>
-
-    <ul class="nav navbar-nav text-center">
-        <li class="nav-item"><a class="nav-link" href="#">Website Name</a></li>
-    </ul>
-
-    <ul class="nav navbar-nav pull-right">
-        <li class="nav-item">
-            <a class="nav-link" href="#">Rates</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Help</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-        </li>
-    </ul>
-</div>
 
 
 <nav class="navbar navbar-fixed-top navbar-dark main-nav">
 <div class="container">
     <ul class="nav navbar-nav pull-left">
-        <li class="nav-item active">
-            <a class="nav-link" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Download</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Register</a>
-        </li>
     </ul>
-    
-
-
     </body>
 </html>
 
