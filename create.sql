@@ -1,5 +1,5 @@
-CREATE DATABASE cadastro:
-use cadastro;
+CREATE DATABASE nodoubt:
+use nodoubt;
 
 CREATE TABLE cadastrousuarios (
     codusuario int NOT NULL AUTO_INCREMENT,
@@ -13,4 +13,4 @@ CREATE TABLE cadastrousuarios (
 );
 
 CREATE USER'estudante'@'localhost'IDENTIFIED BY '12345';
-GRANT ALL PRIVILEGES ON cadastro.* TO 'estudante'@'localhost';
+GRANT ALL PRIVILEGES ON nodoubt.* TO 'estudante'@'localhost';
