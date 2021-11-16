@@ -39,9 +39,7 @@
     
     <body>
     <link rel="stylesheet" href="estilo.css">
-
-
-<nav class="navbar navbar-fixed-top navbar-dark main-nav">
+    <nav class="navbar navbar-fixed-top navbar-dark main-nav">
 <div class="container">
     <ul class="nav navbar-nav pull-left">
         <li class="nav-item active">
@@ -71,6 +69,22 @@
         </li>
     </ul>
 </div>
+
+
+<nav class="navbar navbar-fixed-top navbar-dark main-nav">
+<div class="container">
+    <ul class="nav navbar-nav pull-left">
+        <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Download</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Register</a>
+        </li>
+    </ul>
+    
 
 
     </body>
