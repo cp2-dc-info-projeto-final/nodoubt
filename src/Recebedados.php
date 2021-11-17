@@ -165,7 +165,7 @@
                             if($Globalpermiss != 1){
                             if($fml != $usuario ){
                                 
-                            echo "Não foi possivel!";
+                            echo "O email inserido ja esta cadastado!";
                             $erro = 1;
                             }
                         }
@@ -251,15 +251,16 @@
             include "conecta_mysql.inc";
             
             $nomedebusca = $_POST["username"];
-            $sql = "SELECT * FROM cadastrousuarios WHERE usernameusuario like'%$nomedebusca%';";
+            $sql = "SELECT * FROM cadastrousuarios WHERE usernameusuario like'$nomedebusca%';";
              $res = mysqli_query($mysqli,$sql);
+             $linhas = mysqli_num_rows($res);
 
             if (!mysqli_query($mysqli,$sql)) {
                 echo("Error description: " .mysqli_error($mysqli));
                 exit;
             }
 
-            if( $res == 0){
+            if( $linhas == 0){
                 echo "Nenhum usuario encontrado...";
             }
 
