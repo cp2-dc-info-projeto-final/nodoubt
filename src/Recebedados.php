@@ -265,12 +265,20 @@
             }
 
             else{
-                ?> <h3> <?php
                 $linhas = mysqli_num_rows($res);
                 for($i=0; $i < $linhas; $i++){
                 $usuario = mysqli_fetch_array($res);
+                ?>
+                <h3>
+                <?php
                 echo " ".$usuario["usernameusuario"]."<br>";
-                ?> </h3> <h4> <?php
+                ?> </h3>
+                 
+                 <div class="container">
+                <p><img src="imagem/Nouser.png" width="100" height="100"></img>
+                </div>
+                 
+                 <h4> <?php
                 echo "Nome: ".$usuario["nomeusuario"]."<br>";
                 echo "Idade: ".$usuario["idadeusuario"]."<br>";
                 ?> </h4> <?php

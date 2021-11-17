@@ -11,23 +11,33 @@
     $permiss = $usuario["permissadm"];
 }
 ?>
-
+<div id="login">
+            <div class="card">
+            <div class="card-header">
 <p><strong>Editar Dados</strong></p>
-<form action="Recebedados.php" method="POST">
-    <input type="hidden" name="emailusuario" value="<?php echo $emailuser?>">
-    <p>Nome de usuario: <input type="text" name="username" size="10" value="<?php echo $usuario["usernameusuario"]?>"> </p>
-    <p>Senha: <input type="password" name="senha" size="10" value="<?php echo $usuario["senhausuario"]?>"> </p>
-    <p>Nome: <input type="text" name="nome" size="30" value="<?php echo $usuario["nomeusuario"]?>"> </p>
-    <p>Idade: <input type="text" name="idade" size="3" value="<?php echo $usuario["idadeusuario"]?>"> </p>
-    <p>E-mail: <input type="text" name="email" size="30" value="<?php echo $usuario["emailusuario"]?>"></p>
-    <?php if($Globalpermiss == 1){ ?>
-          <p>Permissão: <input type="text" name="permiss" size="2" value="<?php echo $usuario["permissadm"]?>"></p>
-          <?php
-        }
-    ?>
-    <p><input type="submit" name="operacao" value="Editar!"></p>
-    <input type="submit" name="operacao" value="Excluir">
+</div>
+            <div class="card-content">
+                <div class="card-content-area">
+            <form action="Recebedados.php" method="POST">
+                <input type="hidden" name="emailusuario" value="<?php echo $emailuser?>">
+                <p>Nome de usuario: <input type="text" name="username" size="10" value="<?php echo $usuario["usernameusuario"]?>"> </p>
+                <p>Senha: <input type="password" name="senha" size="10" value="<?php echo $usuario["senhausuario"]?>"> </p>
+                <p>Nome: <input type="text" name="nome" size="30" value="<?php echo $usuario["nomeusuario"]?>"> </p>
+                <p>Idade: <input type="text" name="idade" size="3" value="<?php echo $usuario["idadeusuario"]?>"> </p>
+                <p>E-mail: <input type="text" name="email" size="30" value="<?php echo $usuario["emailusuario"]?>"></p>
+                <?php if($Globalpermiss == 1){ ?>
+                    <p>Permissão: <input type="text" name="permiss" size="2" value="<?php echo $usuario["permissadm"]?>"></p>
+                    <?php
+                    }
+                ?>
+    
+    <div class="card-footer">
+    <p><input type="submit" name="operacao" class="submit" value="Editar!"> <input type="submit" name="operacao" class="submit" value="Excluir"></p>
+    </div>
 </form>
+    </div>
+    </div>
+    </div>
 <?php
     mysqli_close($mysqli);
 ?>
