@@ -266,22 +266,20 @@
 
             else{
                 $linhas = mysqli_num_rows($res);
+                echo "Perfis econtrados: $linhas.";
                 for($i=0; $i < $linhas; $i++){
                 $usuario = mysqli_fetch_array($res);
                 ?>
                 <h3>
                 <?php
-                echo " ".$usuario["usernameusuario"]."<br>";
+                echo"<p><a href='alterperfil.php?usernameusuario=". $usuario["usernameusuario"]."' value=". $usuario['usernameusuario']."><br>"; 
+                echo " ".$usuario["usernameusuario"]."<br></a>";
                 ?> </h3>
                  
                  <div class="container">
                 <p><img src="imagem/Nouser.png" width="100" height="100"></img>
                 </div>
-                 
-                 <h4> <?php
-                echo "Nome: ".$usuario["nomeusuario"]."<br>";
-                echo "Idade: ".$usuario["idadeusuario"]."<br>";
-                ?> </h4> <?php
+                 <?php
                 }
             }
                 echo "<p><a href='Perfil.php'>Retornar";

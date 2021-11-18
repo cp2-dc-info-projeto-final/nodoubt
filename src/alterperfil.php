@@ -1,5 +1,13 @@
 <?php
  include "autentica.inc";
+ include "conecta_mysql.inc";
+ $nomeuser = $_GET["usernameusuario"];
+ $sql = "SELECT * FROM cadastrousuarios WHERE usernameusuario = '$nomeuser';";
+ $res = mysqli_query($mysqli,$sql);
+ $linhas = mysqli_num_rows($res);
+ for($i=0; $i < $linhas; $i++){
+ $usuario = mysqli_fetch_array($res);
+ }
 ?>
 <html>
   <head><meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,35 +41,26 @@
   <div id="content">
 
       <h4><?php 
-            $email = $_SESSION["emailusuario"];
-            include "conecta_mysql.inc";
-      $sql = "SELECT * FROM cadastrousuarios WHERE emailusuario ='$email';";
-      $res = mysqli_query($mysqli,$sql);
-      $linhas = mysqli_num_rows($res);
-      for($i=0; $i < $linhas; $i++){
-      $usuario = mysqli_fetch_array($res);
+ $nomeuser = $_GET["usernameusuario"];
+
+ $sql = "SELECT * FROM cadastrousuarios WHERE usernameusuario = '$nomeuser';";
+ $res = mysqli_query($mysqli,$sql);
+ $linhas = mysqli_num_rows($res);
+ for($i=0; $i < $linhas; $i++){
+ $usuario = mysqli_fetch_array($res);
+ }
       ?> <div class="container">
-        <p><img src="perfis/<?php $img?>.png"> 
+          <?php       echo " ".$usuario["usernameusuario"]."<br>";
+          ?>
+        <p><img src="imagem/Nouser.png" width="100" height="100">
       </a></p></div>  <?php
-      echo "Nome de usuario: ".$usuario["usernameusuario"]."<br>";
-      echo "Senha: ".$usuario["senhausuario"]."<br>";
+
       echo "Nome: ".$usuario["nomeusuario"]."<br>";
       echo "Idade: ".$usuario["idadeusuario"]."<br>";
       echo "Email: ".$usuario["emailusuario"]."<br>";
       echo "----------------------------------<br>";
-      }
-     
-      if($usuario["permissadm"] == 1){
-        ?>
-      <p><a href='IndexAdm.php'>Usuarios</a></p>
-        <?php
-    }
-
-      
+            
       ?>
-  
-    <?php echo"<p><a href='EditaDados.php?emailusuario=". $_SESSION["emailusuario"]."'>EDITAR DADOS</a><br>";?>
-    <p><p><a href="Logout.php">SAIR</a></p>
   </div></h3>
     </body>
 </html>
