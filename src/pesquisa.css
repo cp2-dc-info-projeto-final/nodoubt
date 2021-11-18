@@ -10,10 +10,10 @@ body {
     border-style: solid;
     border-color:rgba(121, 119, 119, 0.534);
     border-radius: 50px;
-    width:480px;
-    height: 440px;
+    width:500px;
+    height: 500px;
     display: flex;
-    align-items: left;
+    align-items: center;
     justify-content: left;
     flex-direction: column;
     z-index: 100%;
