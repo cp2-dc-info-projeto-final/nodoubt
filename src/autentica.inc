@@ -1,6 +1,7 @@
 <?php
      session_start();
      global $Globalpermiss;
+     global $img;
         if(isset($_SESSION["emailusuario"])){
             $email = $_SESSION["emailusuario"];
         }
@@ -32,6 +33,7 @@
                     else{
                         $usuario = mysqli_fetch_array($res);
                         $Globalpermiss = $usuario["permissadm"];
+                        $img = rand(1, 10);
                         if($senha != $usuario["senhausuario"]){
                         unset($_SESSION["emailusuario"]);
                         unset($_SESSION["senhausuario"]);

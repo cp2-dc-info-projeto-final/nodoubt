@@ -195,7 +195,7 @@
 
                     mysqli_query($mysqli,$sql);
                     if (!mysqli_query($mysqli,$sql)) {
-                        echo("Error description: " .mysqli_error($mysqli));
+                        echo("Erro ao atualizar: " .mysqli_error($mysqli));
                         exit;
                     }
 
