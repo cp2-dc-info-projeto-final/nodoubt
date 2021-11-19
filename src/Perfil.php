@@ -11,12 +11,14 @@
         <title>Formulário</title>
 </head>
   <body>
+ 
+
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="#"  class="card-content-area" class="card-content">
      <img src="imagem\nodoubt.png" alt="No Doubt" style="width:40px;">
    </a>
   
-   <ul class="navbar-nav">
+  <ul class="navbar-nav">
   <li class="nav-item">
     <a class="nav-link" href="perfil.php"> Meu perfil</a>
   </li>
@@ -26,7 +28,6 @@
 <input class="form-control mr-sm-2" type="search" placeholder="buscar usuarios..." name="username" aria-label="Pesquisar">
 <button class="btn btn-outline-success my-2 my-sm-0" type="submit" value="buscar">Pesquisar</button>
 </forms>
-
 
 </nav>
 
