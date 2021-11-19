@@ -22,7 +22,7 @@
   </li>
 </ul>
 <form action="Recebedados.php" method="POST" class="form-inline">
-<input type="hidden" name="operacao" value="buscar">
+<input type="hidden" name="operacao" value="buscar"></imput>
 <input class="form-control mr-sm-2" type="search" placeholder="buscar usuarios..." name="username" aria-label="Pesquisar">
 <button class="btn btn-outline-success my-2 my-sm-0" type="submit" value="buscar">Pesquisar</button>
 </forms>
@@ -56,12 +56,59 @@
       <p><a href='IndexAdm.php'>Usuarios</a></p>
         <?php
     }
-
-      
       ?>
   
-    <?php echo"<p><a href='EditaDados.php?emailusuario=". $_SESSION["emailusuario"]."'>EDITAR DADOS</a><br>";?>
-    <p><p><a href="Logout.php">SAIR</a></p>
+    <?php echo"<p><a href='EditaDados.php?emailusuario=". $_SESSION["emailusuario"]."'>EDITAR DADOS</a><br>";?> 
+    <p><p><a href="Logout.php">SAIR</a></p></p>
   </div></h3>
+
+
+    <?php $iduser = $usuario["codusuario"];
+    $iduser .= $usuario["idadeusuario"];
+    $coduser = $usuario["usernameusuario"];
+
+    ?>
+
+
+      <div class="container">
+
+      <div id="area">
+    <form action="Recebedados.php" method="POST">
+      <fieldset>
+      <input type="hidden" name="user" value="<?php echo $coduser?>"></input>
+      <input type="hidden" name="iduser" value="<?php echo $iduser?>"></input>
+      <input type="text" name="titulo" size="25" placeholder="titulo"><p>  
+          <label>Mensagem:</label><br><textarea name="post" class="msg" placeholder="Qual sua duvida?" cols="25" rows="8"></textarea><br>
+          <p><input type="submit" name="operacao" class="submit" value="Postar">
+      </fieldset>
+    </form>
+  </div>
+  
+      <?php
+
+      $sql = "SELECT * FROM postagemusuarios WHERE userpost ='$coduser';";
+      $res = mysqli_query($mysqli, $sql);
+      $linhas = mysqli_num_rows($res);
+
+      if ($linhas == 0){
+
+           echo"<h1>Voce não fez nenhuma postagem</h1>";
+
+      }
+
+      else{
+
+        for($i=0; $i < $linhas; $i++){
+          $post = mysqli_fetch_array($res);
+          echo "<h1>".$post["userpost"]."<br></h1>";
+          echo "<h2>".$post["titulopost"]."<br></h2>";
+          echo "<h3>".$post["postcontent"]."<br></h3";
+          echo "----------------------------------<br>";
+          }
+
+      }
+      mysqli_close($mysqli);
+?>
+  </div>
     </body>
 </html>

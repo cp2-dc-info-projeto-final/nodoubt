@@ -254,7 +254,7 @@
 
                 if($erro == 1) {
 
-                    echo "<br>Cadastro incompleto.";
+                    echo "<br>Atualização de dados incompleta.";
 
                     ?>
                     <div class="card-footer">
@@ -326,6 +326,28 @@
             mysqli_close ($mysqli);
 
         }
+
+        elseif($operacao == "Postar"){
+            include "conecta_mysql.inc";
+        
+            $nomeuser = $_POST["user"];
+            $idouser = $_POST["iduser"];
+            $titulopost = $_POST["titulo"];
+            $postagem = $_POST["post"];
+
+            $sql ="INSERT INTO postagemusuarios (coduserpost,userpost,titulopost,postcontent)"; 
+            $sql .= "VALUES ($idouser,'$nomeuser','$titulopost','$postagem')";
+            mysqli_query($mysqli,$sql);
+
+            if (!mysqli_query($mysqli,$sql)) {
+                echo("Erro ao postar: " .mysqli_error($mysqli));
+                exit;
+            }
+            mysqli_close ($mysqli);
+
+            header("location:Perfil.php");
+            exit;
+        }
     ?>
 
     <html>
@@ -333,6 +355,3 @@
         <link rel="stylesheet" href="estilo.css">
         <head>
     </html>
-
-
-
