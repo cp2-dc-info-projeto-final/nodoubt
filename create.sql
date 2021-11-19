@@ -6,11 +6,10 @@ CREATE TABLE cadastrousuarios (
     usernameusuario varchar(12) NOT NULL,
     senhausuario varchar(255) NOT NULL,
     nomeusuario varchar(40) NOT NULL,
-    idadeusuario int(3) NOT NULL,
+    idadeusuario int(10) NOT NULL,
     emailusuario varchar(30) NOT NULL,
     permissadm int(2) NOT NULL,
     primary key (codusuario)
 );
 
-CREATE USER'estudante'@'localhost'IDENTIFIED BY '12345';
-GRANT ALL PRIVILEGES ON nodoubt.* TO 'estudante'@'localhost';
+0

@@ -46,7 +46,7 @@
       echo "Nome de usuario: ".$usuario["usernameusuario"]."<br>";
       echo "Senha: ".$usuario["senhausuario"]."<br>";
       echo "Nome: ".$usuario["nomeusuario"]."<br>";
-      echo "Idade: ".$usuario["idadeusuario"]."<br>";
+      echo "Data de nascimento: ".$usuario["idadeusuario"]."<br>";
       echo "Email: ".$usuario["emailusuario"]."<br>";
       echo "----------------------------------<br>";
       }
