@@ -60,7 +60,38 @@
       echo "Email: ".$usuario["emailusuario"]."<br>";
       echo "----------------------------------<br>";
             
+        
+
       ?>
   </div></h3>
+
+  <?php
+
+
+
+$sql = "SELECT * FROM postagemusuarios WHERE userpost ='$nomeuser';";
+$res = mysqli_query($mysqli, $sql);
+$linhas = mysqli_num_rows($res);
+
+if ($linhas == 0){
+
+     echo"<h1>Eeste usuario não fez nenhuma postagem</h1>";
+
+}
+
+else{
+
+  for($i=0; $i < $linhas; $i++){
+    $post = mysqli_fetch_array($res);
+    echo "<h1>".$post["userpost"]."<br></h1>";
+    echo "<h2>".$post["titulopost"]."<br></h2>";
+    echo "<h3>".$post["postcontent"]."<br></h3";
+    echo "----------------------------------<br>";
+    }
+
+}
+mysqli_close($mysqli);
+?>
+
     </body>
 </html>

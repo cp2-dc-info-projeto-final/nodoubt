@@ -43,9 +43,42 @@
             echo "O campo: Nome esta vazio ou foi inserido de forma incorreta. <br>";
             $erro = 1;
             }
-            if(is_numeric($id) == FALSE){
-            echo "O campo: Idade deve possui somente numeros.<br>";
+            if ( strlen($id) < 8){
+            echo "O campo: Data de Nascimento deve possui no minimo 8 digitos.<br>";
             $erro = 1;
+            }
+            else{
+                // verifica se a data possui
+                // a barra (/) de separação
+               if(strpos($id, "/") !== FALSE){
+                    //
+                    $partes = explode("/", $id);
+                    // pega o dia da data
+                    $dia = $partes[0];
+                    // pega o mês da data
+                    $mes = $partes[1];
+                    // prevenindo Notice: Undefined offset: 2
+                    // caso informe data com uma única barra (/)
+                    $ano = isset($partes[2]) ? $partes[2] : 0;
+                    $id = $dia;
+                    $id .= $mes;
+                    $id .= $ano;
+                    if (strlen($ano) < 4) {
+                        echo "O campo: Data de Nascimento exige um ano valido.<br>";
+                        $erro = 1;
+                    } 
+                    else {
+                        // verifica se a data é válida
+                        if (!checkdate($mes, $dia, $ano)) {
+                            echo "O campo: Data de Nascimento não indentificou sua data como valida.<br>";
+                            $erro = 1;
+                        }
+                    }
+                 }
+                else{
+                    echo "O campo: Data de Nascimento deve possuir barras de separação.<br>";
+                    $erro = 1;
+                }
             }
             if(strlen($eml) < 8){
             echo "O campo: E-mail esta muito curto e não foi digitado corretamente.<br>";
@@ -56,7 +89,7 @@
             echo "O campo: E-mail não foi digitado corretamente.<br>";
             $erro = 1;
             }
-            return $erro;
+            return array ($erro, $id);
        }
 
     $operacao = $_POST["operacao"];
@@ -77,8 +110,11 @@
             $erro = 0;
             $linhas = 0;
 
-            $erro = Teste_form($username, $senha, $nome, $idade, $email, $erro);
+            $funcao = Teste_form($username, $senha, $nome, $idade, $email, $erro);
             
+            $erro = $funcao[0];
+            $idade = $funcao[1];
+
             if ($erro == 0){
                 $sql ="SELECT * FROM cadastrousuarios WHERE emailusuario ='$email';";
                 $res = mysqli_query($mysqli, $sql);
@@ -153,7 +189,10 @@
                 $linhas = 0;
                 $fml;
 
-                $erro = Teste_form($username, $senha, $nome, $idade, $usuario, $erro);
+                $funcao = Teste_form($username, $senha, $nome, $idade, $usuario, $erro);
+
+                $erro = $funcao[0];
+                $idade = $fucao[1];
 
                 if ($erro == 0){
                     $sql ="SELECT * FROM cadastrousuarios WHERE emailusuario ='$usuario';";
@@ -215,7 +254,7 @@
 
                 if($erro == 1) {
 
-                    echo "<br>Cadastro incompleto.";
+                    echo "<br>Atualização de dados incompleta.";
 
                     ?>
                     <div class="card-footer">
@@ -287,6 +326,28 @@
             mysqli_close ($mysqli);
 
         }
+
+        elseif($operacao == "Postar"){
+            include "conecta_mysql.inc";
+        
+            $nomeuser = $_POST["user"];
+            $idouser = $_POST["iduser"];
+            $titulopost = $_POST["titulo"];
+            $postagem = $_POST["post"];
+
+            $sql ="INSERT INTO postagemusuarios (coduserpost,userpost,titulopost,postcontent)"; 
+            $sql .= "VALUES ($idouser,'$nomeuser','$titulopost','$postagem')";
+            mysqli_query($mysqli,$sql);
+
+            if (!mysqli_query($mysqli,$sql)) {
+                echo("Erro ao postar: " .mysqli_error($mysqli));
+                exit;
+            }
+            mysqli_close ($mysqli);
+
+            header("location:Perfil.php");
+            exit;
+        }
     ?>
 
     <html>
@@ -294,6 +355,3 @@
         <link rel="stylesheet" href="estilo.css">
         <head>
     </html>
-
-
-
