@@ -35,6 +35,7 @@
 
       <h4><?php 
             $email = $_SESSION["emailusuario"];
+            $img = $_SESSION["fotoperfil"];
             include "conecta_mysql.inc";
       $sql = "SELECT * FROM cadastrousuarios WHERE emailusuario ='$email';";
       $res = mysqli_query($mysqli,$sql);
@@ -42,7 +43,7 @@
       for($i=0; $i < $linhas; $i++){
       $usuario = mysqli_fetch_array($res);
       ?> <div class="container">
-        <p><img src="perfis/<?php $img?>.png"> 
+       <?php echo"<p><img src='perfis/$img.jpeg' width='100' height='100'></p>" ?>
       </a></p></div>  <?php
       echo "Nome de usuario: ".$usuario["usernameusuario"]."<br>";
       echo "Senha: ".$usuario["senhausuario"]."<br>";
@@ -75,13 +76,12 @@
 
       <div id="area">
     <form action="Recebedados.php" method="POST">
-      <fieldset>
+        <input type="hidden" name="operacao" value="Postar">
       <input type="hidden" name="user" value="<?php echo $coduser?>"></input>
       <input type="hidden" name="iduser" value="<?php echo $iduser?>"></input>
       <input type="text" name="titulo" size="25" placeholder="titulo"><p>  
-          <label>Mensagem:</label><br><textarea name="post" class="msg" placeholder="Qual sua duvida?" cols="25" rows="8"></textarea><br>
-          <p><input type="submit" name="operacao" class="submit" value="Postar">
-      </fieldset>
+      <br><textarea name="post" placeholder="Qual sua duvida?" cols="25" rows="3"></textarea><br>
+        <input type="submit" class="submit" value="Postar!">
     </form>
   </div>
   

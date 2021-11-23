@@ -1,6 +1,7 @@
 <?php
         $email = $_POST["email"];
         $senha = $_POST["senha"];
+        global $img;
 
         include "conecta_mysql.inc";
             $sql ="SELECT * FROM cadastrousuarios WHERE emailusuario = '$email';";
@@ -19,6 +20,9 @@
             session_start();
             $_SESSION["emailusuario"] = $email;
             $_SESSION["senhausuario"] = $senha;
+            $img = rand(1, 10);
+            $_SESSION["fotoperfil"] = $img;
+
             header("Location:Perfil.php");
             }
         }

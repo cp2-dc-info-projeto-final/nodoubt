@@ -48,17 +48,14 @@
             $erro = 1;
             }
             else{
-                // verifica se a data possui
-                // a barra (/) de separação
                if(strpos($id, "/") !== FALSE){
-                    //
+                
                     $partes = explode("/", $id);
-                    // pega o dia da data
+
                     $dia = $partes[0];
-                    // pega o mês da data
+
                     $mes = $partes[1];
-                    // prevenindo Notice: Undefined offset: 2
-                    // caso informe data com uma única barra (/)
+
                     $ano = isset($partes[2]) ? $partes[2] : 0;
                     $id = $dia;
                     $id .= $mes;
@@ -316,7 +313,7 @@
                 ?> </h3>
                  
                  <div class="container">
-                <p><img src="imagem/Nouser.png" width="100" height="100"></img>
+                <p><img src="perfis/Nouser.png" width="100" height="100"></img>
                 </div>
                  <?php
                 }
@@ -338,11 +335,6 @@
             $sql ="INSERT INTO postagemusuarios (coduserpost,userpost,titulopost,postcontent)"; 
             $sql .= "VALUES ($idouser,'$nomeuser','$titulopost','$postagem')";
             mysqli_query($mysqli,$sql);
-
-            if (!mysqli_query($mysqli,$sql)) {
-                echo("Erro ao postar: " .mysqli_error($mysqli));
-                exit;
-            }
             mysqli_close ($mysqli);
 
             header("location:Perfil.php");

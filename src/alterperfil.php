@@ -49,26 +49,21 @@
  for($i=0; $i < $linhas; $i++){
  $usuario = mysqli_fetch_array($res);
  }
+ $x = rand(1, 10);
       ?> <div class="container">
-          <?php       echo " ".$usuario["usernameusuario"]."<br>";
-          ?>
-        <p><img src="imagem/Nouser.png" width="100" height="100">
+          <?php         echo "<p><img src='perfis/$x.jpeg' width='100' height='100'>";
+           echo " ".$usuario["usernameusuario"]."<br>";?> 
+          
       </a></p></div>  <?php
 
       echo "Nome: ".$usuario["nomeusuario"]."<br>";
       echo "Idade: ".$usuario["idadeusuario"]."<br>";
       echo "Email: ".$usuario["emailusuario"]."<br>";
       echo "----------------------------------<br>";
-            
-        
-
       ?>
   </div></h3>
 
-  <?php
-
-
-
+<?php
 $sql = "SELECT * FROM postagemusuarios WHERE userpost ='$nomeuser';";
 $res = mysqli_query($mysqli, $sql);
 $linhas = mysqli_num_rows($res);
