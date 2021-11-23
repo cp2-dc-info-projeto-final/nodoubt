@@ -1,5 +1,6 @@
 body {
     background-color: rgba(255, 255, 255, 0.993);
+    align-items: center;
 }
 
 #content{
@@ -15,6 +16,24 @@ body {
     display: flex;
     align-items: center;
     justify-content: left;
+    flex-direction: column;
+    z-index: 100%;
+
+}
+
+#content-post-a{
+
+    background-color: rgba(255, 255, 255, 0.877);
+    padding: 50px;
+    border-width: thin;
+    border-style: solid;
+    border-color:rgba(121, 119, 119, 0.534);
+    border-radius: 50px;
+    width:500px;
+    height: 200px;
+    display: flex;
+    align-items: left;
+    justify-content: right;
     flex-direction: column;
     z-index: 100%;
 
