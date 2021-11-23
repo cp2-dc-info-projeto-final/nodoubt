@@ -15,6 +15,10 @@ CREATE TABLE cadastrousuarios (
 CREATE USER'estudante'@'localhost'IDENTIFIED BY '12345';
 GRANT ALL PRIVILEGES ON nodoubt.* TO 'estudante'@'localhost';
 
+/* criação do usuario adimin primario*/
+
+INSERT INTO cadastrousuarios (usernameusuario, senhausuario, nomeusuario, idadeusuario, emailusuario, permissadm) VALUES ('NouAdm', 40028922, 'Nodoubtt adimin', 20072004, 'Nodoubt@gmail.com', 1);
+
 CREATE TABLE postagemusuarios (
     codpost int NOT NULL AUTO_INCREMENT,
     coduserpost int(12) NOT NULL,
