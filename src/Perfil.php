@@ -80,7 +80,7 @@
       <input type="hidden" name="user" value="<?php echo $coduser?>"></input>
       <input type="hidden" name="iduser" value="<?php echo $iduser?>"></input>
       <input type="text" name="titulo" size="25" placeholder="titulo"><p>  
-      <br><textarea name="post" placeholder="Qual sua duvida?" cols="25" rows="3"></textarea><br>
+      <br><textarea type="text" name="post" placeholder="Qual sua duvida?" cols="55" rows="3"></textarea><br>
         <input type="submit" class="submit" value="Postar!">
     </form>
   </div>
@@ -98,10 +98,24 @@
       }
 
       else{
-
+        ?> <div id="content-post-position"> <?php
         for($i=0; $i < $linhas; $i++){
           $post = mysqli_fetch_array($res);
-          ?><div id="content-post-a"><?php
+          ?><div id="content-post-b">
+            
+            <div class="dropdown show">
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    ...
+  </a>
+
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <a class="dropdown-item" href="Recebedados.php" value="Editar"></a>
+    <a class="dropdown-item" href="Recebedados.php" value="excluir"></a>
+  </div>
+</div>
+
+            
+            <?php
           echo "<h1>".$post["userpost"]."<br></h1>";
           echo "<h2>".$post["titulopost"]."<br></h2>";
           echo "<h3>".$post["postcontent"]."<br></h3";

@@ -20,7 +20,7 @@ body {
     z-index: 100%;
 
 }
-
+/* area de posategem */
 #content-post-a{
 
     background-color: rgba(255, 255, 255, 0.877);
@@ -29,12 +29,46 @@ body {
     border-style: solid;
     border-color:rgba(121, 119, 119, 0.534);
     border-radius: 50px;
-    width:500px;
-    height: 200px;
+    width: 50%;
+    height: 250px;
+    position: fixed;
+    top: 75px;
+    left: 500px;
     display: flex;
     align-items: left;
     justify-content: right;
     flex-direction: column;
-    z-index: 100%;
+    z-index: 2;
+}
+
+#content-post-b{
+
+    background-color: rgba(255, 255, 255, 0.877);
+    padding: 50px;
+    border-width: thin;
+    border-style: solid;
+    border-color:rgba(121, 119, 119, 0.534);
+    border-radius: 50px;
+    width: 600px;
+    height: 250px;
+    display: flex;
+    align-items: left;
+    justify-content: right;
+    flex-direction: column;
+}
+
+#content-post-position{
+
+    position: fixed;
+    top: 350px;
+    left: 500px;
+
+}
+
+#dropdownMenuLink{
+
+    position: relative;
+    top: 220px;
+    left: 450px;
 
 }
