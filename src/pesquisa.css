@@ -1,6 +1,7 @@
 body {
     background-color: rgba(255, 255, 255, 0.993);
     align-items: center;
+    font-family: sans-serif;
 }
 
 #content{
@@ -14,7 +15,7 @@ body {
     width:500px;
     height: 500px;
     display: flex;
-    align-items: center;
+    align-items: left;
     justify-content: left;
     flex-direction: column;
     z-index: 100%;
@@ -72,4 +73,5 @@ body {
     left: 450px;
 
 }
+
 

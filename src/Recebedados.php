@@ -18,20 +18,19 @@
             <div class="card-content">
                 <div class="card-content-area">
         <?php 
+    
+    function Teste_form($non1, $sen, $non2, $id, $eml, $erro, $data){
 
-    function Teste_form($non1, $sen, $non2, $id, $eml, $erro){
 
-            if(strlen($non1) < 5){
-                    
+            if(strlen($non1) < 5){       
             echo "O campo: Nome de Usuario deve possuir no mínimo 5 caracteres.<br>";
             $erro = 1;
             }
             if(strlen($non1) > 12){
-                    
-                echo "O campo: Nome de Usuario deve possuir no maximo 12 caracteres.<br>";
-                $erro = 1;
+            echo "O campo: Nome de Usuario deve possuir no maximo 12 caracteres.<br>";
+            $erro = 1;
             }
-            if(strlen($sen) < 5 or strlen($sen) > 10){
+            if(strlen($sen) < 5 or ($sen) == " "){
             echo "O campo: Senha deve possuir no mínimo 5 caracteres.<br>";
             $erro = 1;
             }
@@ -57,9 +56,17 @@
                     $mes = $partes[1];
 
                     $ano = isset($partes[2]) ? $partes[2] : 0;
+                    $data = $id;
                     $id = $dia;
                     $id .= $mes;
                     $id .= $ano;
+
+                    if (!is_numeric($id)){
+
+                        echo "O campo Data de nascimento só aceita nuemros.";
+                        $erro = 1;
+                    }
+
                     if (strlen($ano) < 4) {
                         echo "O campo: Data de Nascimento exige um ano valido.<br>";
                         $erro = 1;
@@ -86,7 +93,7 @@
             echo "O campo: E-mail não foi digitado corretamente.<br>";
             $erro = 1;
             }
-            return array ($erro, $id);
+            return array ($erro, $id, $data);
        }
 
     $operacao = $_POST["operacao"];
@@ -106,11 +113,13 @@
             $email = $_POST["email"];
             $erro = 0;
             $linhas = 0;
+            Global $data;
 
-            $funcao = Teste_form($username, $senha, $nome, $idade, $email, $erro);
+            $funcao = Teste_form($username, $senha, $nome, $idade, $email, $erro, $data);
             
             $erro = $funcao[0];
             $idade = $funcao[1];
+            $data = $funcao[2];
 
             if ($erro == 0){
                 $sql ="SELECT * FROM cadastrousuarios WHERE emailusuario ='$email';";
@@ -185,11 +194,13 @@
                 $erro = 0;
                 $linhas = 0;
                 $fml;
+                $data = 0;
 
-                $funcao = Teste_form($username, $senha, $nome, $idade, $usuario, $erro);
+                $funcao = Teste_form($username, $senha, $nome, $idade, $usuario, $erro, $data);
 
                 $erro = $funcao[0];
-                $idade = $fucao[1];
+                $idade = $funcao[1];
+                $data = $funcao[2];
 
                 if ($erro == 0){
                     $sql ="SELECT * FROM cadastrousuarios WHERE emailusuario ='$usuario';";
@@ -345,14 +356,14 @@
             exit;
         }
 
-        elseif($operacao == "editarpost"){
+        elseif($operacao == "Editarpost"){
             include "conecta_mysql.inc";
 
             $tittle = $_POST["titulo"];
             $conteudo = $_POST["post"];
             $idpost = $_POST["id"];
 
-            $sql = "UPDATE postagemusuarios SET titulopost ='$tittle', postcontent ='$conteudo',";
+            $sql = "UPDATE postagemusuarios SET titulopost ='$tittle', postcontent ='$conteudo' ";
             $sql .= "WHERE codpost = $idpost;";
 
             mysqli_query($mysqli,$sql);
@@ -362,30 +373,32 @@
                 exit;
             }
 
+
+            header("location:Perfil.php");
+
             mysqli_close ($mysqli);
 
         }
 
-        elseif($operacao == "excluirpost"){
+        elseif($operacao == "Excluirpost"){
             include "conecta_mysql.inc";
-            header("location:Perfil.php");
-            exit;
-            $idpost = $_POST["postid"];
-
-            $sql ="DELETE FROM postagemusuarios WHERE codpost = $id;";
+            
+            $codigopost = $_POST["postid"];
+            $sql ="DELETE FROM postagemusuarios WHERE codpost ='$codigopost'";
             mysqli_query($mysqli,$sql);
-
             if (!mysqli_query($mysqli,$sql)) {
                 echo("Error ao excluir postagem: " .mysqli_error($mysqli));
                 exit;
             }
 
+            else{
+
+                header("location:perfil.php");
+                exit;
+            } 
             mysqli_close ($mysqli);
 
-            header("location:Perfil.php");
-            exit;
         }
-
     ?>
 
     <html>

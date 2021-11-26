@@ -16,7 +16,7 @@
 
     <form action="Recebedados.php" method="POST">
 
-    <input type="hidden" name="operacao" value="editarpost">                       
+    <input type="hidden" name="operacao" value="Editarpost">                       
     <input type="hidden" name="id" size="25" value="<?php echo $codposter ?>">
     <p><input type="text" name="titulo" size="25" value="<?php echo $post['titulopost']?>">
     <p><input type="text" name="post" size="200" value="<?php echo $post['postcontent']?>"><p>

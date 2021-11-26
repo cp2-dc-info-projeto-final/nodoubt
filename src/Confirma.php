@@ -12,12 +12,14 @@
         }
             else{
                 $usuario = mysqli_fetch_array($res);
+                $username = $usuario["usernameusuario"];
                 if($senha != $usuario["senhausuario"]){
                     echo "Senha inválida!";
                     echo "<p><a href='login.html'>Página de login</a></p>";
         }
             else{ 
             session_start();
+            $_SESSION["usernameusuario"] = $username;
             $_SESSION["emailusuario"] = $email;
             $_SESSION["senhausuario"] = $senha;
             $img = rand(1, 10);

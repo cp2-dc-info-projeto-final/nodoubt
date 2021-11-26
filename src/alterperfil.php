@@ -11,32 +11,59 @@
 ?>
 <html>
   <head><meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    
 <link rel="stylesheet" href="pesquisa.css">
         <title>Formulário</title>
 </head>
   <body>
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <a class="navbar-brand" href="#">
-     <img src="imagem\nodoubt.png" alt="No Doubt" style="width:40px;">
-   </a>
-  
-   <ul class="navbar-nav">
-  <li class="nav-item">
-    <a class="nav-link" href="perfil.php"> Meu perfil</a>
-  </li>
-</ul>
-<form action="Recebedados.php" method="POST" class="form-inline">
-<input type="hidden" name="operacao" value="buscar">
-<input class="form-control mr-sm-2" type="search" placeholder="buscar usuarios..." name="username" aria-label="Pesquisar">
-<button class="btn btn-outline-success my-2 my-sm-0" type="submit" value="buscar">Pesquisar</button>
-</forms>
+ <header>
+  <div class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
 
+                    <div class="navbar-header">
+                        <button class="navbar-toggle" data-target="#mobile_menu" data-toggle="collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                        <a href="index.html" class="navbar-brand">No Doubt</a>
+                    </div>
 
-</nav>
+                    <div class="navbar-collapse collapse" id="mobile_menu">
+                        <ul class="nav navbar-nav">
+                            <li><a href="Perfil.php">Meu perfil</a></li>
+                            <li><a href="#">Sobre nós</a></li>
+                            <li><a href="#">Contatos</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <form action="Recebedados.php" method="POST" class="navbar-form">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                        <input type="hidden" name="operacao" value="buscar"></imput>
+                                            <input type="search" name="username" placeholder="Buscar usuarios..." class="form-control">
+                                            <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+                                        </div>
+                                    </div>
+                                </form>
+                            </li>
+                        </ul>
+                        <div>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-log-in"></span> Login<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="login.html">Login</a></li>
+                                    <li><a href="Cadastro.html">Se Cadastrar</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                      </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 
   <div id="content">
 

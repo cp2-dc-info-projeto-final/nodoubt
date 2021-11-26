@@ -29,10 +29,16 @@
                     <p>Permissão: <input type="text" name="permiss" size="2" value="<?php echo $usuario["permissadm"]?>"></p>
                     <?php
                     }
+                    else{
+                        ?>
+                        <input type="hidden" name="permiss" value="<?php echo $usuario["permissadm"]?>"></p>
+                        <?php
+                    }
                 ?>
     
     <div class="card-footer">
-    <p><input type="submit" name="operacao" class="submit" value="Editar!"> <input type="submit" name="operacao" class="submit" value="Excluir"></p>
+    <p><input type="submit" name="operacao" class="submit" value="Editar!"> 
+    <input type="submit" name="operacao" class="submit" value="Excluir"></p>
     </div>
 </form>
     </div>
