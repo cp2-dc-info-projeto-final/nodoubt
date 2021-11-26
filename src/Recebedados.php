@@ -271,7 +271,7 @@
             $sql ="DELETE FROM cadastrousuarios WHERE emailusuario ='$email'";
             mysqli_query($mysqli,$sql);
             if (!mysqli_query($mysqli,$sql)) {
-                echo("Error description: " .mysqli_error($mysqli));
+                echo("Error ao excluir perfil: " .mysqli_error($mysqli));
                 exit;
             }
 
@@ -292,7 +292,7 @@
              $linhas = mysqli_num_rows($res);
 
             if (!mysqli_query($mysqli,$sql)) {
-                echo("Error description: " .mysqli_error($mysqli));
+                echo("Error na busca: " .mysqli_error($mysqli));
                 exit;
             }
 
@@ -336,7 +336,7 @@
             $sql .= "VALUES ($idouser,'$nomeuser','$titulopost','$postagem')";
             mysqli_query($mysqli,$sql);
             if (!mysqli_query($mysqli,$sql)) {
-                echo("Error description: " .mysqli_error($mysqli));
+                echo("Error ao postar: " .mysqli_error($mysqli));
                 exit;
             }
             mysqli_close ($mysqli);
@@ -358,7 +358,7 @@
             mysqli_query($mysqli,$sql);
 
             if (!mysqli_query($mysqli,$sql)) {
-                echo("Error description: " .mysqli_error($mysqli));
+                echo("Error na edição da postagem: " .mysqli_error($mysqli));
                 exit;
             }
 
@@ -376,7 +376,7 @@
             mysqli_query($mysqli,$sql);
 
             if (!mysqli_query($mysqli,$sql)) {
-                echo("Error description: " .mysqli_error($mysqli));
+                echo("Error ao excluir postagem: " .mysqli_error($mysqli));
                 exit;
             }
 
