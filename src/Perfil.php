@@ -101,18 +101,23 @@
         ?> <div id="content-post-position"> <?php
         for($i=0; $i < $linhas; $i++){
           $post = mysqli_fetch_array($res);
+          $idpost = $post["codpost"];
           ?><div id="content-post-b">
-            
-            <div class="dropdown show">
-  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    ...
-  </a>
-
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <a class="dropdown-item" href="Recebedados.php" value="Editar"></a>
-    <a class="dropdown-item" href="Recebedados.php" value="excluir"></a>
-  </div>
-</div>
+          <div class="dropdown show">
+          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            ...</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <form action="editapost.php" method="POST">
+              <input type="hidden" name="postid" value="<?php echo $idpost?>"></input>
+              <a class="dropdown-item"><input type="submit" value="Editar"></a>
+              </form>
+              <form action="Recebedados.php" method="POST">
+              <input type="hidden" name="operacao" value="excluirpost"></input>
+              <input type="hidden" name="postid" value="<?php echo $idpost?>"></input>
+              <a class="dropdown-item"><input type="submit" value="Excluir"></a>
+              </form>
+            </div>
+          </div>
 
             
             <?php

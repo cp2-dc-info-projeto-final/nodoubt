@@ -335,11 +335,57 @@
             $sql ="INSERT INTO postagemusuarios (coduserpost,userpost,titulopost,postcontent)"; 
             $sql .= "VALUES ($idouser,'$nomeuser','$titulopost','$postagem')";
             mysqli_query($mysqli,$sql);
+            if (!mysqli_query($mysqli,$sql)) {
+                echo("Error description: " .mysqli_error($mysqli));
+                exit;
+            }
             mysqli_close ($mysqli);
 
             header("location:Perfil.php");
             exit;
         }
+
+        elseif($operacao == "editarpost"){
+            include "conecta_mysql.inc";
+
+            $tittle = $_POST["titulo"];
+            $conteudo = $_POST["post"];
+            $idpost = $_POST["id"];
+
+            $sql = "UPDATE postagemusuarios SET titulopost ='$tittle', postcontent ='$conteudo',";
+            $sql .= "WHERE codpost = $idpost;";
+
+            mysqli_query($mysqli,$sql);
+
+            if (!mysqli_query($mysqli,$sql)) {
+                echo("Error description: " .mysqli_error($mysqli));
+                exit;
+            }
+
+            mysqli_close ($mysqli);
+
+        }
+
+        elseif($operacao == "excluirpost"){
+            include "conecta_mysql.inc";
+            header("location:Perfil.php");
+            exit;
+            $idpost = $_POST["postid"];
+
+            $sql ="DELETE FROM postagemusuarios WHERE codpost = $id;";
+            mysqli_query($mysqli,$sql);
+
+            if (!mysqli_query($mysqli,$sql)) {
+                echo("Error description: " .mysqli_error($mysqli));
+                exit;
+            }
+
+            mysqli_close ($mysqli);
+
+            header("location:Perfil.php");
+            exit;
+        }
+
     ?>
 
     <html>
