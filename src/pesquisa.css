@@ -58,6 +58,8 @@ body {
     flex-direction: column;
 }
 
+
+
 #content-post-position{
 
     position: fixed;
@@ -65,6 +67,8 @@ body {
     left: 500px;
 
 }
+
+/* era pra editar o botão */
 
 #dropdownMenuLink{
 
@@ -75,3 +79,11 @@ body {
 }
 
 
+#content-post-position-alter{
+
+    position: fixed;
+    top: 350px;
+    left: 500px;
+
+
+}

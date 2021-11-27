@@ -97,14 +97,24 @@ $linhas = mysqli_num_rows($res);
 
 if ($linhas == 0){
 
-     echo"<h1>Eeste usuario não fez nenhuma postagem</h1>";
+    ?> 
+        <div class="container" >
+    <div id="content-post-position"> <?php
 
+     echo"<h1>  Este usuario não fez nenhuma postagem</h1>";
+    ?></div>
+    </div> <?php
 }
 
 else{
 
   for($i=0; $i < $linhas; $i++){
     $post = mysqli_fetch_array($res);
+
+    ?><div id="content-post-b"><?php
+
+
+
     echo "<h1>".$post["userpost"]."<br></h1>";
     echo "<h2>".$post["titulopost"]."<br></h2>";
     echo "<h3>".$post["postcontent"]."<br></h3";
