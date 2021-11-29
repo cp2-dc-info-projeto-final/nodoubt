@@ -17,8 +17,6 @@
 ## Diagrama de Casos de Uso
 ![Diagrama de Casos de Uso](https://user-images.githubusercontent.com/82223070/143919962-12685e72-afef-4290-9a3d-1167b32ca1ee.jpeg)
 
-![Diagrama de Casos de Uso](diagrama-de-banco-de-dados.jpg)
-
 ## Descrição dos Casos de Uso
 
 ### CDU 01
