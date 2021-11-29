@@ -11,18 +11,51 @@
 ?>
 <html>
     <head>
-</head>
-<body>
+        <meta charset="UTF-8">
 
-    <form action="Recebedados.php" method="POST">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <input type="hidden" name="operacao" value="Editarpost">                       
-    <input type="hidden" name="id" size="25" value="<?php echo $codposter ?>">
-    <p><input type="text" name="titulo" size="25" value="<?php echo $post['titulopost']?>">
-    <p><input type="text" name="post" size="200" value="<?php echo $post['postcontent']?>"><p>
+        <meta name="viewport"content="width=device-width, initial-scale=1.0">
 
-        <input type="submit" value="editar!" class="submit">
-    </form>
+        <link rel="stylesheet" href="estilo.css">
 
-</body>
+        <title>Editar post</title>
+
+    </head>
+        <body> 
+            <div id="login">
+            <div class="card">
+            <div class="card-header">
+
+                <h2>Editar postagem</h2>
+
+            </div>
+
+<div class="card-content">
+        <div class="card-content-area">
+
+             <form action="Recebedados.php" method="POST">
+                <input type="hidden" name="operacao" value="Editarpost">                       
+                <input type="hidden" name="id" size="25" value="<?php echo $codposter ?>">
+                <p>TItulo: <input type="text" name="titulo" size="25" value="<?php echo $post['titulopost']?>">
+                <p>Post: <input type="text" name="post" size="25" value="<?php echo $post['postcontent']?>"><p>
+
+                <div class="card-footer">
+
+                    <input type="submit" value="editar!" class="submit">
+                </div>
+
+                </form>
+
+                <div class="card-header">
+
+                <h5><a href="Perfil.php">Voltar</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </body>
 </html>

@@ -60,7 +60,7 @@
                     $id = $dia;
                     $id .= $mes;
                     $id .= $ano;
-
+                        
                     if (!is_numeric($id)){
 
                         echo "O campo Data de nascimento só aceita nuemros.";
@@ -343,6 +343,19 @@
             $titulopost = $_POST["titulo"];
             $postagem = $_POST["post"];
 
+            if (empty($tittle)){
+
+                $titulopost = "Particular";
+
+            }
+
+            if (empty($postagem)){
+
+                echo "A edição não pode ser concluida pois o campo da postagem esta vazio";
+                echo "<p><a href='Perfil.php'> Perfil";
+                exit;
+            }
+
             $sql ="INSERT INTO postagemusuarios (coduserpost,userpost,titulopost,postcontent)"; 
             $sql .= "VALUES ($idouser,'$nomeuser','$titulopost','$postagem')";
             mysqli_query($mysqli,$sql);
@@ -362,6 +375,19 @@
             $tittle = $_POST["titulo"];
             $conteudo = $_POST["post"];
             $idpost = $_POST["id"];
+
+            if (empty($tittle)){
+
+                $tittle = "Particular";
+
+            }
+
+            if (empty($conteudo)){
+
+                echo "A edição não pode ser concluida pois o campo da postagem esta vazio";
+                echo "<p><a href='Perfil.php'> Perfil";
+                exit;
+            }
 
             $sql = "UPDATE postagemusuarios SET titulopost ='$tittle', postcontent ='$conteudo' ";
             $sql .= "WHERE codpost = $idpost;";
