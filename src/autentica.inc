@@ -7,6 +7,9 @@
 
         if(isset($_SESSION["senhausuario"])){
             $senha = $_SESSION["senhausuario"];
+        }       
+         if(isset($_SESSION["permissadm"])){
+            $Globalpermiss = $_SESSION["permissadm"];
         }
 
         if(empty($email) OR empty($senha)){

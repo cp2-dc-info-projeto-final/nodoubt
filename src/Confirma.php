@@ -13,6 +13,7 @@
             else{
                 $usuario = mysqli_fetch_array($res);
                 $username = $usuario["usernameusuario"];
+                $permiss = $usuario["permissadm"];
                 if($senha != $usuario["senhausuario"]){
                     echo "Senha inválida!";
                     echo "<p><a href='login.html'>Página de login</a></p>";
@@ -24,7 +25,7 @@
             $_SESSION["senhausuario"] = $senha;
             $img = rand(1, 10);
             $_SESSION["fotoperfil"] = $img;
-
+            $_SESSION["permiss"] = $permiss;
             header("Location:Perfil.php");
             }
         }

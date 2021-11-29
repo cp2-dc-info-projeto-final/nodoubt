@@ -41,6 +41,15 @@
     <input type="submit" name="operacao" class="submit" value="Excluir"></p>
     </div>
 </form>
+
+<div class="card-header">
+
+
+<h5><a href="Perfil.php">Voltar</a>
+</h5>
+
+</div>
+
     </div>
     </div>
     </div>

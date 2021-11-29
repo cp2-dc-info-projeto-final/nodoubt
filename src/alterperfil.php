@@ -14,7 +14,7 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    
-<link rel="stylesheet" href="pesquisa.css">
+<link rel="stylesheet" href="pesquisar.css">
         <title>Formulário</title>
 </head>
   <body>
@@ -68,6 +68,7 @@
   <div id="content">
 
       <h4><?php 
+      
  $nomeuser = $_GET["usernameusuario"];
 
  $sql = "SELECT * FROM cadastrousuarios WHERE usernameusuario = '$nomeuser';";
@@ -78,7 +79,7 @@
  }
  $x = rand(1, 10);
       ?> <div class="container">
-          <?php         echo "<p><img src='perfis/$x.jpeg' width='100' height='100'>";
+          <?php echo "<p><img src='perfis/$x.jpeg' width='100' height='100'>";
            echo " ".$usuario["usernameusuario"]."<br>";?> 
           
       </a></p></div>  <?php
@@ -119,6 +120,24 @@ else{
     echo "<h2>".$post["titulopost"]."<br></h2>";
     echo "<h3>".$post["postcontent"]."<br></h3";
     echo "----------------------------------<br>";
+
+    $idpost = $post["codpost"];
+
+    if($Globalpermiss == 1){
+        ?>
+        <form action="editapost.php" method="POST" >
+        <input type="hidden" name="postid" value="<?php echo $idpost?>"></input>
+        <a class="dropdown-item">
+          <input type="submit" value="Editar"></a>
+        </form>
+    <form action="Recebedados.php" method="POST">
+        <input type="hidden" name="operacao" value="Excluirpost"></p>
+        <input type="hidden" name="postid" value="<?php echo $idpost?>"></input>
+          <input type="submit" value="Excluir"></a>
+        </form>
+        <?php
+    }
+
     }
 
 }

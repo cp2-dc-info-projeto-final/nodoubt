@@ -399,9 +399,13 @@
                 exit;
             }
 
+            if ($Globalpermiss == 1){
 
+                header("location:indexAdm.php");
+            }
+            else{
             header("location:Perfil.php");
-
+            }
             mysqli_close ($mysqli);
 
         }
@@ -419,8 +423,14 @@
 
             else{
 
-                header("location:perfil.php");
-                exit;
+                if ($Globalpermiss == 1){
+
+                    header("location:indexAdm.php");
+                    
+                }
+                else{
+                header("location:Perfil.php");
+                }
             } 
             mysqli_close ($mysqli);
 

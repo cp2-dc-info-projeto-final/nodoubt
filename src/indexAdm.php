@@ -41,8 +41,9 @@
                 echo "Email: ".$usuario["emailusuario"]."<br>";
                 if ($permiss == 1){ echo"Permissão: Adm<br>"; }
                 elseif($permiss != 1){ echo"Permissão: comum <br>"; }
+                $nomeuser = $usuario["usernameusuario"];
                 echo "<a href='EditaDados.php?emailusuario=".$usuario["emailusuario"]."'>Editar dados</a><br>";
-
+                echo"<p><a href='alterperfil.php?usernameusuario=". $nomeuser."'>Perfil do usuario</a></p>";
                 echo "---------------------------------<br>";
                 }
                 mysqli_close($mysqli);
