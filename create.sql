@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 24-Nov-2021 às 21:55
+-- Tempo de geração: 02-Dez-2021 às 22:39
 -- Versão do servidor: 10.4.21-MariaDB
 -- versão do PHP: 7.3.31
 
@@ -20,7 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `nodoubt`
 --
-DROP DATABASE IS EXISTS 'nodoubt';
+DROP DATABASE IF EXISTS 'nodoubt';
 CREATE DATABASE IF NOT EXISTS `nodoubt` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `nodoubt`;
 
@@ -35,15 +35,16 @@ GRANT ALL PRIVILEGES ON nodoubt.* TO 'estudante'@'localhost';
 --
 
 DROP TABLE IF EXISTS `cadastrousuarios`;
-CREATE TABLE `cadastrousuarios` (
-  `codusuario` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `cadastrousuarios` (
+  `codusuario` int(11) NOT NULL AUTO_INCREMENT,
   `usernameusuario` varchar(12) NOT NULL,
   `senhausuario` varchar(255) NOT NULL,
   `nomeusuario` varchar(40) NOT NULL,
   `idadeusuario` int(10) NOT NULL,
   `emailusuario` varchar(30) NOT NULL,
-  `permissadm` int(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `permissadm` int(2) NOT NULL,
+  PRIMARY KEY (`codusuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `cadastrousuarios`
@@ -51,9 +52,34 @@ CREATE TABLE `cadastrousuarios` (
 
 INSERT INTO `cadastrousuarios` (`codusuario`, `usernameusuario`, `senhausuario`, `nomeusuario`, `idadeusuario`, `emailusuario`, `permissadm`) VALUES
 (1, 'NouAdm', '36612206', 'Nodoubtt adimin', 20072204, 'Nodoubt@gmail.com', 1),
-(4, 'worldhaio', '36612206', 'vicky do nascimento wingler', 20072004, 'wingler-vicky@hotmail.com', 0),
-(5, 'barbosa', '36612206', 'isabelle barbosa', 31051982, 'isabelebarbarba@gmail.com', 0),
-(6, 'noob22', '36612206', 'Andreza Carolina do Nascimento', 21011999, 'dre@gmail.com', 0);
+(5, 'barbosa', '36612206', 'isabelle barbosa', 31051982, 'isabelebarbosa1@gmail.com', 0),
+(6, 'noob23', '36612206', 'Andreza Carolina do Nascimento', 21011998, 'dre@gmail.com', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `comentusuarios`
+--
+
+DROP TABLE IF EXISTS `comentusuarios`;
+CREATE TABLE IF NOT EXISTS `comentusuarios` (
+  `idcoment` int(11) NOT NULL AUTO_INCREMENT,
+  `idusercoment` int(12) NOT NULL,
+  `codpostcoment` int(11) NOT NULL,
+  `usercoment` varchar(12) NOT NULL,
+  `comentario` varchar(366) NOT NULL,
+  `likecoment` int(9) NOT NULL,
+  PRIMARY KEY (`idcoment`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `comentusuarios`
+--
+
+INSERT INTO `comentusuarios` (`idcoment`, `idusercoment`, `codpostcoment`, `usercoment`, `comentario`, `likecoment`) VALUES
+(2, 1, 101, 'NouAdm ', 'nem eu', 0),
+(3, 1, 101, 'NouAdm ', 'ok', 0),
+(7, 1, 102, 'NouAdm ', 'sei la', 0);
 
 -- --------------------------------------------------------
 
@@ -62,61 +88,26 @@ INSERT INTO `cadastrousuarios` (`codusuario`, `usernameusuario`, `senhausuario`,
 --
 
 DROP TABLE IF EXISTS `postagemusuarios`;
-CREATE TABLE `postagemusuarios` (
-  `codpost` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `postagemusuarios` (
+  `codpost` int(11) NOT NULL AUTO_INCREMENT,
   `coduserpost` int(12) NOT NULL,
   `userpost` varchar(12) NOT NULL,
   `titulopost` varchar(30) NOT NULL,
-  `postcontent` varchar(366) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `postcontent` varchar(366) NOT NULL,
+  PRIMARY KEY (`codpost`)
+) ENGINE=InnoDB AUTO_INCREMENT=103 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `postagemusuarios`
 --
 
 INSERT INTO `postagemusuarios` (`codpost`, `coduserpost`, `userpost`, `titulopost`, `postcontent`) VALUES
-(21, 531051982, 'barbosa', 'a', 'b'),
 (27, 621011999, 'noob22', 'Frase na lápide', 'Frase de efeito para colocar em uma lápide.'),
 (35, 621011999, 'noob22', 'aa', 'bb'),
 (36, 621011999, 'noob22', 'aa', 'bb'),
-(37, 120072204, 'NouAdm', 'aeeeeeeeeeeeeeeee', 'n seeeeeiii'),
-(38, 120072204, 'NouAdm', 'aeeeeeeeeeeeeeeee', 'n seeeeeiii'),
-(55, 120072204, 'NouAdm', '', 'apenas 1'),
-(56, 120072204, 'NouAdm', '', 'apenas 1'),
-(57, 120072204, 'NouAdm', 'ok', 'apenas 1'),
-(59, 120072204, 'NouAdm', 'a', 'aoenas 1');
-
---
--- Índices para tabelas despejadas
---
-
---
--- Índices para tabela `cadastrousuarios`
---
-ALTER TABLE `cadastrousuarios`
-  ADD PRIMARY KEY (`codusuario`);
-
---
--- Índices para tabela `postagemusuarios`
---
-ALTER TABLE `postagemusuarios`
-  ADD PRIMARY KEY (`codpost`);
-
---
--- AUTO_INCREMENT de tabelas despejadas
---
-
---
--- AUTO_INCREMENT de tabela `cadastrousuarios`
---
-ALTER TABLE `cadastrousuarios`
-  MODIFY `codusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT de tabela `postagemusuarios`
---
-ALTER TABLE `postagemusuarios`
-  MODIFY `codpost` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+(100, 120072204, 'NouAdm', 'Nao aguento mais tcc', 'a'),
+(101, 120072204, 'NouAdm', 'Nao aguento mais tcc', 'save me :)'),
+(102, 120072204, 'NouAdm', 'duvida', 'meu projeto esta funcionando?');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
