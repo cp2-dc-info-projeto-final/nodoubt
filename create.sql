@@ -20,11 +20,12 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `nodoubt`
 --
+DROP DATABASE IS EXISTS 'nodoubt';
 CREATE DATABASE IF NOT EXISTS `nodoubt` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `nodoubt`;
 
-
-CREATE USER'estudante'@'localhost'IDENTIFIED BY '12345';
+DROP USER IF EXISTS 'estudante'@'localhost';
+CREATE USER IF NOT EXISTS 'estudante'@'localhost'IDENTIFIED BY '12345';
 GRANT ALL PRIVILEGES ON nodoubt.* TO 'estudante'@'localhost';
 
 -- --------------------------------------------------------

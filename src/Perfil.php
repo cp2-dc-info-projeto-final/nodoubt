@@ -1,6 +1,16 @@
 <?php
  include "autentica.inc";
-?>
+ $email = $_SESSION["emailusuario"];
+ $img = $_SESSION["fotoperfil"];
+ include "conecta_mysql.inc";
+$sql = "SELECT * FROM cadastrousuarios WHERE emailusuario ='$email';";
+$res = mysqli_query($mysqli,$sql);
+$linhas = mysqli_num_rows($res);
+for($i=0; $i < $linhas; $i++){
+$usuario = mysqli_fetch_array($res);
+$nome = $usuario["usernameusuario"];
+}
+?> 
 <html>
   <head><meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -8,8 +18,8 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    
 
 
-    <link rel="stylesheet" href="pesquisar.css">
-        <title>Formulário</title>
+    <link rel="stylesheet" href="pesquisa.css">
+        <title><?php echo $nome;?></title>
 </head>
   <body>
  <header>
@@ -60,16 +70,7 @@
 
   <div id="content">
 
-      <h4><?php 
-            $email = $_SESSION["emailusuario"];
-            $img = $_SESSION["fotoperfil"];
-            include "conecta_mysql.inc";
-      $sql = "SELECT * FROM cadastrousuarios WHERE emailusuario ='$email';";
-      $res = mysqli_query($mysqli,$sql);
-      $linhas = mysqli_num_rows($res);
-      for($i=0; $i < $linhas; $i++){
-      $usuario = mysqli_fetch_array($res);
-      ?> <div class="container">
+      <h4><div class="container">
        <?php echo"<p><img src='perfis/$img.jpeg' width='100' height='100'></p>" ?>
       </a></p></div>  <?php
       echo "Nome de usuario: ".$usuario["usernameusuario"]."<br>";
@@ -78,7 +79,7 @@
       echo "Data de nascimento: ".$usuario["idadeusuario"]."<br>";
       echo "Email: ".$usuario["emailusuario"]."<br>";
       echo "----------------------------------<br>";
-      }
+      
      
       if($usuario["permissadm"] == 1){
         ?>
@@ -114,7 +115,7 @@
   
       <?php
 
-      $sql = "SELECT * FROM postagemusuarios WHERE userpost ='$coduser';";
+      $sql = "SELECT * FROM postagemusuarios WHERE userpost ='$coduser' ORDER BY codpost DESC;";
       $res = mysqli_query($mysqli, $sql);
       $linhas = mysqli_num_rows($res);
 
@@ -132,7 +133,11 @@
 
           // botões nao aparecendo por causa da versão do bootstrap//
 
-          ?><div id="content-post-b">
+          echo "<a href='postcoment.php?idpost=". $idpost."' for='content-post-b'>";
+          
+          ?>
+            <div class='container'>
+            <div id='content-post-b'>
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
             
           <div class="dropdown show">
@@ -164,7 +169,7 @@
           
           <form action="editapost.php" method="POST" >
               <input type="hidden" name="postid" value="<?php echo $idpost?>"></input>
-              <a class="dropdown-item">
+              <input type="hidden" name="operacao" value="editar"></p>
                 <input type="submit" value="Editar"></a>
               </form>
           <form action="Recebedados.php" method="POST">
@@ -175,6 +180,7 @@
 
 
           </div>
+          </a>
           <?php
           }
 

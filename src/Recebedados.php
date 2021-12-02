@@ -343,7 +343,7 @@
             $titulopost = $_POST["titulo"];
             $postagem = $_POST["post"];
 
-            if (empty($tittle)){
+            if (empty($titulopost)){
 
                 $titulopost = "Particular";
 
@@ -351,22 +351,20 @@
 
             if (empty($postagem)){
 
-                echo "A edição não pode ser concluida pois o campo da postagem esta vazio";
+                echo "A postagem não pode ser concluida pois o campo da postagem esta vazio";
                 echo "<p><a href='Perfil.php'> Perfil";
                 exit;
             }
 
+            else{
             $sql ="INSERT INTO postagemusuarios (coduserpost,userpost,titulopost,postcontent)"; 
             $sql .= "VALUES ($idouser,'$nomeuser','$titulopost','$postagem')";
             mysqli_query($mysqli,$sql);
-            if (!mysqli_query($mysqli,$sql)) {
-                echo("Error ao postar: " .mysqli_error($mysqli));
-                exit;
-            }
             mysqli_close ($mysqli);
 
             header("location:Perfil.php");
             exit;
+            }
         }
 
         elseif($operacao == "Editarpost"){
@@ -433,6 +431,67 @@
                 }
             } 
             mysqli_close ($mysqli);
+
+        }
+
+        elseif($operacao == "comentar"){
+            include "conecta_mysql.inc";
+
+            $coment = $_POST["coment"];
+            $usuarioc = $_POST["usercomentou"];
+            $comentid = $_POST["idpostcomentou"];
+            $iduser = $_POST["idusercomentou"];
+            
+            $sql ="INSERT INTO comentusuarios (idusercoment,codpostcoment,usercoment,comentario)";        
+            $sql .= "VALUES ($iduser,$comentid,'$usuarioc','$coment')";
+    
+            mysqli_query($mysqli,$sql);
+            mysqli_close ($mysqli);
+
+            header("location:postcoment.php?idpost=$comentid"); 
+            exit;
+
+        }
+        elseif( $operacao == "editarcoment"){
+            include "conecta_mysql.inc";
+
+                $idi = $_POST["id"];
+            $conten = $_POST["post"];
+            $code = $_POST["passe"];
+
+            if(empty($conten)){
+
+                echo "Não é possivel fazer um comentario vazio";
+                echo "<a href='postcoment.php?idpost=". $code."'>";
+                exit;
+            }
+            else{
+
+            $sql = "UPDATE comentusuarios SET comentario ='$conten' ";
+            $sql .= "WHERE idcoment = $idi;";
+
+            mysqli_query($mysqli,$sql);
+            mysqli_close ($mysqli);
+
+
+            header("location:postcoment.php?idpost=$code"); 
+            exit;
+            }
+
+        }
+
+        elseif($operacao == "excluircoment"){
+            include "conecta_mysql.inc";
+            
+            $codigocoment = $_POST["postid"];
+            $coder = $_POST["idcomen"];
+            
+            $sql ="DELETE FROM comentusuarios WHERE idcoment ='$codigocoment'";
+            mysqli_query($mysqli,$sql);
+
+            
+                header("location:postcoment.php?idpost=$coder"); 
+            exit;
 
         }
     ?>
