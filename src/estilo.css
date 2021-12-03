@@ -6,7 +6,11 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+<<<<<<< Updated upstream
     position: fixed;
+=======
+    
+>>>>>>> Stashed changes
 
 }
 
@@ -23,15 +27,15 @@ body {
 .card {
 
     background-color: rgba(255, 255, 255, 0.877);
-    padding: 50px;
-    border-radius: 49px;
+    padding: 40px;
+    border-radius: 79px;
     width:280px;
 
 }
 
 .card-header {
 
-    padding-bottom: 10px;
+    padding-bottom: 15px;
     opacity: 1.6;
     color: rgb(3, 2, 2);
 
@@ -124,3 +128,5 @@ body {
     z-index: 100%;
 
 }
+
+
