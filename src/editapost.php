@@ -93,13 +93,11 @@
                 </div>
 
                 </form>
-                <?php
-            }
-            ?>
 
                 <div class="card-header">
 
                 <h5><?php echo"<a href='postcoment.php?idpost=". $codigo."'>Voltar</a>";
+                }
                     ?>
                 </div>
 

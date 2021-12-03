@@ -16,7 +16,7 @@ $nome = $usuario["usernameusuario"];
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    
-
+<script src="https://kit.fontawesome.com/785c80f02e.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="pesquisa.css">
         <title><?php echo $nome;?></title>
@@ -129,53 +129,31 @@ $nome = $usuario["usernameusuario"];
         ?> <div id="content-post-position"> <?php
         for($i=0; $i < $linhas; $i++){
           $post = mysqli_fetch_array($res);
-          $idpost = $post["codpost"];
-
-          // botões nao aparecendo por causa da versão do bootstrap//
-
-          echo "<a href='postcoment.php?idpost=". $idpost."' for='content-post-b'>";
-          
+          $idpost = $post["codpost"];          
           ?>
             <div class='container'>
+           <?php echo "<a href='postcoment.php?idpost=". $idpost."' for='content-post-b'>";
+            ?>
             <div id='content-post-b'>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-            
-          <div class="dropdown show">
-          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            ...</a>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <form action="editapost.php" method="POST">
-              <input type="hidden" name="postid" value="<?php echo $idpost?>"></input>
-              <a class="dropdown-item">
-                <input type="submit" value="Editar"></a>
-              </form>
-              <form action="editarpost.php" method="POST">
-              <input type="hidden" name="operacao" value="Excluirpost"></p>
-              <input type="hidden" name="postid" value="<?php echo $idpost?>"></input>
-              <a class="dropdown-item">
-                <input type="submit" value="Excluir"></a>
-              </form>
-            </div>
-          </div>
-          </script>
-            
-
+     
             <?php
           echo "<h1>".$post["userpost"]."<br></h1>";
           echo "<h2>".$post["titulopost"]."<br></h2>";
           echo "<h3>".$post["postcontent"]."<br></h3";
           echo "----------------------------------<br>";
           ?>
-          
+             </a>
           <form action="editapost.php" method="POST" >
               <input type="hidden" name="postid" value="<?php echo $idpost?>"></input>
               <input type="hidden" name="operacao" value="editar"></p>
-                <input type="submit" value="Editar"></a>
+                <button type="submit" value="Editar"><i class="fas fa-pen" aria-hidden="true"></i></button></a>
               </form>
           <form action="Recebedados.php" method="POST">
               <input type="hidden" name="operacao" value="Excluirpost"></p>
               <input type="hidden" name="postid" value="<?php echo $idpost?>"></input>
-                <input type="submit" value="Excluir"></a>
+                <button type="submit" value="Excluir"><i class="fas fa-trash-alt"></i></button>
+
+</a>
               </form>
 
 
