@@ -18,7 +18,7 @@ $nome = $usuario["usernameusuario"];
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    
 <script src="https://kit.fontawesome.com/785c80f02e.js" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="pesquisa.css">
+    <link rel="stylesheet" href="pesquisar.css">
         <title><?php echo $nome;?></title>
 </head>
   <body>
@@ -132,8 +132,6 @@ $nome = $usuario["usernameusuario"];
           $idpost = $post["codpost"];          
           ?>
             <div class='container'>
-           <?php echo "<a href='postcoment.php?idpost=". $idpost."' for='content-post-b'>";
-            ?>
             <div id='content-post-b'>
      
             <?php
@@ -142,7 +140,10 @@ $nome = $usuario["usernameusuario"];
           echo "<h3>".$post["postcontent"]."<br></h3";
           echo "----------------------------------<br>";
           ?>
-             </a>
+          <div id="linha">
+          <?php echo "<a href='postcoment.php?idpost=". $idpost."' for='content-post-b'>";?>
+            <button><i class="fas fa-comments">           
+          </i></a></button>
           <form action="editapost.php" method="POST" >
               <input type="hidden" name="postid" value="<?php echo $idpost?>"></input>
               <input type="hidden" name="operacao" value="editar"></p>
@@ -152,11 +153,8 @@ $nome = $usuario["usernameusuario"];
               <input type="hidden" name="operacao" value="Excluirpost"></p>
               <input type="hidden" name="postid" value="<?php echo $idpost?>"></input>
                 <button type="submit" value="Excluir"><i class="fas fa-trash-alt"></i></button>
-
-</a>
               </form>
-
-
+        </div>
           </div>
           </a>
           <?php

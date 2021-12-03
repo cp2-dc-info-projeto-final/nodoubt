@@ -42,9 +42,9 @@ body {
     z-index: 2;
 }
 
-a.link{
-    color: gray;
-}
+#linha{
+    display:inline;
+ }
 
 #content-post-b{
 
