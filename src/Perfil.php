@@ -88,8 +88,8 @@ $nome = $usuario["usernameusuario"];
     }
       ?>
   
-    <?php echo"<p><a href='EditaDados.php?emailusuario=". $_SESSION["emailusuario"]."'>EDITAR DADOS</a><br>";?> 
-    <p><p><a href="Logout.php">SAIR</a></p></p>
+    <?php echo"<p><a href='EditaDados.php?emailusuario=". $_SESSION["emailusuario"]."'>Edita Dados</a><br>";?> 
+    <p><p><a href="Logout.php">Sair</a></p></p>
   </div></h3></div>
 
 
@@ -147,12 +147,12 @@ $nome = $usuario["usernameusuario"];
           <form action="editapost.php" method="POST" >
               <input type="hidden" name="postid" value="<?php echo $idpost?>"></input>
               <input type="hidden" name="operacao" value="editar"></p>
-                <button type="submit" value="Editar"><i class="fas fa-pen" aria-hidden="true"></i></button></a>
-              </form>
-          <form action="Recebedados.php" method="POST">
+              <button type="submit" value="Editar"><i class="fas fa-pen" aria-hidden="true"></i></button></a>
+            </form>
+              <form action="Recebedados.php" method="POST">
               <input type="hidden" name="operacao" value="Excluirpost"></p>
               <input type="hidden" name="postid" value="<?php echo $idpost?>"></input>
-                <button type="submit" value="Excluir"><i class="fas fa-trash-alt"></i></button>
+              <button type="submit" value="Excluir"><i class="fas fa-trash-alt"></i></button>
               </form>
         </div>
           </div>
