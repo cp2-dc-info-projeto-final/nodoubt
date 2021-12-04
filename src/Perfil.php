@@ -53,12 +53,29 @@ $nome = $usuario["usernameusuario"];
                         </ul>
                         <div>
                         <ul class="nav navbar-nav navbar-right">
+                          <?php
+                          if(!isset($_SESSION["emailusuario"])){
+                          ?>
                             <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-log-in"></span> Login<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="login.html">Login</a></li>
                                     <li><a href="Cadastro.html">Se Cadastrar</a></li>
                                 </ul>
                             </li>
+                            <?php
+                          }
+                          else{
+                            $x = "perfis/";
+                            $x .= $_SESSION["fotoperfil"];
+                            $x .= ".jpeg"
+                            ?>
+                        <li><a href="#">
+                        <img src="<?php echo $x ?> " style="width:20px;">                         
+                         <?php echo $_SESSION["usernameusuario"];?>
+                          </a></li>
+                           <?php 
+                          }  
+                          ?>
                         </ul>
                       </div>
                       </div>
@@ -134,6 +151,7 @@ $nome = $usuario["usernameusuario"];
             <div class='container'>
             <div id='content-post-b'>
      
+            <img src="<?php echo $x ?> " style="width:60px;">
             <?php
           echo "<h1>".$post["userpost"]."<br></h1>";
           echo "<h2>".$post["titulopost"]."<br></h2>";
