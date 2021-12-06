@@ -4,7 +4,7 @@
 
 ### RF 01
 
-O sistema deverá armazenar cadastro de usuári e administradores.
+O sistema deverá armazenar cadastro de usuário e administradores.
 ### RF 02
 
 O sistema deve fazer inclusão, exclusão e alteração de postagens e comentários.
