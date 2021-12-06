@@ -159,7 +159,7 @@
                 <p><a href="login.html"><input type="submit" value="Pagina de login" class="submit"></a></p>
 
                 </div>
-    <?php
+                 <?php
                 exit;
                 
         
@@ -278,10 +278,36 @@
             include "autentica.inc";
             include "conecta_mysql.inc";
             
-            $email = $_POST["email"];
-            $sql ="DELETE FROM cadastrousuarios WHERE emailusuario ='$email'";
-            mysqli_query($mysqli,$sql);
-            if (!mysqli_query($mysqli,$sql)) {
+            $user = $_POST["username"];
+
+            $sql ="SELECT * FROM postagemusuarios WHERE userpost ='$user';";
+            $res = mysqli_query($mysqli, $sql);
+            $linhas = mysqli_num_rows($res);
+
+            if( $linhas != 0){
+                for($i=0; $i < $linhas; $i++){
+                    $array = mysqli_fetch_array($res);
+                    $postex = $array["codpost"];
+
+                    $sql ="DELETE FROM postagemusuarios WHERE codpost ='$postex'";
+                    mysqli_query($mysqli,$sql);
+                    
+                    $sql ="SELECT * FROM comentusuarios WHERE codpostcoment ='$postex';";
+                    $resu = mysqli_query($mysqli, $sql);
+                    $linhass = mysqli_num_rows($resu);     
+
+                    if( $linhass != 0){
+
+                        $sql ="DELETE FROM comentusuarios WHERE codpostcoment ='$postex'";
+                        mysqli_query($mysqli,$sql);
+
+                    }
+                }
+            }
+
+            $sql ="DELETE FROM cadastrousuarios WHERE usernameusuario ='$user'";    
+            $resul = mysqli_query($mysqli,$sql);
+            if (!$resul) {
                 echo("Error ao excluir perfil: " .mysqli_error($mysqli));
                 exit;
             }
@@ -409,9 +435,22 @@
         }
 
         elseif($operacao == "Excluirpost"){
+    
             include "conecta_mysql.inc";
             
             $codigopost = $_POST["postid"];
+
+            $sql ="SELECT * FROM comentusuarios WHERE codpostcoment = $codigopost ;";
+            $resu = mysqli_query($mysqli, $sql);
+            $linhass = mysqli_num_rows($resu);     
+
+            if( $linhass != 0){
+
+                $sql ="DELETE FROM comentusuarios WHERE codpostcoment ='$codigopost'";
+                mysqli_query($mysqli,$sql);
+
+            }
+
             $sql ="DELETE FROM postagemusuarios WHERE codpost ='$codigopost'";
             mysqli_query($mysqli,$sql);
             if (!mysqli_query($mysqli,$sql)) {
@@ -421,19 +460,13 @@
 
             else{
 
-                if ($Globalpermiss == 1){
-
-                    header("location:indexAdm.php");
-                    
-                }
-                else{
-                header("location:Perfil.php");
-                }
+                echo "Postagem excluida com exito!";
+                header("refresh:3;url=perfil.php");
+                exit;
             } 
             mysqli_close ($mysqli);
 
         }
-
         elseif($operacao == "comentar"){
             include "conecta_mysql.inc";
 
@@ -479,7 +512,6 @@
             }
 
         }
-
         elseif($operacao == "excluircoment"){
             include "conecta_mysql.inc";
             
