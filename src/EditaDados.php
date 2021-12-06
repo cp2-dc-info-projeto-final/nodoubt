@@ -25,7 +25,7 @@
                 <p>Nome: <input type="text" name="nome" size="30" value="<?php echo $usuario["nomeusuario"]?>"> </p>
                 <p>Idade: <input type="text" name="idade" size="3" value="<?php echo $usuario["idadeusuario"]?>"> </p>
                 <p>E-mail: <input type="text" name="email" size="30" value="<?php echo $usuario["emailusuario"]?>"></p>
-                <?php if($Globalpermiss == 1){ ?>
+                <?php if($_SESSION["permiss"] == 1){ ?>
                     <p>Permissão: <input type="text" name="permiss" size="2" value="<?php echo $usuario["permissadm"]?>"></p>
                     <?php
                     }

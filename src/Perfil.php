@@ -32,7 +32,7 @@ $nome = $usuario["usernameusuario"];
 
                     <div class="navbar-header">
                         <button class="navbar-toggle" data-target="#mobile_menu" data-toggle="collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-                        <a href="index.html" class="navbar-brand">No Doubt</a>
+                        <a href="index.php" class="navbar-brand">No Doubt</a>
                     </div>
 
                     <div class="navbar-collapse collapse" id="mobile_menu">
@@ -113,8 +113,24 @@ $nome = $usuario["usernameusuario"];
 
 
     <?php $iduser = $usuario["codusuario"];
-    $iduser .= $usuario["idadeusuario"];
+    $datinha = $usuario["idadeusuario"];
+
+    if(strpos($datinha, "/") !== FALSE){
+                
+      $partes = explode("/", $datinha);
+
+      $dia = $partes[0];
+
+      $mes = $partes[1];
+
+      $ano = isset($partes[2]) ? $partes[2] : 0;
+      $datinha = $dia;
+      $datinha .= $mes;
+      $datinha .= $ano;
+    }
+      $iduser .= $datinha;
     $coduser = $usuario["usernameusuario"];
+
 
     ?>
 
@@ -162,7 +178,7 @@ $nome = $usuario["usernameusuario"];
           ?>
           <div id="linha">
           <?php echo "<a href='postcoment.php?idpost=". $idpost."' for='content-post-b'>";?>
-            <button><i class="fas fa-comments" title="Comentar!">           
+          <button><i class="fas fa-comments" title="Comentar!">           
           </i></a></button>
           <form action="editapost.php" method="POST" >
               <input type="hidden" name="postid" value="<?php echo $idpost?>"></input>

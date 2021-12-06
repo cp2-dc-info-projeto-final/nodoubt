@@ -20,7 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `nodoubt`
 --
-DROP DATABASE IF EXISTS 'nodoubt';
+
+DROP DATABASE IF EXISTS nodoubt;
 CREATE DATABASE IF NOT EXISTS `nodoubt` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `nodoubt`;
 
@@ -40,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `cadastrousuarios` (
   `usernameusuario` varchar(12) NOT NULL,
   `senhausuario` varchar(255) NOT NULL,
   `nomeusuario` varchar(40) NOT NULL,
-  `idadeusuario` int(10) NOT NULL,
+  `idadeusuario` varchar(10) NOT NULL,
   `emailusuario` varchar(30) NOT NULL,
   `permissadm` int(2) NOT NULL,
   PRIMARY KEY (`codusuario`)
@@ -51,9 +52,9 @@ CREATE TABLE IF NOT EXISTS `cadastrousuarios` (
 --
 
 INSERT INTO `cadastrousuarios` (`codusuario`, `usernameusuario`, `senhausuario`, `nomeusuario`, `idadeusuario`, `emailusuario`, `permissadm`) VALUES
-(1, 'NouAdm', '36612206', 'Nodoubtt adimin', 20072204, 'Nodoubt@gmail.com', 1),
-(5, 'barbosa', '36612206', 'isabelle barbosa', 31051982, 'isabelebarbosa1@gmail.com', 0),
-(6, 'noob23', '36612206', 'Andreza Carolina do Nascimento', 21011998, 'dre@gmail.com', 0);
+(1, 'NouAdm', '36612206', 'Nodoubtt adimin', '20/07/2004', 'Nodoubt@gmail.com', 1),
+(5, 'barbosa', '36612206', 'isabelle barbosa', '31/05/1982', 'isabelebarbosa1@gmail.com', 0),
+(6, 'noob23', '36612206', 'Andreza Carolina do Nascimento', '21/01/1998', 'dre@gmail.com', 0);
 
 -- --------------------------------------------------------
 

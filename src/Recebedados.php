@@ -145,7 +145,7 @@
             
             if($erro == 0) {
                 $sql ="INSERT INTO cadastrousuarios (usernameusuario,senhausuario,nomeusuario,idadeusuario,emailusuario)";        
-                $sql .= "VALUES ('$username','$senha','$nome',$idade,'$email')";
+                $sql .= "VALUES ('$username','$senha','$nome','$data','$email')";
         
                 mysqli_query($mysqli,$sql);
                 mysqli_close ($mysqli);
@@ -237,7 +237,7 @@
                 
                 if($erro == 0) {
                     $sql = "UPDATE cadastrousuarios SET usernameusuario ='$username', senhausuario ='$senha',";
-                    $sql .= "nomeusuario = '$nome', idadeusuario = $idade, emailusuario = '$usuario', permissadm = $permiss ";
+                    $sql .= "nomeusuario = '$nome', idadeusuario = '$data', emailusuario = '$usuario', permissadm = $permiss ";
                     $sql .= "WHERE emailusuario = '$emailusuario';";
 
                     mysqli_query($mysqli,$sql);
