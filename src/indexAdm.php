@@ -8,12 +8,15 @@
         <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-
-            <div class="card">
-            <div class="card-content">
-            <div class="card-content-area">
-   
-   <?php 
+            
+            
+            <div class="card"> 
+            <div class="card-header"> 
+            <div class="card-content"> 
+            <div class="card-content-area"> 
+       
+  
+  <?php 
               $email = $_SESSION["emailusuario"];
               include "conecta_mysql.inc";
               $sql = "SELECT * FROM cadastrousuarios WHERE emailusuario ='$email';";
