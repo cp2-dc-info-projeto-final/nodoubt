@@ -209,7 +209,7 @@ $nome = $usuario["usernameusuario"];
          Vicky Wingler<br>
          Julia Sena<br>
          Vitoria Costa<br>
-         Caio <br>
+         Caio Felipe <br>
          Estudantes do <a href="https://www.cp2.g12.br/index.php" target="_blank"> Colégio Pedro II</a></p>
   <p class="w3-medium" style="color: white;">
       Contato: <a href="https://twitter.com/Wingler_Vtt" target="_blank"></a></p>
