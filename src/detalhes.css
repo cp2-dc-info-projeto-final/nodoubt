@@ -23,7 +23,7 @@ body {
 /* area de posategem */
 #content-post-a{
 
-    background-color: rgba(225, 225, 247, 0.877);
+    background-color: rgba(225, 247, 225, 0.877);
     padding: 60px;
     border-width: thin;
     border-style: solid;
@@ -43,7 +43,7 @@ body {
 
 #content-post-b{
 
-    background-color: rgba(225, 225, 247, 0.877);
+    background-color: rgba(255, 255, 255, 0.877);
     padding: 30px;
     border-width: thin;
     border-style: solid;
@@ -62,7 +62,7 @@ body {
 
     position: absolute;
     top: 350px;
-    left: 50px;
+    left: 500px;
 
 }
 
