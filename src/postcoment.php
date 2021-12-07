@@ -27,7 +27,7 @@ include "autentica.inc";
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    
 
 
-    <link rel="stylesheet" href="pesquisa.css">
+    <link rel="stylesheet" href="detalhes.css">
 
 </head>
 <body>
@@ -97,6 +97,12 @@ include "autentica.inc";
 
 <h1>   
     <div class="container">
+
+                    <div class="card">
+                     <div class="card-header">
+                    </div>
+                    <div class="card-content">
+                    <div class="card-content-area">
 
     <?php
     
