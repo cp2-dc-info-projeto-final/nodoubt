@@ -30,7 +30,7 @@
             echo "O campo: Nome de Usuario deve possuir no maximo 12 caracteres.<br>";
             $erro = 1;
             }
-            if(strlen($sen) < 5 or ($sen) == " "){
+            if(strlen($sen) < 5 or empty($sen)){
             echo "O campo: Senha deve possuir no mínimo 5 caracteres.<br>";
             $erro = 1;
             }
@@ -323,12 +323,41 @@
         elseif($operacao == "buscar"){
             include "conecta_mysql.inc";
             
-            $nomedebusca = $_POST["username"];
-            $sql = "SELECT * FROM cadastrousuarios WHERE usernameusuario like'$nomedebusca%';";
+            $busca = $_POST["username"];
+
+             $sql = "SELECT * FROM postagemusuarios WHERE titulopost  like'%$busca%';";
+              $res = mysqli_query($mysqli,$sql);
+              $linhas = mysqli_num_rows($res);
+            if (!mysqli_query($mysqli,$sql)) {
+                echo("Error na busca: " .mysqli_error($mysqli));
+                exit;
+            }
+
+            
+            if( $linhas == 0){
+                echo $busca." Não foi encontrado em nenhum titulo...";
+            }
+            else{
+                echo "titulos econtrados: $linhas.";
+                for($i=0; $i < $linhas; $i++){
+                $posti = mysqli_fetch_array($res);
+                $cod = $posti["codpost"];
+                $title = $posti["titulopost"];
+                $quem = $posti["userpost"]
+                ?><h3>
+                <?php
+                echo"<p><a href='postcoment.php?idpost=$cod'>$title<br></a>"; 
+                echo "<a href='alterperfil.php?usernameusuario=$quem'>-$quem</a><br>";
+                ?> </h3>
+                 <?php
+                }
+            }
+
+            $sql = "SELECT * FROM cadastrousuarios WHERE usernameusuario like'$busca%';";
              $res = mysqli_query($mysqli,$sql);
              $linhas = mysqli_num_rows($res);
 
-            if (!mysqli_query($mysqli,$sql)) {
+             if (!mysqli_query($mysqli,$sql)) {
                 echo("Error na busca: " .mysqli_error($mysqli));
                 exit;
             }
@@ -478,6 +507,14 @@
             $sql ="INSERT INTO comentusuarios (idusercoment,codpostcoment,usercoment,comentario)";        
             $sql .= "VALUES ($iduser,$comentid,'$usuarioc','$coment')";
     
+
+            if (empty($coment)){
+
+                echo "Não é possivel realizar um comentario vazio";
+                echo "<p><a href='postcoment.php?idpost=$comentid'>Retornar</a>";
+                exit;
+            }
+
             mysqli_query($mysqli,$sql);
             mysqli_close ($mysqli);
 
