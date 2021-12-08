@@ -71,7 +71,7 @@ include "autentica.inc";
                             <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-log-in"></span> Login<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="login.html">Login</a></li>
-                                    <li><a href="Cadastro.html">Se Cadastrar</a></li>
+                                    <li><a href="Cadastro.php">Se Cadastrar</a></li>
                                 </ul>
                             </li>
                             <?php

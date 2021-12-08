@@ -19,34 +19,45 @@
                 <div class="card-content-area">
         <?php 
     
-    function Teste_form($non1, $sen, $non2, $id, $eml, $erro, $data){
+    function Teste_form($non1, $sen, $sen2, $non2, $id, $eml, $erro, $data){
 
-
+            //impede nomes de usuario menores que 5
             if(strlen($non1) < 5){       
             echo "O campo: Nome de Usuario deve possuir no mínimo 5 caracteres.<br>";
             $erro = 1;
             }
+            // impede nomes de usuario maiores que 12
             if(strlen($non1) > 12){
             echo "O campo: Nome de Usuario deve possuir no maximo 12 caracteres.<br>";
             $erro = 1;
             }
+            #impede senhas menores que 5 ou vazias
             if(strlen($sen) < 5 or empty($sen)){
             echo "O campo: Senha deve possuir no mínimo 5 caracteres.<br>";
             $erro = 1;
             }
+            #verifica se as senhas são iguais
+            if($sen !== $sen2 ){
+            echo "Os campos de Senha não podem ser diferentes.<br>";
+            $erro = 1;
+            }
+            // impede nomes de usuario iguais a senha
             if($non1 == $sen){
             echo "O campo: Nome de Usuario e Senha devem ser diferentes.<br>";
             $erro = 1;
             }
+            // impede nomes vazios ou sem espaço
             if(empty($non2) OR strstr($non2,' ') == FALSE){    
             echo "O campo: Nome esta vazio ou foi inserido de forma incorreta. <br>";
             $erro = 1;
             }
+            // impede escrita de idade menor que 8
             if ( strlen($id) < 8){
             echo "O campo: Data de Nascimento deve possui no minimo 8 digitos.<br>";
             $erro = 1;
             }
             else{
+                //impede idade de /
                if(strpos($id, "/") !== FALSE){
                 
                     $partes = explode("/", $id);
@@ -60,17 +71,17 @@
                     $id = $dia;
                     $id .= $mes;
                     $id .= $ano;
-                        
+                    //impede idade com data do ano menor que 1000
+                    if (strlen($ano) < 4) {
+                        echo "O campo: Data de Nascimento exige um ano valido.<br>";
+                        $erro = 1;
+                    }
+                    //impede idade nao numerica
                     if (!is_numeric($id)){
 
                         echo "O campo Data de nascimento só aceita nuemros.";
                         $erro = 1;
                     }
-
-                    if (strlen($ano) < 4) {
-                        echo "O campo: Data de Nascimento exige um ano valido.<br>";
-                        $erro = 1;
-                    } 
                     else {
                         // verifica se a data é válida
                         if (!checkdate($mes, $dia, $ano)) {
@@ -84,11 +95,12 @@
                     $erro = 1;
                 }
             }
+            // verifica se o email possui menos de 8 letras
             if(strlen($eml) < 8){
             echo "O campo: E-mail esta muito curto e não foi digitado corretamente.<br>";
             $erro = 1;
             }
-
+            // impede email sem @  
             if(strstr($eml,'@') == FALSE){
             echo "O campo: E-mail não foi digitado corretamente.<br>";
             $erro = 1;
@@ -112,10 +124,11 @@
             $idade = $_POST["idade"];
             $email = $_POST["email"];
             $erro = 0;
+            $senha2 = $_POST["senhadois"];
             $linhas = 0;
             Global $data;
 
-            $funcao = Teste_form($username, $senha, $nome, $idade, $email, $erro, $data);
+            $funcao = Teste_form($username, $senha, $senha2, $nome, $idade, $email, $erro, $data);
             
             $erro = $funcao[0];
             $idade = $funcao[1];
@@ -170,8 +183,14 @@
 
                  ?>
                  <div class="card-footer">
-
-                        <p><a href="Cadastro.html"><input type="submit" value="Retornar" class="submit"></a></p>
+                    <form action="cadastro.php" method="POST">
+                     <input type="hidden" name="nomeum" value="<?php echo $username;?>">
+                    <input type="hidden" name="senhaum" value="<?php echo $senha;?>">
+                    <input type="hidden" name="nomedois" value="<?php echo $nome;?>">
+                    <input type="hidden" name="idade" value="<?php echo $data;?>">
+                    <input type="hidden" name="email" value="<?php echo $email;?>">
+                    <input type="hidden" name="senhadois" value="<?php echo $senha2;?>">
+                    <p><a href="Cadastro.php"><input type="submit" value="Retornar" class="submit"></a></p>
                 </div>
                 <?php 
                 exit;
