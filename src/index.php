@@ -80,10 +80,11 @@
 </header>
 
 <div class="container">
-        <img scr="imagem/logo.jpeg" width="100%">           
+<img src="imagem/logo.jpeg" left="0px"display="flex" height="100%" width="1270px">           
 </div>
 
-<br>  <br>  <br>  <br>  <br>  <br>   <br>  <br>  <br>  <br> <br>
+<br>
+<div>
   
   <footer class="w3-container w3-padding-64 w3-center  w3-xlarge" style= "background-color: #343a40">
     <p class="w3-medium" style="color: white;">
@@ -98,6 +99,6 @@
     </section>
 
 </footer>
-
+</div>
   </body>
 </html>
