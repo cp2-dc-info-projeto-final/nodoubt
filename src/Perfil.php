@@ -202,8 +202,8 @@ $nome = $usuario["usernameusuario"];
   </div>
 
   <br>  <br>  <br>  <br>  <br>  <br>   <br>  <br>  <br>  <br> <br>
-
-  <section id="contactus"><footer class="w3-container w3-padding-64 w3-center  w3-xlarge" style= "background-color: #343a40">
+  
+  <footer class="w3-container w3-padding-64 w3-center  w3-xlarge" style= "background-color: #343a40">
     <p class="w3-medium" style="color: white;">
          Desenvolvido por: <br>
          Vicky Wingler<br>
@@ -212,7 +212,7 @@ $nome = $usuario["usernameusuario"];
          Caio Felipe <br>
          Estudantes do <a href="https://www.cp2.g12.br/index.php" target="_blank"> Colégio Pedro II</a></p>
   <p class="w3-medium" style="color: white;">
-      Contato: <a href="https://twitter.com/Wingler_Vtt" target="_blank"></a></p>
+  <section id="contactus"> Contato: <a href="https://twitter.com/Wingler_Vtt" target="_blank"></a></p>
     </section>
 
 </footer>
