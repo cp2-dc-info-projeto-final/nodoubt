@@ -175,6 +175,7 @@ $nome = $usuario["usernameusuario"];
           echo "<h3>".$post["postcontent"]."<br></h3";
           echo "----------------------------------<br>";
           ?>
+          
           <div id="linha">
           <?php echo "<a href='postcoment.php?idpost=". $idpost."' for='content-post-b'>";?>
           <button><i class="fas fa-comments" title="Comentar!">           
@@ -189,6 +190,7 @@ $nome = $usuario["usernameusuario"];
               <input type="hidden" name="postid" value="<?php echo $idpost?>"></input>
               <button type="submit" value="Excluir"><i class="fas fa-trash-alt" title="excluir postagem!"></i></button>
               </form>
+       
         </div>
           </div>
           </a>
@@ -202,6 +204,7 @@ $nome = $usuario["usernameusuario"];
 
   <br>  <br>  <br>  <br>  <br>  <br>   <br>  <br>  <br>  <br> <br>
   
+  <
   <footer class="w3-container w3-padding-64 w3-center  w3-xlarge" style= "background-color: #343a40">
     <p class="w3-medium" style="color: white;">
          Desenvolvido por: <br>
@@ -213,8 +216,8 @@ $nome = $usuario["usernameusuario"];
   <p class="w3-medium" style="color: white;">
   <section id="contactus"> Contato: <a href="https://twitter.com/Wingler_Vtt" target="_blank"></a></p>
     </section>
-
 </footer>
+
 
     </body>
 </html>

@@ -82,8 +82,9 @@
             <div class="card-header"> 
             <div class="card-content"> 
             <div class="card-content-area"> 
-       
   
+                
+    
   <?php 
               $email = $_SESSION["emailusuario"];
               include "conecta_mysql.inc";
