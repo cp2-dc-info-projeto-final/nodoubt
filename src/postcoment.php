@@ -34,6 +34,8 @@ include "autentica.inc";
 </head>
 <body>
 
+
+
 <header>
   <div class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -97,34 +99,25 @@ include "autentica.inc";
     </div>
 </header>
 
-<h1>   
 
-<div id="contentT">
+
+<div id="contentt">
 
     <?php
     
     echo $post["titulopost"];
  
-   ?>
+    ?>
 
-        <h6>
-            <?php echo "<a href='alterperfil.php?usernameusuario=". $user."'>-$user </a>";
-        ?>
+<h6>
+    <?php echo "<a href='alterperfil.php?usernameusuario=". $user."'>-$user </a>";
+?>
 
-        <h3>
-            <?php echo $conteudo;
-        ?>
-        </h3>
-    </div>
-
-<div class="container">
-
-
-
-
-
-
-
+<h3>
+    <?php echo $conteudo;
+?>
+</h3>
+</div>
 
 
 <?php
@@ -183,19 +176,20 @@ include "autentica.inc";
 </form>
 </div>
 
-<br>  <br>  <br>  <br>  <br>  <br>   <br>  <br>  <br>  <br> <br>
+<br>  <br>  <br>  <br>  <br>  <br>   <br>  <br>  <br>  <br> <br> 
   
   <footer class="w3-container w3-padding-64 w3-center  w3-xlarge" style= "background-color: #343a40">
     <p class="w3-medium" style="color: white;">
          Desenvolvido por: <br>
          Vicky Wingler<br>
-         Julia Sena<br>
+         Júlia Sena<br>
          Vitoria Costa<br>
          Caio Felipe <br>
          Estudantes do <a href="https://www.cp2.g12.br/index.php" target="_blank"> Colégio Pedro II</a></p>
   <p class="w3-medium" style="color: white;">
   <section id="contactus"> Contato: <a href="#" target="_blank">nodoubttt0@gmail.com</a></p>
     </section>
+  
 
 </footer>
 </body>
