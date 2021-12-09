@@ -190,7 +190,7 @@ include "autentica.inc";
 </form>
 </div>
 
-<br>  <br>  <br>  <br>  <br>  <br>   <br>  <br>  <br>  <br> <br>
+<br>  <br>  <br>  <br>  <br>  <br>   <br>  <br>  <br>  <br> <br> 
   
   <footer class="w3-container w3-padding-64 w3-center  w3-xlarge" style= "background-color: #343a40">
     <p class="w3-medium" style="color: white;">
