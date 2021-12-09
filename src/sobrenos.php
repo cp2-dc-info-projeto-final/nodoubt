@@ -88,18 +88,19 @@
                     
                      <br>  <br>  <br>  <br>  <br>  <br>   <br>  <br>  <br>  <br> <br>
   
-  <footer class="w3-container w3-padding-64 w3-center  w3-xlarge" style= "background-color: #343a40">
+    <footer class="w3-container w3-padding-64 w3-center  w3-xlarge" style= "background-color: #343a40">
     <p class="w3-medium" style="color: white;">
          Desenvolvido por: <br>
          Vicky Wingler<br>
-         Julia Sena<br>
-         Vitoria Maria<br>
+         Júlia Sena<br>
+         Vitória Costa<br>
          Caio Felipe <br>
          Estudantes do <a href="https://www.cp2.g12.br/index.php" target="_blank"> Colégio Pedro II</a></p>
   <p class="w3-medium" style="color: white;">
-  
-
+  <section id="contactus"> Contato: <a href="#" target="_blank">nodoubt@gmail.com</a></p>
+    </section>
 </footer>
+
                
 </body>
  </html
