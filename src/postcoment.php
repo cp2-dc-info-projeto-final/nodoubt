@@ -100,11 +100,9 @@ include "autentica.inc";
     </div>
 </header>
 
-
+<h1>
 <div id="contentt">
 
-
-<h1>
     <?php
     
     echo $post["titulopost"];

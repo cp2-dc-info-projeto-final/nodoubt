@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 02-Dez-2021 às 22:39
+-- Tempo de geração: 09-Dez-2021 às 23:44
 -- Versão do servidor: 10.4.21-MariaDB
 -- versão do PHP: 7.3.31
 
@@ -20,7 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `nodoubt`
 --
-
 DROP DATABASE IF EXISTS nodoubt;
 CREATE DATABASE IF NOT EXISTS `nodoubt` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `nodoubt`;
@@ -45,16 +44,14 @@ CREATE TABLE IF NOT EXISTS `cadastrousuarios` (
   `emailusuario` varchar(30) NOT NULL,
   `permissadm` int(2) NOT NULL,
   PRIMARY KEY (`codusuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `cadastrousuarios`
 --
 
 INSERT INTO `cadastrousuarios` (`codusuario`, `usernameusuario`, `senhausuario`, `nomeusuario`, `idadeusuario`, `emailusuario`, `permissadm`) VALUES
-(1, 'NouAdm', '36612206', 'Nodoubtt adimin', '20/07/2004', 'Nodoubt@gmail.com', 1),
-(5, 'barbosa', '36612206', 'isabelle barbosa', '31/05/1982', 'isabelebarbosa1@gmail.com', 0),
-(6, 'noob23', '36612206', 'Andreza Carolina do Nascimento', '21/01/1998', 'dre@gmail.com', 0);
+(1, 'NouAdm', '$2y$10$lKIKpG092z06WPwxIhDLK.qKMsipKDTCGpCHz.0cd/Gcl4BSXkG4e', 'vicky do nascimento ', '20/07/2004', 'nodoubttt0@gmail.com', 1);
 
 -- --------------------------------------------------------
 
@@ -71,16 +68,24 @@ CREATE TABLE IF NOT EXISTS `comentusuarios` (
   `comentario` varchar(366) NOT NULL,
   `likecoment` int(9) NOT NULL,
   PRIMARY KEY (`idcoment`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
 
 --
--- Extraindo dados da tabela `comentusuarios`
+-- Estrutura da tabela `curtirusuarios`
 --
 
-INSERT INTO `comentusuarios` (`idcoment`, `idusercoment`, `codpostcoment`, `usercoment`, `comentario`, `likecoment`) VALUES
-(2, 1, 101, 'NouAdm ', 'nem eu', 0),
-(3, 1, 101, 'NouAdm ', 'ok', 0),
-(7, 1, 102, 'NouAdm ', 'sei la', 0);
+DROP TABLE IF EXISTS `curtirusuarios`;
+CREATE TABLE IF NOT EXISTS `curtirusuarios` (
+  `idlike` int(11) NOT NULL AUTO_INCREMENT,
+  `iduserlike` int(12) NOT NULL,
+  `codpostlike` int(13) NOT NULL,
+  `userlike` varchar(13) NOT NULL,
+  `curtida` int(2) NOT NULL,
+  `titulopostlike` varchar(30) NOT NULL,
+  PRIMARY KEY (`idlike`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -95,20 +100,9 @@ CREATE TABLE IF NOT EXISTS `postagemusuarios` (
   `userpost` varchar(12) NOT NULL,
   `titulopost` varchar(30) NOT NULL,
   `postcontent` varchar(366) NOT NULL,
+  `likepost` int(9) NOT NULL,
   PRIMARY KEY (`codpost`)
-) ENGINE=InnoDB AUTO_INCREMENT=103 DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `postagemusuarios`
---
-
-INSERT INTO `postagemusuarios` (`codpost`, `coduserpost`, `userpost`, `titulopost`, `postcontent`) VALUES
-(27, 621011999, 'noob22', 'Frase na lápide', 'Frase de efeito para colocar em uma lápide.'),
-(35, 621011999, 'noob22', 'aa', 'bb'),
-(36, 621011999, 'noob22', 'aa', 'bb'),
-(100, 120072204, 'NouAdm', 'Nao aguento mais tcc', 'a'),
-(101, 120072204, 'NouAdm', 'Nao aguento mais tcc', 'save me :)'),
-(102, 120072204, 'NouAdm', 'duvida', 'meu projeto esta funcionando?');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,4 +1,7 @@
 <?php
+
+
+
  include "autentica.inc";
  $email = $_SESSION["emailusuario"];
  $img = $_SESSION["fotoperfil"];
@@ -181,6 +184,13 @@ $nome = $usuario["usernameusuario"];
           <?php echo "<a href='postcoment.php?idpost=". $idpost."' for='content-post-b'>";?>
           <button><i class="fas fa-comments" title="Comentar!">           
           </i></a></button>
+
+          <form action="Recebedados.php" method="POST" >
+              <input type="hidden" name="postid" value="<?php echo $idpost?>"></input>
+              <input type="hidden" name="operacao" value="editar"></p>
+              <button type="submit" value="Editar"><i class="far fa-heart" aria-hidden="true" title="editar postagem!"></i></button></a>
+            </form>
+
           <form action="editapost.php" method="POST" >
               <input type="hidden" name="postid" value="<?php echo $idpost?>"></input>
               <input type="hidden" name="operacao" value="editar"></p>
@@ -214,7 +224,7 @@ $nome = $usuario["usernameusuario"];
          Caio Felipe <br>
          Estudantes do <a href="https://www.cp2.g12.br/index.php" target="_blank"> Colégio Pedro II</a></p>
   <p class="w3-medium" style="color: white;">
-  <section id="contactus"> Contato: <a href="#" target="_blank">nodoubt@gmail.com</a></p>
+  <section id="contactus"> Contato: <a href="#" target="_blank">nodoubttt0@gmail.com</a></p>
     </section>
 </footer>
 

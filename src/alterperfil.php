@@ -41,7 +41,7 @@
                     <div class="navbar-collapse collapse" id="mobile_menu">
                         <ul class="nav navbar-nav">
                             <li><a href="sobrenos.php">Sobre nos</a></li>
-                            <li><a href="#contactus">Contatos</a></li>
+                            <li><a href="#contactus">Fale conosco</a></li>
                         </ul>
                         <ul class="nav navbar-nav">
                             <li>
@@ -204,6 +204,7 @@ mysqli_close($mysqli);
          Estudantes do <a href="https://www.cp2.g12.br/index.php" target="_blank"> Colégio Pedro II</a></p>
   <p class="w3-medium" style="color: white;">
   <section id="contactus"> Contato: <a href="#" target="_blank">nodoubt@gmail.com</a></p>
+
     </section>
 </footer>
 
