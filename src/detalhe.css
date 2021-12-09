@@ -42,14 +42,31 @@ body {
 
 #content-post-b{
 
-    background-color: rgba(255, 255, 255, 0.877);
+    background-color: rgba(224, 224, 243, 0.877);
     padding: 30px;
     border-width: thin;
     border-style: solid;
     border-color:rgba(121, 119, 119, 0.534);
     border-radius: 80px;
-    width: 600px;
-    height: 360px;
+    width: 700px;
+    height: 400px;
+    display: flex;
+    align-items: left;
+    justify-content: right;
+    flex-direction: column;
+}
+
+
+#contentt{
+
+    background-color: rgba(224, 224, 243, 0.877);
+    position: relative;
+    padding: 80px;
+    border-width: thin;
+    border-style: solid;
+    border-radius: 50px;
+    width: 800px;
+    height: 500px;
     display: flex;
     align-items: left;
     justify-content: right;
@@ -83,4 +100,5 @@ footer{
 
 
 }
+
 

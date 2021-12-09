@@ -87,7 +87,8 @@ $nome = $usuario["usernameusuario"];
     </div>
  </header>
 
-  <div id="content">
+ <div id="content">
+
 
       <h4><div class="container">
        <?php echo"<p><img src='perfis/$img.jpeg' width='100' height='100'></p>" ?>
@@ -193,7 +194,7 @@ $nome = $usuario["usernameusuario"];
        
         </div>
           </div>
-          </a>
+          </a><br>
           <?php
           }
 
@@ -204,7 +205,6 @@ $nome = $usuario["usernameusuario"];
 
   <br>  <br>  <br>  <br>  <br>  <br>   <br>  <br>  <br>  <br> <br>
   
-  <
   <footer class="w3-container w3-padding-64 w3-center  w3-xlarge" style= "background-color: #343a40">
     <p class="w3-medium" style="color: white;">
          Desenvolvido por: <br>
@@ -214,10 +214,9 @@ $nome = $usuario["usernameusuario"];
          Caio Felipe <br>
          Estudantes do <a href="https://www.cp2.g12.br/index.php" target="_blank"> Colégio Pedro II</a></p>
   <p class="w3-medium" style="color: white;">
-  <section id="contactus"> Contato: <a href="https://twitter.com/Wingler_Vtt" target="_blank"></a></p>
+  <section id="contactus"> Contato: <a href="#" target="_blank">nodoubt@gmail.com</a></p>
     </section>
 </footer>
-
 
     </body>
 </html>
