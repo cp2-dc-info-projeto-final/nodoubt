@@ -29,7 +29,7 @@
                     <div class="navbar-collapse collapse" id="mobile_menu">
                         <ul class="nav navbar-nav">
                             <li><a href="sobrenos.php">Sobre nos</a></li>
-                            <li><a href="#contactus">Contatos</a></li>
+                            <li><a href="#contactus">Fale Conosco</a></li>
                         </ul>
                         <ul class="nav navbar-nav">
                             <li>
