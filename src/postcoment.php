@@ -28,7 +28,7 @@ include "autentica.inc";
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    
     <script src="https://kit.fontawesome.com/785c80f02e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="https://www.w3schools.com/w3css/3/w3.css">
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="detalhe.css">
   
 
 </head>
@@ -99,30 +99,23 @@ include "autentica.inc";
 
 <h1>   
 
-
-
-            <center>
-            <div class="card"> 
-            <div class="card-header"> 
-            <div class="card-content"> 
-            <div class="card-content-area"> 
-  
+<div id="contentT">
 
     <?php
     
     echo $post["titulopost"];
  
-    ?>
-</h1>
-<h6>
-    <?php echo "<a href='alterperfil.php?usernameusuario=". $user."'>-$user </a>";
-?>
-</h6>
-<h3>
-    <?php echo $conteudo;
-?>
-</h3>
-</div>
+   ?>
+
+        <h6>
+            <?php echo "<a href='alterperfil.php?usernameusuario=". $user."'>-$user </a>";
+        ?>
+
+        <h3>
+            <?php echo $conteudo;
+        ?>
+        </h3>
+    </div>
 
 <div class="container">
 
@@ -201,7 +194,7 @@ include "autentica.inc";
          Caio Felipe <br>
          Estudantes do <a href="https://www.cp2.g12.br/index.php" target="_blank"> Colégio Pedro II</a></p>
   <p class="w3-medium" style="color: white;">
-  <section id="contactus"> Contato: <a href="https://twitter.com/Wingler_Vtt" target="_blank"></a></p>
+  <section id="contactus"> Contato: <a href="#" target="_blank">nodoubttt0@gmail.com</a></p>
     </section>
 
 </footer>
