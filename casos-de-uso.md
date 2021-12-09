@@ -293,7 +293,7 @@ descurtir postagem
 
 1. O usuario, ve uma postagem que curtiu e deseja descurtir.
 2. O usuario clica no icone de coração, dentro do balão da postagem.
-3. O sistema atualiza a pagina, agora com o simbolo de coração diferentte, indicando que a postagem foi descurtida.
+3. O sistema atualiza a pagina, agora com o simbolo de coração diferente, indicando que a postagem foi descurtida.
 
 ### CDU 15
 
@@ -313,4 +313,4 @@ descurtir comentario
 
 1. O usuario, ve um comentario que curtiu e deseja descurtir.
 2. O usuario clica no icone de coração, dentro do balão do comentario.
-3. O sistema atualiza a pagina, agora com o simbolo de coração diferentte, indicando que o comentario foi descurtido.
+3. O sistema atualiza a pagina, agora com o simbolo de coração diferente, indicando que o comentario foi descurtido.
