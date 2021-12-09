@@ -52,7 +52,7 @@
                           ?>
                             
                             <li><a href="Login.html"> <button><i class="fas fa-sign-in-alt"></i><button>
-                            </li>
+                          </li>
 
                             <?php
                           }
