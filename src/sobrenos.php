@@ -8,6 +8,8 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    
 <script src="https://kit.fontawesome.com/785c80f02e.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" href="https://www.w3schools.com/w3css/3/w3.css">
+<link rel="stylesheet" href="logo.css">
+
 
 <body>
    
@@ -76,22 +78,13 @@
 </header>
 
 
-   <h1 align="center">NoDoubt</h1> 
-   <h2 align="left"> Quem somos? </h2>
-   <p> Somos quatro programadores iniciantes, com o intuito de criar um site para fim escolar. </p> 
-   <h2> Sobre nosso site! </h2>
-   <p> Nosso projeto consiste em uma rede social bem aberta ao estilo fórum para estudantes de todos os níveis de escolaridade postarem suas duvidas sobre conteudos diversos ou até mesmo de suas areas de estudos, e outros usuarios responder essas dúvidas. A fim de cessar essas perguntas, e esse incômodo do estudante mais tímido! </p>  
+   <h1 align="center"><u>No Doubt</u></h1> 
+   <h2 align="left"> <b> Quem somos? <b> </h2>
+   <p><h3><b>Somos quatro programadores iniciantes, com o intuito de criar um site para fins escolares.<b></h3></p> 
+   <br> <br>
+   <h2><b>Sobre nosso site!</b></h2>
+   <p> <h3><b> O projeto consiste em uma rede social bem aberta ao estilo fórum para estudantes de todos os níveis de escolaridade postarem suas dúvidas sobre conteúdos diversos ou até mesmo de suas áreas de estudos, e outros usuários poderão responder essas dúvidas. E com o auxílio de método de votação popular pelo usuário, as respostas mais votadas serão tidas como corretas. Dessa forma, garatindo maior confiabilidade nas respostas e tornando assim a educação algo mais democrático.</b> </h3> </p>  
    
-                     <center>      
-                     <img src="pasta/img.png"
-                     width="550px" >
-                     </center>
-                
-                     <center> 
-                     <img src="pasta/img2.jpg"
-                     width="550px" > 
-                     </center>
-            
                     
                      <br>  <br>  <br>  <br>  <br>  <br>   <br>  <br>  <br>  <br> <br>
   
@@ -100,12 +93,11 @@
          Desenvolvido por: <br>
          Vicky Wingler<br>
          Julia Sena<br>
-         Vitoria Costa<br>
+         Vitoria Maria<br>
          Caio Felipe <br>
          Estudantes do <a href="https://www.cp2.g12.br/index.php" target="_blank"> Colégio Pedro II</a></p>
   <p class="w3-medium" style="color: white;">
-  <section id="contactus"> Contato: <a href="https://twitter.com/Wingler_Vtt" target="_blank"></a></p>
-    </section>
+  
 
 </footer>
                
