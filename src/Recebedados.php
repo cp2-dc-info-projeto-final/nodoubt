@@ -344,67 +344,81 @@
             
             $busca = $_POST["username"];
 
-             $sql = "SELECT * FROM postagemusuarios WHERE titulopost  like'%$busca%';";
-              $res = mysqli_query($mysqli,$sql);
-              $linhas = mysqli_num_rows($res);
-            if (!mysqli_query($mysqli,$sql)) {
-                echo("Error na busca: " .mysqli_error($mysqli));
-                exit;
-            }
+            if(!empty($busca)){
+                
+                    $sql = "SELECT * FROM postagemusuarios WHERE titulopost  like'%$busca%';";
+                    $res = mysqli_query($mysqli,$sql);
+                    $linhas = mysqli_num_rows($res);
+                    if (!mysqli_query($mysqli,$sql)) {
+                        echo("Error na busca: " .mysqli_error($mysqli));
+                        exit;
+                    }
 
-            
-            if( $linhas == 0){
-                echo $busca." Não foi encontrado em nenhum titulo...";
-            }
-            else{
-                echo "titulos econtrados: $linhas.";
-                for($i=0; $i < $linhas; $i++){
-                $posti = mysqli_fetch_array($res);
-                $cod = $posti["codpost"];
-                $title = $posti["titulopost"];
-                $quem = $posti["userpost"]
-                ?><h3>
-                <?php
-                echo"<p><a href='postcoment.php?idpost=$cod'>$title<br></a>"; 
-                echo "<a href='alterperfil.php?usernameusuario=$quem'>-$quem</a><br>";
-                ?> </h3>
-                 <?php
+                    if( $linhas == 0){
+                        echo $busca." Não foi encontrado em nenhum titulo...";
+                    }
+                    else{
+                        echo "titulos econtrados: $linhas.";
+                        for($i=0; $i < $linhas; $i++){
+                        $posti = mysqli_fetch_array($res);
+                        $cod = $posti["codpost"];
+                        $title = $posti["titulopost"];
+                        $quem = $posti["userpost"]
+                        ?><h3>
+                        <?php
+                        echo"<p><a href='postcoment.php?idpost=$cod'>$title<br></a>"; 
+                        echo "<a href='alterperfil.php?usernameusuario=$quem'>-$quem</a><br>";
+                        ?> </h3>
+                        <?php
+                        }
+                    }
+
+                    $sql = "SELECT * FROM cadastrousuarios WHERE usernameusuario like'$busca%';";
+                    $res = mysqli_query($mysqli,$sql);
+                    $linhas = mysqli_num_rows($res);
+
+                    if (!mysqli_query($mysqli,$sql)) {
+                        echo("Error na busca: " .mysqli_error($mysqli));
+                        exit;
+                    }
+
+                    if( $linhas == 0){
+                        echo "Nenhum usuario encontrado...";
+                    }
+
+                    else{
+                        $linhas = mysqli_num_rows($res);
+                        echo "Perfis econtrados: $linhas.";
+                        for($i=0; $i < $linhas; $i++){
+                        $usuario = mysqli_fetch_array($res);
+                        ?>
+                        <h3>
+                        <?php
+                        echo"<p><a href='alterperfil.php?usernameusuario=". $usuario["usernameusuario"]."' value=". $usuario['usernameusuario']."><br>"; 
+                        echo " ".$usuario["usernameusuario"]."<br></a>";
+                        ?> </h3>
+                        
+                        <div class="container">
+                        <p><img src="perfis/Nouser.png" width="100" height="100"></img>
+                        </div>
+                        <?php
+                        }
+                    }
+
                 }
-            }
+                else{
+                    echo "Nenhum resultado para sua busca foi encontrado :(";
 
-            $sql = "SELECT * FROM cadastrousuarios WHERE usernameusuario like'$busca%';";
-             $res = mysqli_query($mysqli,$sql);
-             $linhas = mysqli_num_rows($res);
-
-             if (!mysqli_query($mysqli,$sql)) {
-                echo("Error na busca: " .mysqli_error($mysqli));
-                exit;
-            }
-
-            if( $linhas == 0){
-                echo "Nenhum usuario encontrado...";
-            }
-
-            else{
-                $linhas = mysqli_num_rows($res);
-                echo "Perfis econtrados: $linhas.";
-                for($i=0; $i < $linhas; $i++){
-                $usuario = mysqli_fetch_array($res);
-                ?>
-                <h3>
-                <?php
-                echo"<p><a href='alterperfil.php?usernameusuario=". $usuario["usernameusuario"]."' value=". $usuario['usernameusuario']."><br>"; 
-                echo " ".$usuario["usernameusuario"]."<br></a>";
-                ?> </h3>
-                 
-                 <div class="container">
-                <p><img src="perfis/Nouser.png" width="100" height="100"></img>
-                </div>
-                 <?php
                 }
-            }
-                echo "<p><a href='Perfil.php'>Retornar";
+                session_start();
+                if(isset($_SESSION["emailusuario"])){
 
+                echo "<p><a href='Perfil.php'>Retornar ao perfil";
+
+                }
+                else{
+                    echo "<p><a href='index.php'>Retornar ao inicio";
+                }
             mysqli_close ($mysqli);
 
         }

@@ -6,11 +6,18 @@
  - [CDU 02](#CDU-02): Efetuar login.
  - [CDU 03](#CDU-03): Logout.
  - [CDU 04](#CDU-04): Editar dados.
- - [CDU 04](#CDU-05): Excluir dados.
- - [CDU 05](#CDU-06): Busca.
- - [CDU 05](#CDU-07): Fazer postagem.
- - [CDU 05](#CDU-08): Editar postagem.
- - [CDU 05](#CDU-09): Excluir postagem.
+ - [CDU 05](#CDU-05): Excluir dados.
+ - [CDU 06](#CDU-06): Busca.
+ - [CDU 07](#CDU-07): Fazer postagem.
+ - [CDU 08](#CDU-08): Editar postagem.
+ - [CDU 09](#CDU-09): Excluir postagem.
+ - [CDU 10](#CDU-09): Comentar postagem.
+ - [CDU 11](#CDU-09): Editar comentario.
+ - [CDU 12](#CDU-09): Excluir comentario.
+ - [CDU 13](#CDU-09): Curtir posttagens.
+ - [CDU 14](#CDU-09): Curtir comentarios.
+ - [CDU 15](#CDU-09): Descurtir posttagens.
+ - [CDU 16](#CDU-09): Descurtir comentarios.
  
 
 
@@ -127,15 +134,23 @@ Busca
 
 **Fluxo Principal**
 
-1. O usuário entra no site e visualiza o perfil.
-2. O usuário se direciona até a barra de busca e digita o ursername do usuario que deseja encontrar.
-3. O sistema mostra os resultados dos perfis dos usuarios encontrados.
+1. O usuário entra site e ve o icone da barra de busca.
+2. O usuário se direciona até a barra de busca e digita o ursername do usuario ou o topico que deseja encontrar.
+3. O sistema mostra os resultados dos perfis dos usuarios e os titulos dos posts encontrados com o que foi digitado.
+4. O usuario clica no destino que deseja e é direcionado para o post, ou para o perfil do usuario.
 
 **Fluxo Alternativo A**
 
-1. O usuário entra no site e visualiza o perfil.
-2. O usuário se direciona até a barra de busca e digita o ursername que deseja encontrar.
-3. O sistema exibe uma mensagem de "usuário não encontrado".
+1. O usuário entra site e ve o icone da barra de busca.
+2. O usuário se direciona até a barra de busca nao digita nada.
+3. O sistema exibe uma mensagem dizendo "Nenhum resultado para sua busca encontrado :(".
+
+**Fluxo Alternativo B**
+
+1. O usuário entra site e ve o icone da barra de busca.
+2. O usuário se direciona até a barra de busca e digita um caracter que acha que esta presente no nome de usuario ou no post que deseja.
+3. O sistema exibe todos os perfil e posts com os caracteres digitado..
+
 
 ### CDU 07
 
@@ -209,3 +224,93 @@ Exluir postagem
 
 1. O usuario, em sua timeline, vê a postagem que deseja apagar e clica em excluir.
 2. O sistema atualiza a pagina, agora com aquela postagem excluida do sistema.
+
+### CDU 10
+
+comentar postagem
+
+**Fluxo Principal**
+
+1. O usuario, ve um post e deseja comenta-lo.
+2. O usuario clica no icone de converna dentro do balão da postagem
+3. o sistema o direciona para uma pagina, onde é possivel ver outros comentarios, se houve, e onde há um local para comentar.
+4. O usuario digita o que deseja no campo de comentario, e então envia.
+5. o sistema atualliza, agora mostranddo o comentario que fez, com o titulo como "Re: (Mensagem do titulo que esta comentando)".
+
+**Fluxo Alternativo A**
+
+1. O usuario, ve um post e deseja comenta-lo.
+2. O usuario clica no icone de converna dentro do balão da postagem
+3. o sistema o direciona para uma pagina, onde é possivel ver outros comentarios, se houve, e onde há um local para comentar.
+4. O usuario não digita nada no campo de comentario, e então envia.
+5. o sistema exibe uma mensagem indicando que não é possivel escrever um comentario vazio".
+
+### CDU 11
+
+Editar comentario
+
+**Fluxo Principal**
+
+1. O usuario, ve seu comentario em uma postagem e deseja edita-lo.
+2. O usuario clica no icone de lapis dentro do balão do comentario.
+3. o sistema o direciona para uma pagina, onde há um campo preenchido com texto do comentario feito.
+4. O usuario digita o que deseja no campo de comentario, e então envia.
+5. o sistema atualliza, agora mostranddo o comentario agora editado, com o titulo como "Re: (Mensagem do titulo que esta comentando)".
+
+**Fluxo Alternativo A**
+
+1. O usuario, ve seu comentario em uma postagem e deseja edita-lo.
+2. O usuario clica no icone de lapis dentro do balão do comentario.
+3. o sistema o direciona para uma pagina, onde há um campo preenchido com texto do comentario feito.
+4. O usuario não digita nada no campo de comentario, e então envia.
+5. o sistema exibe uma mensagem indicando que não é possivel escrever um comentario vazio".
+
+### CDU 12
+
+Editar comentario
+
+**Fluxo Principal**
+
+1. O usuario, ve prorprio comentario em uma postagem e deseja exclui-lo.
+2. O usuario clica no icone de lixeira dentro do balão do comentario.
+3. o sistema exibe uma mensagem dizendo quw o comentario foi excluido, e então retorna o usuario para a pagina da postagem após 2 segundos.
+
+### CDU 13
+
+curtir postagem
+
+**Fluxo Principal**
+
+1. O usuario, ve uma postagem e deseja curtir.
+2. O usuario clica no icone de coração, dentro do balão da postagem.
+3. O sistema atualiza a pagina, agora com o simbolo de coração diferentte, indicando que a postagem foi curtida.
+
+### CDU 14
+
+descurtir postagem
+
+**Fluxo Principal**
+
+1. O usuario, ve uma postagem que curtiu e deseja descurtir.
+2. O usuario clica no icone de coração, dentro do balão da postagem.
+3. O sistema atualiza a pagina, agora com o simbolo de coração diferentte, indicando que a postagem foi descurtida.
+
+### CDU 15
+
+curtir comentario
+
+**Fluxo Principal**
+
+1. O usuario, ve um comentario e deseja curtir.
+2. O usuario clica no icone de coração, dentro do balão do comentario.
+3. O sistema atualiza a pagina, agora com o simbolo de coração diferentte, indicando que o comentario foi curtido.
+
+### CDU 16
+
+descurtir comentario
+
+**Fluxo Principal**
+
+1. O usuario, ve um comentario que curtiu e deseja descurtir.
+2. O usuario clica no icone de coração, dentro do balão do comentario.
+3. O sistema atualiza a pagina, agora com o simbolo de coração diferentte, indicando que o comentario foi descurtido.
