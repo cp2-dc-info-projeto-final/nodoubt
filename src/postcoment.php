@@ -116,7 +116,6 @@ include "autentica.inc";
 </div>
 
 <div class="container">
-    
 <?php
 
         $sql = "SELECT * FROM comentusuarios WHERE codpostcoment = $idpost;";
