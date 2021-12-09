@@ -28,8 +28,8 @@ include "autentica.inc";
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    
     <script src="https://kit.fontawesome.com/785c80f02e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="https://www.w3schools.com/w3css/3/w3.css">
-
-    <link rel="stylesheet" href="detalhes.css">
+    
+  
 
 </head>
 <body>
@@ -98,13 +98,6 @@ include "autentica.inc";
 </header>
 
 <h1>   
-    <div class="container">
-
-                    <div class="card">
-                     <div class="card-header">
-                    </div>
-                    <div class="card-content">
-                    <div class="card-content-area">
 
     <?php
     
@@ -123,6 +116,7 @@ include "autentica.inc";
 </div>
 
 <div class="container">
+    
 <?php
 
         $sql = "SELECT * FROM comentusuarios WHERE codpostcoment = $idpost;";
@@ -169,6 +163,7 @@ include "autentica.inc";
 </div>
 <br>
 <div>
+
     <form action="Recebedados.php" method="POST">
         <input type="hidden" name="operacao" value="comentar">
         <input type="hidden" name="idusercomentou" value="<?php echo $codigin?>">
