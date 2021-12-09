@@ -64,11 +64,11 @@
                     <form action="Recebedados.php" method="POST">
                     <input type="hidden" name="operacao" value="cadastrar">                       
                     <p>Nome de usuario: <input type="text" placeholder="limite de 12 caracteres..." name="username" size="25" value="<?php echo $user;?>"> </p>
-                    <p>Senha:<br> <input type="password" placeholder="Ex: 1a2b3c4d5e " name="senha" size="25" value="<?php echo $user;?>"> </p>
+                    <p>Senha:<br> <input type="password" placeholder="Ex: 1a2b3c4d5e " name="senha" size="25"> </p>
                     <p>Confirmar senha:<br> <input type="password" placeholder=" Digite aqui sua senha novamente..." name="senhadois" size="25"> </p>
-                    <p>Nome: <input type="text" placeholder="Deve possuir entre 5 a 40 caracteres" name="nome" size="40"> </p>
-                    <p>Data de nascimento: <input type="text"  placeholder="Ex: dia/mês/ano..." name="idade" size="25"> </p>
-                    <p>E-mail: <input type="text" placeholder="Ex: exemplo@yahoo.com" name="email" size="30"></p>
+                    <p>Nome: <input type="text" placeholder="Deve possuir entre 5 a 40 caracteres" name="nome" size="40" value="<?php echo $nome;?>"> </p>
+                    <p>Data de nascimento: <input type="text"  placeholder="Ex: dia/mês/ano..." name="idade" size="25" value="<?php echo $id;?>"> </p>
+                    <p>E-mail: <input type="text" placeholder="Ex: exemplo@yahoo.com" name="email" size="30" value="<?php echo $email;?>"></p>
                                 
 
                         <div class="card-footer">

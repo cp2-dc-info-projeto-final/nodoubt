@@ -22,7 +22,7 @@
             session_start();
             $_SESSION["usernameusuario"] = $username;
             $_SESSION["emailusuario"] = $email;
-            $_SESSION["senhacript"] = $senha;
+            $_SESSION["senhacript"] = $usuario["senhausuario"];
             $img = rand(1, 10);
             $_SESSION["fotoperfil"] = $img;
             $_SESSION["permiss"] = $permiss;
