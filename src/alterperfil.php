@@ -188,7 +188,7 @@ mysqli_close($mysqli);
     <p class="w3-medium" style="color: white;">
          Desenvolvido por: <br>
          Vicky Wingler<br>
-         Julia Sena<br>
+         Júlia Sena<br>
          Vitoria Costa<br>
          Caio Felipe <br>
          Estudantes do <a href="https://www.cp2.g12.br/index.php" target="_blank"> Colégio Pedro II</a></p>
