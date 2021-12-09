@@ -428,10 +428,10 @@ function Teste_edit($non1, $non2, $id, $eml, $erro, $data){
                     }
 
                     if( $linhas == 0){
-                        echo $busca." Não foi encontrado em nenhum titulo...";
+                        echo $busca." Não foi encontrado nenhuma postagem com este título <br>";
                     }
                     else{
-                        echo "titulos econtrados: $linhas.";
+                        echo "Títulos econtrados: $linhas.";
                         for($i=0; $i < $linhas; $i++){
                         $posti = mysqli_fetch_array($res);
                         $cod = $posti["codpost"];
@@ -456,12 +456,12 @@ function Teste_edit($non1, $non2, $id, $eml, $erro, $data){
                     }
 
                     if( $linhas == 0){
-                        echo "Nenhum usuario encontrado...";
+                        echo "Nenhum usuário encontrado...";
                     }
 
                     else{
                         $linhas = mysqli_num_rows($res);
-                        echo "Perfis econtrados: $linhas.";
+                        echo "<br>Perfis econtrados: $linhas.";
                         for($i=0; $i < $linhas; $i++){
                         $usuario = mysqli_fetch_array($res);
                         ?>
@@ -490,7 +490,7 @@ function Teste_edit($non1, $non2, $id, $eml, $erro, $data){
 
                 }
                 else{
-                    echo "<p><a href='index.php'>Retornar ao inicio";
+                    echo "<p><a href='index.php'>Retornar ao início";
                 }
             mysqli_close ($mysqli);
 
@@ -512,7 +512,7 @@ function Teste_edit($non1, $non2, $id, $eml, $erro, $data){
 
             if (empty($postagem)){
 
-                echo "A postagem não pode ser concluida pois o campo da postagem esta vazio";
+                echo "A postagem não pode ser concluída pois o campo da postagem está vazio";
                 echo "<p><a href='Perfil.php'> Perfil";
                 exit;
             }
