@@ -90,8 +90,6 @@
     </div>
 </header>
 
-
-
 <div id="content">
 
       <h4><?php 
@@ -128,7 +126,9 @@
     if ($linhas == 0){
 
     ?> 
+     
         <div class="container" >
+            
      <?php
 
      echo"<h1>  Este usuario não fez nenhuma postagem</h1>";
