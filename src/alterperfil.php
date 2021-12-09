@@ -20,11 +20,14 @@
 <script src="https://kit.fontawesome.com/785c80f02e.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" href="https://www.w3schools.com/w3css/3/w3.css">
 
+<link rel="stylesheet" href="detalhe.css">
+
+
         <title><?php echo $nomeuser; ?></title>
 </head>
   <body>
 
-  <header>
+<header>
   <div class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="row">
@@ -89,7 +92,7 @@
 
 
 
-  <div id="content">
+<div id="content">
 
       <h4><?php 
       
@@ -113,28 +116,33 @@
                 ?>
             </div></h3>
 
+            <div id="content-post-position-alter">
+
 <?php
     $sql = "SELECT * FROM postagemusuarios WHERE userpost ='$nomeuser';";
     $res = mysqli_query($mysqli, $sql);
     $linhas = mysqli_num_rows($res);
 
+
+        
     if ($linhas == 0){
 
     ?> 
         <div class="container" >
-    <div id="content-post-position"> <?php
+     <?php
 
      echo"<h1>  Este usuario não fez nenhuma postagem</h1>";
     ?></div>
-    </div> <?php
+    <?php
     }
 
 else{
 
   for($i=0; $i < $linhas; $i++){
     $post = mysqli_fetch_array($res);
-
-    ?><div id="content-post-b"><?php
+    
+    ?><div id="content-post-b">
+        <?php
 
     echo "<h1>".$post["userpost"]."<br></h1>";
     echo "<h2>".$post["titulopost"]."<br></h2>";
@@ -164,17 +172,19 @@ else{
               <input type="hidden" name="postid" value="<?php echo $idpost?>"></input>
               <button type="submit" value="Excluir"><i class="fas fa-trash-alt" title="excluir postagem!"></i></button>
               </form>
+            <br><br>
         <?php
+
             }
     }
 
 }
 mysqli_close($mysqli);
-?>
+?></h3></div> 
 
 <br>  <br>  <br>  <br>  <br>  <br>   <br>  <br>  <br>  <br> <br>
   
-  <footer class="w3-container w3-padding-64 w3-center  w3-xlarge" style= "background-color: #343a40">
+  <footer class="w3-container w3-padding-64 w3-center  w3-xlarge" style= "background-color: #343a40; width:100%">
     <p class="w3-medium" style="color: white;">
          Desenvolvido por: <br>
          Vicky Wingler<br>
