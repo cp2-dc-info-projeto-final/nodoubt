@@ -194,13 +194,14 @@ function Teste_edit($non1, $non2, $id, $eml, $erro, $data){
             $username = $_POST["username"];
             $nome = $_POST["nome"];
             $idade = $_POST["idade"];
+            $senha = $_POST["senha"];
             $email = $_POST["email"];
             $erro = 0;
             $senha2 = $_POST["senhadois"];
             $linhas = 0;
             Global $data;
 
-            $funcao = Teste_edit($username, $nome, $idade, $email, $erro, $data);
+            $funcao = Teste_form($username, $senha, $senha2, $nome, $idade, $email, $erro, $data);
             
             $erro = $funcao[0];
             $idade = $funcao[1];
@@ -230,8 +231,8 @@ function Teste_edit($non1, $non2, $id, $eml, $erro, $data){
             
             if($erro == 0) {
                 $senhacript = password_hash($senha, PASSWORD_DEFAULT);
-                $sql ="INSERT INTO cadastrousuarios (usernameusuario,nomeusuario,idadeusuario,emailusuario)";        
-                $sql .= "VALUES ('$username','$nome','$data','$email')";
+                $sql ="INSERT INTO cadastrousuarios (usernameusuario, senhausuario, nomeusuario,idadeusuario,emailusuario)";        
+                $sql .= "VALUES ('$username','$senhacript','$nome','$data','$email')";
         
                 mysqli_query($mysqli,$sql);
                 mysqli_close ($mysqli);

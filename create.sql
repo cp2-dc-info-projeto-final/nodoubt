@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 09-Dez-2021 às 23:06
+-- Tempo de geração: 09-Dez-2021 às 23:44
 -- Versão do servidor: 10.4.21-MariaDB
 -- versão do PHP: 7.3.31
 
@@ -20,7 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `nodoubt`
 --
-
 DROP DATABASE IF EXISTS nodoubt;
 CREATE DATABASE IF NOT EXISTS `nodoubt` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `nodoubt`;
@@ -45,7 +44,14 @@ CREATE TABLE IF NOT EXISTS `cadastrousuarios` (
   `emailusuario` varchar(30) NOT NULL,
   `permissadm` int(2) NOT NULL,
   PRIMARY KEY (`codusuario`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `cadastrousuarios`
+--
+
+INSERT INTO `cadastrousuarios` (`codusuario`, `usernameusuario`, `senhausuario`, `nomeusuario`, `idadeusuario`, `emailusuario`, `permissadm`) VALUES
+(1, 'NouAdm', '$2y$10$lKIKpG092z06WPwxIhDLK.qKMsipKDTCGpCHz.0cd/Gcl4BSXkG4e', 'vicky do nascimento ', '20/07/2004', 'nodoubttt0@gmail.com', 1);
 
 -- --------------------------------------------------------
 
