@@ -130,7 +130,7 @@
         <div class="container" >
             
      <?php
-
+    
      echo"<h1>  Este usuario não fez nenhuma postagem</h1>";
     ?></div>
     <?php
@@ -173,12 +173,20 @@ else{
               <button type="submit" value="Excluir"><i class="fas fa-trash-alt" title="excluir postagem!"></i></button>
               </form>
             <br><br>
-        <?php
-
+            <?php
+        
+             
             }
-    }
+            ?>
+             
+            <br> <br> <br> <br> <br> <br> <br> 
+            <?php
+    }   
 
 }
+
+
+
 mysqli_close($mysqli);
 ?></h3></div> 
 
