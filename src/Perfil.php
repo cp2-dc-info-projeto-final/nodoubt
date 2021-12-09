@@ -210,7 +210,7 @@ $nome = $usuario["usernameusuario"];
          Desenvolvido por: <br>
          Vicky Wingler<br>
          Júlia Sena<br>
-         Vitoria Costa<br>
+         Vitória Costa<br>
          Caio Felipe <br>
          Estudantes do <a href="https://www.cp2.g12.br/index.php" target="_blank"> Colégio Pedro II</a></p>
   <p class="w3-medium" style="color: white;">
