@@ -50,12 +50,10 @@
                           session_start();
                           if(!isset($_SESSION["emailusuario"])){
                           ?>
-                            <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-log-in"></span> Login<span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="login.html">Login</a></li>
-                                    <li><a href="Cadastro.php">Se Cadastrar</a></li>
-                                </ul>
+                            
+                            <li><a href="Login.html"> <button><i class="fas fa-sign-in-alt"></i><button>
                             </li>
+
                             <?php
                           }
                           else{
@@ -86,19 +84,19 @@
 <br>
 <div>
   
-<footer class="w3-container w3-padding-64 w3-center  w3-xlarge" style= "background-color: #343a40">
+  <footer class="w3-container w3-padding-64 w3-center  w3-xlarge" style= "background-color: #343a40">
     <p class="w3-medium" style="color: white;">
          Desenvolvido por: <br>
          Vicky Wingler<br>
          Júlia Sena<br>
-         Vitória Costa<br>
+         Vitoria Costa<br>
          Caio Felipe <br>
          Estudantes do <a href="https://www.cp2.g12.br/index.php" target="_blank"> Colégio Pedro II</a></p>
   <p class="w3-medium" style="color: white;">
-  <section id="contactus"> Contato: <a href="#" target="_blank">nodoubt@gmail.com</a></p>
+  <section id="contactus"> Contato: <a href="https://twitter.com/Wingler_Vtt" target="_blank"></a></p>
     </section>
-</footer>
 
+</footer>
 </div>
   </body>
 </html>
