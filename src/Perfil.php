@@ -37,8 +37,8 @@ $nome = $usuario["usernameusuario"];
 
                     <div class="navbar-collapse collapse" id="mobile_menu">
                         <ul class="nav navbar-nav">
-                            <li><a href="sobrenos.php">Sobre nos</a></li>
-                            <li><a href="#contactus">Contatos</a></li>
+                            <li><a href="sobrenos.php">SOBRE NÓS</a></li>
+                            <li><a href="#contactus">FALE CONOSCO</a></li>
                         </ul>
                         <ul class="nav navbar-nav">
                             <li>
@@ -92,8 +92,7 @@ $nome = $usuario["usernameusuario"];
       <h4><div class="container">
        <?php echo"<p><img src='perfis/$img.jpeg' width='100' height='100'></p>" ?>
       </a></p></div>  <?php
-      echo "Nome de usuario: ".$usuario["usernameusuario"]."<br>";
-      echo "Senha: ".$usuario["senhausuario"]."<br>";
+      echo "Nome de usuário: ".$usuario["usernameusuario"]."<br>";
       echo "Nome: ".$usuario["nomeusuario"]."<br>";
       echo "Data de nascimento: ".$usuario["idadeusuario"]."<br>";
       echo "Email: ".$usuario["emailusuario"]."<br>";
@@ -102,12 +101,12 @@ $nome = $usuario["usernameusuario"];
      
       if($usuario["permissadm"] == 1){
         ?>
-      <p><a href='IndexAdm.php'>Usuarios</a></p>
+      <p><a href='IndexAdm.php'>Usuários</a></p>
         <?php
     }
       ?>
   
-    <?php echo"<p><a href='EditaDados.php?emailusuario=". $_SESSION["emailusuario"]."'>Edita Dados</a><br>";?> 
+    <?php echo"<p><a href='EditaDados.php?emailusuario=". $_SESSION["emailusuario"]."'>Editar Dados</a><br>";?> 
     <p><p><a href="Logout.php">Sair</a></p></p>
   </div></h3></div>
 
@@ -156,7 +155,7 @@ $nome = $usuario["usernameusuario"];
 
       if ($linhas == 0){
 
-           echo"<h1>Voce não fez nenhuma postagem</h1>";
+           echo"<h1>Você não fez nenhuma postagem.</h1>";
 
       }
 
@@ -207,7 +206,7 @@ $nome = $usuario["usernameusuario"];
     <p class="w3-medium" style="color: white;">
          Desenvolvido por: <br>
          Vicky Wingler<br>
-         Julia Sena<br>
+         Júlia Sena<br>
          Vitoria Costa<br>
          Caio Felipe <br>
          Estudantes do <a href="https://www.cp2.g12.br/index.php" target="_blank"> Colégio Pedro II</a></p>
