@@ -73,19 +73,19 @@
                     $id .= $ano;
                     //impede idade com data do ano menor que 1000
                     if (strlen($ano) < 4) {
-                        echo "O campo: Data de Nascimento exige um ano valido.<br>";
+                        echo "O campo: Data de Nascimento exige um ano válido.<br>";
                         $erro = 1;
                     }
                     //impede idade nao numerica
                     if (!is_numeric($id)){
 
-                        echo "O campo Data de nascimento só aceita nuemros.";
+                        echo "O campo Data de nascimento só aceita números.";
                         $erro = 1;
                     }
                     else {
                         // verifica se a data é válida
                         if (!checkdate($mes, $dia, $ano)) {
-                            echo "O campo: Data de Nascimento não indentificou sua data como valida.<br>";
+                            echo "O campo: Data de Nascimento não indentificou sua data como válida.<br>";
                             $erro = 1;
                         }
                     }
@@ -97,7 +97,7 @@
             }
             // verifica se o email possui menos de 8 letras
             if(strlen($eml) < 8){
-            echo "O campo: E-mail esta muito curto e não foi digitado corretamente.<br>";
+            echo "O campo: E-mail esta muito curto ou não foi digitado corretamente.<br>";
             $erro = 1;
             }
             // impede email sem @  
@@ -157,8 +157,9 @@
             }
             
             if($erro == 0) {
+                $senhacript = password_hash($senha, PASSWORD_DEFAULT);
                 $sql ="INSERT INTO cadastrousuarios (usernameusuario,senhausuario,nomeusuario,idadeusuario,emailusuario)";        
-                $sql .= "VALUES ('$username','$senha','$nome','$data','$email')";
+                $sql .= "VALUES ('$username','$senhacript','$nome','$data','$email')";
         
                 mysqli_query($mysqli,$sql);
                 mysqli_close ($mysqli);

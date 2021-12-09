@@ -39,7 +39,7 @@ body {
     flex-direction: column;
    
 }
-
+/* Area das timeline*/
 
 #content-post-b{
 
@@ -51,6 +51,7 @@ body {
     border-radius: 80px;
     width: 600px;
     height: 360px;
+    display: flex;
     align-items: left;
     justify-content: right;
     flex-direction: column;
@@ -66,25 +67,21 @@ body {
 
 }
 
-/* era pra editar o botão */
-
-#dropdownMenuLink{
-
-    position: fi;
-    top: 90px;
-    left: 450px;
-
-}
-
 
 #content-post-position-alter{
 
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 80px;
+    left: 500px;
 
 
 }
 
+footer{
 
+    justify-content: center;
+
+
+
+}
 

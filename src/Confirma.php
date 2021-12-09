@@ -14,7 +14,7 @@
                 $usuario = mysqli_fetch_array($res);
                 $username = $usuario["usernameusuario"];
                 $permiss = $usuario["permissadm"];
-                if($senha != $usuario["senhausuario"]){
+                if(!password_verify($senha, $usuario["senhausuario"])){
                     echo "Senha inválida!";
                     echo "<p><a href='login.html'>Página de login</a></p>";
         }
@@ -22,7 +22,7 @@
             session_start();
             $_SESSION["usernameusuario"] = $username;
             $_SESSION["emailusuario"] = $email;
-            $_SESSION["senhausuario"] = $senha;
+            $_SESSION["senhacript"] = $senha;
             $img = rand(1, 10);
             $_SESSION["fotoperfil"] = $img;
             $_SESSION["permiss"] = $permiss;
