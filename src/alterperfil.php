@@ -129,6 +129,7 @@
      
         <div class="container" >
             
+            
      <?php
     
      echo"<h1>  Este usuario não fez nenhuma postagem</h1>";
@@ -157,6 +158,7 @@ else{
     
     if($_SESSION["usernameusuario"] == $nomeuser){
         ?>
+        
           <form action="editapost.php" method="POST" >
               <input type="hidden" name="postid" value="<?php echo $idpost?>"></input>
               <input type="hidden" name="operacao" value="editar"></p>
@@ -172,14 +174,14 @@ else{
               <input type="hidden" name="postid" value="<?php echo $idpost?>"></input>
               <button type="submit" value="Excluir"><i class="fas fa-trash-alt" title="excluir postagem!"></i></button>
               </form>
-            <br><br>
+            <br><br><br>
             <?php
         
              
             }
             ?>
              
-            <br> <br> <br> <br> <br> <br> <br> 
+            <br> <br> <br> <br> <br> <br> <br> <br>
             <?php
     }   
 

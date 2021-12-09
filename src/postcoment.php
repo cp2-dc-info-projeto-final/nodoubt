@@ -29,10 +29,11 @@ include "autentica.inc";
     <script src="https://kit.fontawesome.com/785c80f02e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="https://www.w3schools.com/w3css/3/w3.css">
     <link rel="stylesheet" href="detalhe.css">
-  
+    <title>Comentário</title>
 
 </head>
 <body>
+
 
 
 
@@ -103,18 +104,19 @@ include "autentica.inc";
 <div id="contentt">
 
 
-
+<h1>
     <?php
     
     echo $post["titulopost"];
- 
+    
     ?>
+    </h1>
 
-<h6>
+<h4>
     <?php echo "<a href='alterperfil.php?usernameusuario=". $user."'>-$user </a>";
 ?>
-
-<h3>
+</h4>
+<h2>
     <?php echo $conteudo;
 ?>
 </h3>
