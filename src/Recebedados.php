@@ -19,7 +19,7 @@
                 <div class="card-content-area">
         <?php 
     
-    function Teste_form($non1, $sen, $sen2, $non2, $id, $eml, $erro, $data){
+function Teste_form($non1, $sen, $sen2, $non2, $id, $eml, $erro, $data){
 
             //impede nomes de usuario menores que 5
             if(strlen($non1) < 5){       
@@ -106,7 +106,80 @@
             $erro = 1;
             }
             return array ($erro, $id, $data);
-       }
+}
+function Teste_edit($non1, $non2, $id, $eml, $erro, $data){
+
+    //impede nomes de usuario menores que 5
+    if(strlen($non1) < 5){       
+    echo "O campo: Nome de Usuario deve possuir no mínimo 5 caracteres.<br>";
+    $erro = 1;
+    }
+    // impede nomes de usuario maiores que 12
+    if(strlen($non1) > 12){
+    echo "O campo: Nome de Usuario deve possuir no maximo 12 caracteres.<br>";
+    $erro = 1;
+    }
+    // impede nomes vazios ou sem espaço
+    if(empty($non2) OR strstr($non2,' ') == FALSE){    
+    echo "O campo: Nome esta vazio ou foi inserido de forma incorreta. <br>";
+    $erro = 1;
+    }
+    // impede escrita de idade menor que 8
+    if ( strlen($id) < 8){
+    echo "O campo: Data de Nascimento deve possui no minimo 8 digitos.<br>";
+    $erro = 1;
+    }
+    else{
+        //impede idade de /
+       if(strpos($id, "/") !== FALSE){
+        
+            $partes = explode("/", $id);
+
+            $dia = $partes[0];
+
+            $mes = $partes[1];
+
+            $ano = isset($partes[2]) ? $partes[2] : 0;
+            $data = $id;
+            $id = $dia;
+            $id .= $mes;
+            $id .= $ano;
+            //impede idade com data do ano menor que 1000
+            if (strlen($ano) < 4) {
+                echo "O campo: Data de Nascimento exige um ano válido.<br>";
+                $erro = 1;
+            }
+            //impede idade nao numerica
+            if (!is_numeric($id)){
+
+                echo "O campo Data de nascimento só aceita números.";
+                $erro = 1;
+            }
+            else {
+                // verifica se a data é válida
+                if (!checkdate($mes, $dia, $ano)) {
+                    echo "O campo: Data de Nascimento não indentificou sua data como válida.<br>";
+                    $erro = 1;
+                }
+            }
+         }
+        else{
+            echo "O campo: Data de Nascimento deve possuir barras de separação.<br>";
+            $erro = 1;
+        }
+    }
+    // verifica se o email possui menos de 8 letras
+    if(strlen($eml) < 8){
+    echo "O campo: E-mail esta muito curto ou não foi digitado corretamente.<br>";
+    $erro = 1;
+    }
+    // impede email sem @  
+    if(strstr($eml,'@') == FALSE){
+    echo "O campo: E-mail não foi digitado corretamente.<br>";
+    $erro = 1;
+    }
+    return array ($erro, $id, $data);
+}
 
     $operacao = $_POST["operacao"];
         include "conecta_mysql.inc";
@@ -119,7 +192,6 @@
         </div> <?php
             
             $username = $_POST["username"];
-            $senha = $_POST["senha"];
             $nome = $_POST["nome"];
             $idade = $_POST["idade"];
             $email = $_POST["email"];
@@ -128,7 +200,7 @@
             $linhas = 0;
             Global $data;
 
-            $funcao = Teste_form($username, $senha, $senha2, $nome, $idade, $email, $erro, $data);
+            $funcao = Teste_edit($username, $nome, $idade, $email, $erro, $data);
             
             $erro = $funcao[0];
             $idade = $funcao[1];
@@ -158,8 +230,8 @@
             
             if($erro == 0) {
                 $senhacript = password_hash($senha, PASSWORD_DEFAULT);
-                $sql ="INSERT INTO cadastrousuarios (usernameusuario,senhausuario,nomeusuario,idadeusuario,emailusuario)";        
-                $sql .= "VALUES ('$username','$senhacript','$nome','$data','$email')";
+                $sql ="INSERT INTO cadastrousuarios (usernameusuario,nomeusuario,idadeusuario,emailusuario)";        
+                $sql .= "VALUES ('$username','$nome','$data','$email')";
         
                 mysqli_query($mysqli,$sql);
                 mysqli_close ($mysqli);

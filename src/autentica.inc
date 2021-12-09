@@ -35,7 +35,7 @@
                     else{
                         $usuario = mysqli_fetch_array($res);
                         $Globalpermiss = $usuario["permissadm"];
-                        if(!password_verify($senhacript, $usuario["senhausuario"])){
+                        if(!hash_equals($usuario["senhausuario"], $senhacript)){
                         unset($_SESSION["emailusuario"]);
                         unset($_SESSION["senhacript"]);
                         echo "Senha invalida.<br>";
