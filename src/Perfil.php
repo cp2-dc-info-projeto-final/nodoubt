@@ -107,7 +107,7 @@ $nome = $usuario["usernameusuario"];
   
     <?php echo"<p><a href='EditaDados.php?emailusuario=". $_SESSION["emailusuario"]."'>Editar Dados</a><br>";?> 
     <p><p><a href="Logout.php">Sair</a></p></p>
-  </div></h3></div>
+  </div></h3>
 
 
     <?php $iduser = $usuario["codusuario"];
@@ -118,7 +118,7 @@ $nome = $usuario["usernameusuario"];
 
     $ask = 1;
     ?>
-
+</div>
 
       <div class="container">
 
@@ -150,24 +150,11 @@ $nome = $usuario["usernameusuario"];
 
         for($i=0; $i < $linhas; $i++){
           $post = mysqli_fetch_array($res);
-          $idpost = $post["codpost"];          
-          ?>
-            <div class='container'>
-            <div id='content-post-b'>
-     
-            <img src="<?php echo $x ?>  " style="width:60px;">
-            <?php
-          echo "<h1>".$post["userpost"]."</h1>";
-          echo "<h2>".$post["titulopost"]."</h2>";
-          echo "<h3>".$post["postcontent"]."<br></h3";
-          echo "----------------------------------<br>";
-        
-          
+
            $post = mysqli_fetch_array($res);
           $idpost = $post["codpost"];  
           $title = $post["titulopost"];
           ?>
-              <div class='container'>
               <div id='content-post-b'>
               
                   <img src="<?php echo $x ?> " style="width:60px;">
@@ -239,9 +226,7 @@ $nome = $usuario["usernameusuario"];
                         <input type="hidden" name="postid" value="<?php echo $idpost?>"></input>
                         <button type="submit" value="Excluir"><i class="fas fa-trash-alt" title="excluir postagem!"></i></button>
                         </form>
-                
-                  </div>
-                    </div>
+
                     </a><br>
                     <?php
                    }
@@ -249,8 +234,12 @@ $nome = $usuario["usernameusuario"];
       mysqli_close($mysqli);
 ?>
   </div>
+                
+  </div>
+          </div>
+</div>
+  <br>  <br>  <br>  <br>  <br>  <br>   <br>  <br>  <br>  <br> <br>  <br>  <br>  <br>  <br>  <br>  <br>   <br>  <br>  <br>  <br> <br>
 
-  <br>  <br>  <br>  <br>  <br>  <br>   <br>  <br>  <br>  <br> <br>
   
   <footer class="w3-container w3-padding-64 w3-center  w3-xlarge" style= "background-color: #343a40">
     <p class="w3-medium" style="color: white;">
