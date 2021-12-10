@@ -28,7 +28,7 @@
 
                     <div class="navbar-collapse collapse" id="mobile_menu">
                         <ul class="nav navbar-nav">
-                            <li><a href="sobrenos.php">Sobre nos</a></li>
+                            <li><a href="sobrenos.php">Sobre nós</a></li>
                             <li><a href="#contactus">Fale Conosco</a></li>
                         </ul>
                         <ul class="nav navbar-nav">
@@ -50,9 +50,10 @@
                           session_start();
                           if(!isset($_SESSION["emailusuario"])){
                           ?>
-                            
-                            <li><a href="Login.html"> <button><i class="fas fa-sign-in-alt"></i><button>
-                          </li>
+          
+                            <li>
+                              <a href="Login.html"> <button><i class="fas fa-sign-in-alt"></i><button>
+                            </li>
 
                             <?php
                           }

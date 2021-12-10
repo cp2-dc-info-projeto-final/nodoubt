@@ -50,7 +50,7 @@ include "autentica.inc";
 
                     <div class="navbar-collapse collapse" id="mobile_menu">
                         <ul class="nav navbar-nav">
-                            <li><a href="sobrenos.php">Sobre nos</a></li>
+                            <li><a href="sobrenos.php">Sobre nós</a></li>
                             <li><a href="#contactus">Fale Conosco</a></li>
                         </ul>
                         <ul class="nav navbar-nav">
@@ -71,11 +71,8 @@ include "autentica.inc";
                           <?php
                           if(!isset($_SESSION["emailusuario"])){
                           ?>
-                            <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-log-in"></span> Login<span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="login.html">Login</a></li>
-                                    <li><a href="Cadastro.php">Se Cadastrar</a></li>
-                                </ul>
+                            <li>
+                              <a href="Login.html"> <button><i class="fas fa-sign-in-alt"></i><button>
                             </li>
                             <?php
                           }

@@ -62,7 +62,7 @@
     <head>
     
     <body>
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="style.css">
 
 
 <nav class="navbar navbar-fixed-top navbar-dark main-nav">
