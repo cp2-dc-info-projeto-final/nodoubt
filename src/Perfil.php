@@ -21,7 +21,7 @@ $nome = $usuario["usernameusuario"];
 <script src="https://kit.fontawesome.com/785c80f02e.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" href="https://www.w3schools.com/w3css/3/w3.css">
 
-    <link rel="stylesheet" href="detalhe.css">
+    <link rel="stylesheet" href="detalhes.css">
         <title><?php echo $nome;?></title>
 </head>
   <body>
@@ -38,8 +38,8 @@ $nome = $usuario["usernameusuario"];
 
                     <div class="navbar-collapse collapse" id="mobile_menu">
                         <ul class="nav navbar-nav">
-                            <li><a href="sobrenos.php">SOBRE NÓS</a></li>
-                            <li><a href="#contactus">FALE CONOSCO</a></li>
+                            <li><a href="sobrenos.php">Sobre Nós</a></li>
+                            <li><a href="#contactus">Fale Conosco</a></li>
                         </ul>
                         <ul class="nav navbar-nav">
                             <li>
@@ -59,11 +59,8 @@ $nome = $usuario["usernameusuario"];
                           <?php
                           if(!isset($_SESSION["emailusuario"])){
                           ?>
-                            <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-log-in"></span> Login<span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="login.html">Login</a></li>
-                                    <li><a href="Cadastro.php">Se Cadastrar</a></li>
-                                </ul>
+                            <li>
+                              <a href="Login.html"> <button><i class="fas fa-sign-in-alt"></i><button>
                             </li>
                             <?php
                           }
@@ -152,6 +149,19 @@ $nome = $usuario["usernameusuario"];
         ?> <div id="content-post-position"> <?php
 
         for($i=0; $i < $linhas; $i++){
+          $post = mysqli_fetch_array($res);
+          $idpost = $post["codpost"];          
+          ?>
+            <div class='container'>
+            <div id='content-post-b'>
+     
+            <img src="<?php echo $x ?>  " style="width:60px;">
+            <?php
+          echo "<h1>".$post["userpost"]."</h1>";
+          echo "<h2>".$post["titulopost"]."</h2>";
+          echo "<h3>".$post["postcontent"]."<br></h3";
+          echo "----------------------------------<br>";
+        
           
            $post = mysqli_fetch_array($res);
           $idpost = $post["codpost"];  

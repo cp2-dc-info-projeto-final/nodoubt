@@ -12,7 +12,7 @@
 
         <meta name="viewport"content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="estilo.css">
+        <link rel="stylesheet" href="style.css">
 
         <title>Editar post</title>
 
@@ -74,7 +74,7 @@
 
                 ?>
                 
-                <h2>Editar comentario</h2>
+                <h2>Editar comentário</h2>
 
             </div>
 

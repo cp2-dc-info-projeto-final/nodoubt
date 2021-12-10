@@ -20,7 +20,7 @@
 <script src="https://kit.fontawesome.com/785c80f02e.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" href="https://www.w3schools.com/w3css/3/w3.css">
 
-<link rel="stylesheet" href="detalhe.css">
+<link rel="stylesheet" href="detalhes.css">
 
 
         <title><?php echo $nomeuser; ?></title>
@@ -61,11 +61,8 @@
                           <?php
                           if(!isset($_SESSION["emailusuario"])){
                           ?>
-                            <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-log-in"></span> Login<span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="login.html">Login</a></li>
-                                    <li><a href="Cadastro.php">Se Cadastrar</a></li>
-                                </ul>
+                            <li>
+                              <a href="Login.html"> <button><i class="fas fa-sign-in-alt"></i><button>
                             </li>
                             <?php
                           }
@@ -129,6 +126,7 @@
      
         <div class="container" >
             
+            
      <?php
     
      echo"<h1>  Este usuario não fez nenhuma postagem</h1>";
@@ -157,6 +155,7 @@ else{
     
     if($_SESSION["usernameusuario"] == $nomeuser){
         ?>
+        
           <form action="editapost.php" method="POST" >
               <input type="hidden" name="postid" value="<?php echo $idpost?>"></input>
               <input type="hidden" name="operacao" value="editar"></p>
@@ -172,14 +171,14 @@ else{
               <input type="hidden" name="postid" value="<?php echo $idpost?>"></input>
               <button type="submit" value="Excluir"><i class="fas fa-trash-alt" title="excluir postagem!"></i></button>
               </form>
-            <br><br>
+            <br><br><br>
             <?php
         
              
             }
             ?>
              
-            <br> <br> <br> <br> <br> <br> <br> 
+            <br> <br> <br> <br> <br> <br> <br> <br>
             <?php
     }   
 
@@ -192,18 +191,18 @@ mysqli_close($mysqli);
 
 <br>  <br>  <br>  <br>  <br>  <br>   <br>  <br>  <br>  <br> <br>
   
-  <footer class="w3-container w3-padding-64 w3-center  w3-xlarge" style= "background-color: #343a40; width:100%">
+<footer class="w3-container w3-padding-64 w3-center  w3-xlarge" style= "background-color: #343a40">
     <p class="w3-medium" style="color: white;">
          Desenvolvido por: <br>
          Vicky Wingler<br>
          Júlia Sena<br>
-         Vitoria Costa<br>
+         Vitória Costa<br>
          Caio Felipe <br>
          Estudantes do <a href="https://www.cp2.g12.br/index.php" target="_blank"> Colégio Pedro II</a></p>
   <p class="w3-medium" style="color: white;">
-  <section id="contactus"> Contato: <a href="#" target="_blank">nodoubttt0@gmail.com</a></p>
-    </section>
+  <section id="contactus"> Contato: <a href="#" target="_blank">nodoubt@gmail.com</a></p>
 
+    </section>
 </footer>
 
     </body>
