@@ -19,4 +19,5 @@ Projeto Final do Curso Técnico Integrado de Desenvolvimento de Sistemas - Colé
 - [Apresentação](apresentacao.pdf)
 
 **Modelagem do Banco de Dados**
-![Diagrama de Casos de Uso](https://user-images.githubusercontent.com/55743181/145641093-308e40bc-448b-4a4d-a1a9-e30bfeddcccd.jpg)
+
+![Diagrama Banco de Dados](https://user-images.githubusercontent.com/55743181/145641463-7033aa37-a9ca-4843-a12d-7b2faa588928.jpg)
