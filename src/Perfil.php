@@ -149,8 +149,6 @@ $nome = $usuario["usernameusuario"];
         ?> <div id="content-post-position"> <?php
 
         for($i=0; $i < $linhas; $i++){
-          $post = mysqli_fetch_array($res);
-
            $post = mysqli_fetch_array($res);
           $idpost = $post["codpost"];  
           $title = $post["titulopost"];
