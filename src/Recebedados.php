@@ -597,7 +597,7 @@ function Teste_edit($non1, $non2, $id, $eml, $erro, $data){
             else{
 
                 echo "Postagem excluida com exito!";
-                header("refresh:3;url=perfil.php");
+                header("refresh:1;url=perfil.php");
                 exit;
             } 
             mysqli_close ($mysqli);
@@ -714,9 +714,33 @@ function Teste_edit($non1, $non2, $id, $eml, $erro, $data){
                         }
                         else{
                         echo "Voce curtiu este post!";
-                        header("refresh:1;url=perfil.php?operacao=$");
+                        header("refresh:1;url=perfil.php");
                         exit;
                         }
+                }
+                elseif($pt == "coment"){
+
+                    $codogu = $_POST["cudugo"];
+
+                    $sql = "SELECT * FROM comentusuarios WHERE idcoment ='$idopost';";
+                    $res = mysqli_query($mysqli,$sql);
+                    $linhas = mysqli_num_rows($res);
+
+                        for($i=0; $i < $linhas; $i++){
+                            $like = mysqli_fetch_array($res);
+                        }
+
+                        $ncurtida = $laik + $like["likecoment"];
+
+                        $sql = "UPDATE comentusuarios SET likecoment ='$ncurtida' ";
+                        $sql .= "WHERE idcoment = $idopost;";
+            
+                        mysqli_query($mysqli,$sql);
+
+                        echo "Voce curtiu este post!";
+                        header("refresh:1;url=postcoment.php?idpost=$codogu");
+                        exit;
+
                 }
 
         }
@@ -768,6 +792,39 @@ function Teste_edit($non1, $non2, $id, $eml, $erro, $data){
                         header("refresh:1;url=perfil.php?operacao=$");
                         exit;
                         }
+                 }
+                 elseif($pt == "coment"){
+
+                    $codogu = $_POST["cudugo"];
+
+
+                    $sql = "SELECT * FROM comentusuarios WHERE idcoment ='$idopost';";
+                    $res = mysqli_query($mysqli,$sql);
+                    $linhas = mysqli_num_rows($res);
+
+                        for($i=0; $i < $linhas; $i++){
+                            $like = mysqli_fetch_array($res);
+                        }
+
+                        $ncurtida = $laik - $like["likecoment"];
+
+                        $sql = "UPDATE comentusuarios SET likecoment ='$ncurtida' ";
+                        $sql .= "WHERE idcoment = $idopost;";
+            
+                        mysqli_query($mysqli,$sql);
+
+                        $sql ="DELETE FROM curtirusuarios WHERE codpostlike ='$idopost'";
+                        $resul = mysqli_query($mysqli,$sql);
+
+                        if ($resul == FALSE){
+                            echo("Error ao excluir curtidas da tabela: " .mysqli_error($mysqli));
+                            exit;
+                        }
+
+                        echo "Voce descurtiu este post!";
+                        header("refresh:1;url=postcoment.php?idpost=$codogu");
+                        exit;
+
                  }
 
         }

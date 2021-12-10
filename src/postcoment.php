@@ -141,19 +141,72 @@ include "autentica.inc";
         echo "<a href='alterperfil.php?usernameusuario=". $nome."'>-$nome</a>";
         ?></h6><h4><?php
         echo " ". $comentario["comentario"]."<br>";
+        
+           $codugo = $idpost;
+
+        $idpost = $comentario["idcoment"];
+        $title = "Re:";
+        $title .= $post["titulopost"];
+        
+        $mysql = "SELECT * FROM curtirusuarios WHERE userlike ='$nomelogado' AND codpostlike ='$idpost' ;";
+        $resu = mysqli_query($mysqli,$mysql);
+        $linhass = mysqli_num_rows($resu);
+
+        if($linhass == 0){
+
+          $operacao = "curtir";
+
+        }
+
+        elseif($linhass >= 1){
+
+          $operacao = "ncurtir";
+
+        }
+
+        $ask = 1;
+        $pt = "coment";
+        
         ?></h4>
+                <form action="Recebedados.php" method="POST">
+                    <input type="hidden" name="operacao" value="<?php echo $operacao?>"></p>
+                    <input type="hidden" name="postid" value="<?php echo $idpost?>"></input>
+                    <input type="hidden" name="usercod" value="<?php echo $codigin?>"></input>
+                    <input type="hidden" name="userrname" value="<?php echo $nomelogado?>"></input>
+                    <input type="hidden" name="titre" value="<?php echo $title?>"></input>          
+                    <input type="hidden" name="cudugo" value="<?php echo $codugo?>"></input>          
+                    <input type="hidden" name="laiki" value="<?php echo $ask?>"></input>          
+                    <input type="hidden" name="post" value="<?php echo $pt?>"></input>   
+                    
+                    <div style="white-space: nowrap;  hyphens: none;">
+                    <?php
+                    if( $operacao == "curtir"){
+                    ?>   
+
+                        <button style="white-space: nowrap" type="submit" class="submit"><i class="far fa-heart" aria-hidden="true" title="Curtir"></i></button></a>
+
+                      <?php
+                    }
+                    elseif( $operacao == "ncurtir"){
+                    ?>
+                        <button style="white-space: nowrap" type="submit" class="submit"><i class="fas fa-heart" aria-hidden="true" title="Descurtir"></i></button></a>
+
+                    <?php
+                    }            
+                      ?> 
+                      </form>
         
         <form action="editapost.php" method="POST" >
         <input type="hidden" name="postid" value="<?php echo $id?>">
         <input type="hidden" name="idcomen" value="<?php echo $iddois?>">              
               <input type="hidden" name="operacao" value="editarcoment"></p>
-                <input type="submit" value="Editar"></a>
+              <button type="submit" value="Editar"><i class="fas fa-pen" aria-hidden="true" title="editar postagem!"></i></button></a>
               </form>
           <form action="Recebedados.php" method="POST">
               <input type="hidden" name="operacao" value="excluircoment"></p>
               <input type="hidden" name="idcomen" value="<?php echo $iddois?>">              
               <input type="hidden" name="postid" value="<?php echo $id?>"></input>
-                <input type="submit" value="Excluir"></a>
+              <button type="submit" value="Excluir"><i class="fas fa-trash-alt" title="excluir postagem!"></i></button>
               </form>
         
         <?php
