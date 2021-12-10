@@ -704,9 +704,19 @@ function Teste_edit($non1, $non2, $id, $eml, $erro, $data){
             
                         mysqli_query($mysqli,$sql);
 
+
+                        if(isset($_POST["alter"])){
+                            $nomie = $_POST["nomi"];
+                            echo "Voce curtiu este post!";
+                            header("refresh:1;url=alterperfil.php?usernameusuario=$nomie");
+                            exit;
+
+                        }
+                        else{
                         echo "Voce curtiu este post!";
                         header("refresh:1;url=perfil.php?operacao=$");
                         exit;
+                        }
                 }
 
         }
@@ -746,9 +756,18 @@ function Teste_edit($non1, $non2, $id, $eml, $erro, $data){
                             exit;
                         }
 
+                        if(isset($_POST["alter"])){
+                            $nomie = $_POST["nomi"];
+                            echo "Voce descurtiu este post!";
+                            header("refresh:1;url=alterperfil.php?usernameusuario=$nomie");
+                            exit;
+
+                        }
+                        else{
                         echo "Voce descurtiu este post!";
                         header("refresh:1;url=perfil.php?operacao=$");
                         exit;
+                        }
                  }
 
         }
