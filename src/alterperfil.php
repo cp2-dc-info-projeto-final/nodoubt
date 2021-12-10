@@ -9,6 +9,15 @@
  $usuario = mysqli_fetch_array($res);
  $per = $_SESSION["permiss"];
  }
+ $nome = $_SESSION["usernameusuario"];
+ $mysql = "SELECT * FROM cadastrousuarios WHERE usernameusuario = '$nome';";
+ $result = mysqli_query($mysqli,$mysql);
+ $linhaaas = mysqli_num_rows($result);
+ for($i=0; $i < $linhaaas; $i++){
+ $usur = mysqli_fetch_array($result);
+ $iduser = $usur["codusuario"];
+ }
+
 ?>
 
 <html>
@@ -108,6 +117,7 @@
                 echo "Idade: ".$usuario["idadeusuario"]."<br>";
                 echo "Email: ".$usuario["emailusuario"]."<br>";
                 echo "----------------------------------<br>";
+            
                 ?>
             </div></h3>
 
@@ -139,6 +149,7 @@ else{
   for($i=0; $i < $linhas; $i++){
     $post = mysqli_fetch_array($res);
     
+
     ?><div id="content-post-b">
         <?php
 
@@ -146,6 +157,60 @@ else{
     echo "<h2>".$post["titulopost"]."<br></h2>";
     echo "<h3>".$post["postcontent"]."<br></h3";
     echo "----------------------------------<br>";
+    $idpost = $post["codpost"];
+    $usario = $post["userpost"];
+    $title = $post["titulopost"];
+    $pt = "post";
+    $ask = 1;
+    $mysql = "SELECT * FROM curtirusuarios WHERE userlike ='$nome' AND codpostlike ='$idpost' ;";
+    $resu = mysqli_query($mysqli,$mysql);
+    $linhass = mysqli_num_rows($resu);
+
+    if($linhass == 0){
+
+      $operacao = "curtir";
+
+    }
+
+    elseif($linhass >= 1){
+
+      $operacao = "ncurtir";
+
+    }
+
+
+        $alter = 1;
+    ?>
+    
+    
+    <form action="Recebedados.php" method="POST">
+            <input type="hidden" name="operacao" value="<?php echo $operacao?>"></p>
+            <input type="hidden" name="postid" value="<?php echo $idpost?>"></input>
+            <input type="hidden" name="usercod" value="<?php echo $iduser?>"></input>
+            <input type="hidden" name="userrname" value="<?php echo $nome?>"></input>
+            <input type="hidden" name="titre" value="<?php echo $title?>"></input>          
+            <input type="hidden" name="laiki" value="<?php echo $ask?>"></input>          
+            <input type="hidden" name="alter" value="<?php echo $alter?>"></input>          
+            <input type="hidden" name="nomi" value="<?php echo $usario?>"></input>          
+            <input type="hidden" name="post" value="<?php echo $pt?>"></input>      
+                    <?php
+                    if( $operacao == "curtir"){
+                    ?>    
+                        <button type="submit" class="submit"><i class="far fa-heart" aria-hidden="true" title="Curtir"></i></button></a>
+
+                      <?php
+                    }
+                    elseif( $operacao == "ncurtir"){
+                    ?>
+                        <button type="submit" class="submit"><i class="fas fa-heart" aria-hidden="true" title="Descurtir"></i></button></a>
+
+                    <?php
+                    }            
+                      ?> 
+                      </form>
+    
+    <?php
+
 
     $idpost = $post["codpost"];
 
