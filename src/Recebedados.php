@@ -670,6 +670,88 @@ function Teste_edit($non1, $non2, $id, $eml, $erro, $data){
             exit;
 
         }
+        elseif( $operacao == "curtir"){
+            include "autentica.inc";
+            include "conecta_mysql.inc";
+
+            $nomeuser = $_POST["userrname"];
+            $idouser = $_POST["usercod"];
+            $idopost = $_POST["postid"];
+            $titulopost = $_POST["titre"];
+            $laik = $_POST["laiki"];
+            $pt = $_POST["post"];
+
+
+            $sql ="INSERT INTO curtirusuarios (iduserlike, codpostlike, userlike, curtida, titulopostlike)";        
+            $sql .= "VALUES ($idouser,$idopost,'$nomeuser',$laik,'$titulopost')";
+    
+            mysqli_query($mysqli, $sql);
+            
+            if($pt == "post"){
+
+                    $sql = "SELECT * FROM postagemusuarios WHERE codpost ='$idopost';";
+                    $res = mysqli_query($mysqli,$sql);
+                    $linhas = mysqli_num_rows($res);
+
+                        for($i=0; $i < $linhas; $i++){
+                            $like = mysqli_fetch_array($res);
+                        }
+
+                        $ncurtida = $laik + $like["likepost"];
+
+                        $sql = "UPDATE postagemusuarios SET likepost ='$ncurtida' ";
+                        $sql .= "WHERE codpost = $idopost;";
+            
+                        mysqli_query($mysqli,$sql);
+
+                        echo "Voce curtiu este post!";
+                        header("refresh:1;url=perfil.php?operacao=$");
+                        exit;
+                }
+
+        }
+        elseif( $operacao == "ncurtir"){
+            include "autentica.inc";
+            include "conecta_mysql.inc";
+
+            $nomeuser = $_POST["userrname"];
+            $idouser = $_POST["usercod"];
+            $idopost = $_POST["postid"];
+            $titulopost = $_POST["titre"];
+            $laik = $_POST["laiki"];
+            $pt = $_POST["post"];
+
+            if($pt == "post"){
+
+                    $sql = "SELECT * FROM postagemusuarios WHERE codpost ='$idopost';";
+                    $res = mysqli_query($mysqli,$sql);
+                    $linhas = mysqli_num_rows($res);
+
+                        for($i=0; $i < $linhas; $i++){
+                            $like = mysqli_fetch_array($res);
+                        }
+
+                        $ncurtida = $laik - $like["likepost"];
+
+                        $sql = "UPDATE postagemusuarios SET likepost ='$ncurtida' ";
+                        $sql .= "WHERE codpost = $idopost;";
+            
+                        mysqli_query($mysqli,$sql);
+
+                        $sql ="DELETE FROM curtirusuarios WHERE codpostlike ='$idopost'";
+                        $resul = mysqli_query($mysqli,$sql);
+
+                        if ($resul == FALSE){
+                            echo("Error ao excluir curtidas da tabela: " .mysqli_error($mysqli));
+                            exit;
+                        }
+
+                        echo "Voce descurtiu este post!";
+                        header("refresh:1;url=perfil.php?operacao=$");
+                        exit;
+                 }
+
+        }
     ?>
 
     <html>
