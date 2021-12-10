@@ -122,12 +122,14 @@ $nome = $usuario["usernameusuario"];
 
       <div class="container">
 
-      <div id="content-post-a">
+      <div id="content-post-a" align-items="top">
     <form action="Recebedados.php" method="POST">
         <input type="hidden" name="operacao" value="Postar">
       <input type="hidden" name="user" value="<?php echo $coduser?>"></input>
       <input type="hidden" name="iduser" value="<?php echo $iduser?>"></input>
-      <input type="text" name="titulo" size="25" placeholder="titulo"><p>  
+      <i><h5>Tiulo</h5></i>
+      <input type="text" name="titulo" size="25" placeholder="titulo"><p>
+      <i><h5>Postagem</h5></i>
       <br><textarea type="text" name="post" placeholder="Qual sua duvida?" cols="55" rows="3"></textarea><br>
         <input type="submit" class="submit" value="Postar!">
     </form>
@@ -191,41 +193,42 @@ $nome = $usuario["usernameusuario"];
                     <input type="hidden" name="userrname" value="<?php echo $nome?>"></input>
                     <input type="hidden" name="titre" value="<?php echo $title?>"></input>          
                     <input type="hidden" name="laiki" value="<?php echo $ask?>"></input>          
-                    <input type="hidden" name="post" value="<?php echo $pt?>"></input>      
+                    <input type="hidden" name="post" value="<?php echo $pt?>"></input>   
+                    
+                    <div style="white-space: nowrap;  hyphens: none;">
                     <?php
                     if( $operacao == "curtir"){
-                    ?>    
-                        <button type="submit" class="submit"><i class="far fa-heart" aria-hidden="true" title="Curtir"></i></button></a>
+                    ?>   
+
+                        <button style="white-space: nowrap" type="submit" class="submit"><i class="far fa-heart" aria-hidden="true" title="Curtir"></i></button></a>
 
                       <?php
                     }
                     elseif( $operacao == "ncurtir"){
                     ?>
-                        <button type="submit" class="submit"><i class="fas fa-heart" aria-hidden="true" title="Descurtir"></i></button></a>
+                        <button style="white-space: nowrap" type="submit" class="submit"><i class="fas fa-heart" aria-hidden="true" title="Descurtir"></i></button></a>
 
                     <?php
                     }            
                       ?> 
                       </form>
-
+                    
                     <?php echo "<a href='postcoment.php?idpost=". $idpost."' for='content-post-b'>";?>
                     <button><i class="fas fa-comments" title="Comentar!">           
                     </i></a></button>
-
-
-
+                  </div><div  style="white-space: nowrap;  hyphens: none;">
                     <form action="editapost.php" method="POST" >
                         <input type="hidden" name="postid" value="<?php echo $idpost?>"></input>
                         <input type="hidden" name="operacao" value="editar"></p>
-                        <button type="submit" value="Editar" style=" border: none; focus: oun"><i class="fas fa-pen" aria-hidden="true" title="editar postagem!"></i></button></a>
-                      </form>
+                        <button type="submit" value="Editar"><i class="fas fa-pen" aria-hidden="true" title="editar postagem!"></i></button></a>
+                      </form></div><div  style="white-space: nowrap;  hyphens: none;">
                         <form action="Recebedados.php" method="POST">
                         <input type="hidden" name="operacao" value="Excluirpost"></p>
                         <input type="hidden" name="postid" value="<?php echo $idpost?>"></input>
                         <button type="submit" value="Excluir"><i class="fas fa-trash-alt" title="excluir postagem!"></i></button>
                         </form>
-
-                    </a><br></br><br>
+                  </div>
+                    <br></br><br>
                     <?php
                    }
             }
