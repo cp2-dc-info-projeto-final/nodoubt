@@ -6,7 +6,7 @@
 
         <meta name="viewport"content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="estilo.css">
+        <link rel="stylesheet" href="style.css">
 
         <title>Cadastro</title>
 
@@ -674,6 +674,6 @@ function Teste_edit($non1, $non2, $id, $eml, $erro, $data){
 
     <html>
         <head>
-        <link rel="stylesheet" href="estilo.css">
+        <link rel="stylesheet" href="style.css">
         <head>
     </html>

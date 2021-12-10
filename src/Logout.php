@@ -7,6 +7,6 @@
 
 <html>
     <head>
-        <link rel="stylesheet" href="estilo.css">  
+        <link rel="stylesheet" href="style.css">  
     </head>
 </html>

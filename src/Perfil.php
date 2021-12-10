@@ -23,7 +23,7 @@ $nome = $usuario["usernameusuario"];
 <script src="https://kit.fontawesome.com/785c80f02e.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" href="https://www.w3schools.com/w3css/3/w3.css">
 
-    <link rel="stylesheet" href="detalhe.css">
+    <link rel="stylesheet" href="detalhes.css">
         <title><?php echo $nome;?></title>
 </head>
   <body>
@@ -169,10 +169,10 @@ $nome = $usuario["usernameusuario"];
             <div class='container'>
             <div id='content-post-b'>
      
-            <img src="<?php echo $x ?> " style="width:60px;">
+            <img src="<?php echo $x ?>  " style="width:60px;">
             <?php
-          echo "<h1>".$post["userpost"]."<br></h1>";
-          echo "<h2>".$post["titulopost"]."<br></h2>";
+          echo "<h1>".$post["userpost"]."</h1>";
+          echo "<h2>".$post["titulopost"]."</h2>";
           echo "<h3>".$post["postcontent"]."<br></h3";
           echo "----------------------------------<br>";
           ?>
