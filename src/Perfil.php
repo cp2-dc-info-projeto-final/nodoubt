@@ -21,7 +21,7 @@ $nome = $usuario["usernameusuario"];
 <script src="https://kit.fontawesome.com/785c80f02e.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" href="https://www.w3schools.com/w3css/3/w3.css">
 
-    <link rel="stylesheet" href="detalhes.css">
+    <link rel="stylesheet" href="detalhe.css">
         <title><?php echo $nome;?></title>
 </head>
   <body>
