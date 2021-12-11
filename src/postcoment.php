@@ -144,7 +144,7 @@ include "autentica.inc";
         
            $codugo = $idpost;
 
-        $idpost = $comentario["idcoment"];
+        $idcoments = $comentario["idcoment"];
         $title = "Re:";
         $title .= $post["titulopost"];
         
@@ -170,7 +170,7 @@ include "autentica.inc";
         ?></h4>
                 <form action="Recebedados.php" method="POST">
                     <input type="hidden" name="operacao" value="<?php echo $operacao?>"></p>
-                    <input type="hidden" name="postid" value="<?php echo $idpost?>"></input>
+                    <input type="hidden" name="postid" value="<?php echo $idcoments?>"></input>
                     <input type="hidden" name="usercod" value="<?php echo $codigin?>"></input>
                     <input type="hidden" name="userrname" value="<?php echo $nomelogado?>"></input>
                     <input type="hidden" name="titre" value="<?php echo $title?>"></input>          
