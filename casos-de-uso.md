@@ -149,7 +149,7 @@ Busca
 **Fluxo Alternativo B**
 
 1. O usuário entra site e ve o icone da barra de busca.
-2. O usuário se direciona até a barra de busca e digita um caracter que acha que esta presente no nome de usuario ou no post que deseja.
+2. O usuário se direciona até a barra de busca e digita um caracter que acha que esta presente no nickname ou no post que deseja.
 3. O sistema exibe todos os perfil e posts com os caracteres digitado..
 
 
