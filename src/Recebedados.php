@@ -702,7 +702,7 @@ function Teste_edit($non1, $non2, $id, $eml, $erro, $data){
             mysqli_query($mysqli,$sql);
             mysqli_close ($mysqli);
 
-            header("location:postcoment.php?idpost=$comentid"); 
+                header("location:postcoment.php?idpost=$comentid"); 
             exit;
 
         }

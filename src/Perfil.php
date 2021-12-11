@@ -134,7 +134,7 @@ $nome = $usuario["usernameusuario"];
         <input type="submit" class="submit" value="Postar!">
     </form>
   </div>
-  
+  <br>
       <?php
 
       $sql = "SELECT * FROM postagemusuarios WHERE userpost ='$coduser' ORDER BY codpost DESC;";
@@ -195,7 +195,6 @@ $nome = $usuario["usernameusuario"];
                     <input type="hidden" name="laiki" value="<?php echo $ask?>"></input>          
                     <input type="hidden" name="post" value="<?php echo $pt?>"></input>   
                     
-                    <div style="white-space: nowrap;  hyphens: none;">
                     <?php
                     if( $operacao == "curtir"){
                     ?>   
@@ -228,7 +227,7 @@ $nome = $usuario["usernameusuario"];
                         <button type="submit" value="Excluir"><i class="fas fa-trash-alt" title="excluir postagem!"></i></button>
                         </form>
                   </div>
-                    <br></br><br>
+                    <br></br><br><br><br>
                     <?php
                    }
             }

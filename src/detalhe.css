@@ -7,11 +7,11 @@ body {
 #content{
 
     background-color: rgba(224, 224, 243, 0.877);
-    padding: 30px;
+    padding: 25px;
     border-width: thin;
     border-style: solid;
     border-radius: 50px;
-    width:340px;
+    width:350px;
     height: 400px;
     display: flex;
     align-items: left;
@@ -23,12 +23,12 @@ body {
 #content-post-a{
 
     background-color: rgba(224, 224, 243, 0.877);
-    padding: 60px;
+    padding: 30px;
     border-width: thin;
     border-style: solid;
     border-radius: 50px;
     width: 60%;
-    height: 250px;
+    height: 300px;
     position: absolute;
     top: 75px;
     left: 500px;
@@ -54,6 +54,7 @@ body {
     align-items: left;
     justify-content: right;
     flex-direction: column;
+    
 }
 
 
