@@ -9,7 +9,6 @@ body {
     background-color: rgba(224, 224, 243, 0.877);
     padding: 25px;
     border-width: thin;
-    border-style: solid;
     border-radius: 50px;
     width:350px;
     height: 400px;
@@ -25,7 +24,6 @@ body {
     background-color: rgba(224, 224, 243, 0.877);
     padding: 30px;
     border-width: thin;
-    border-style: solid;
     border-radius: 50px;
     width: 60%;
     height: 300px;
@@ -45,8 +43,6 @@ body {
     background-color: rgba(224, 224, 243, 0.877);
     padding: 30px;
     border-width: thin;
-    border-style: solid;
-    border-color:rgba(252, 250, 250, 0.534);
     border-radius: 90px;
     width: 800px;
     height: 500px;
@@ -64,7 +60,6 @@ body {
     position: absolute;
     padding: 80px;
     border-width: thin;
-    border-style: solid;
     border-radius: 50px;
     width: 700px;
     height: 200px;
@@ -80,7 +75,7 @@ body {
 #content-post-position{
 
     position: absolute;
-    top: 350px;
+    top: 400px;
     left: 500px;
 
 }
