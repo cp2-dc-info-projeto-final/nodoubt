@@ -3,7 +3,11 @@ body {
     align-items: center;
     font-family: Comic sans-serif, 'Times New Roman', Times;
 }
-
+button {
+    border: none;
+    padding: 0;
+    background: none;
+}
 #content{
 
     background-color: rgba(224, 224, 243, 0.877);

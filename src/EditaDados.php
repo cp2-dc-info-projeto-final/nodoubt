@@ -62,7 +62,7 @@
     <head>
     
     <body>
-    <link rel="stylesheet" href="estilização.css">
+    <link rel="stylesheet" href="estilizar.css">
 
 
 <nav class="navbar navbar-fixed-top navbar-dark main-nav">

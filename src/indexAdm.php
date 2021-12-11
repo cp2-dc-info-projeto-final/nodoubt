@@ -13,7 +13,7 @@
         <link rel="stylesheet" type="text/css" href="https://www.w3schools.com/w3css/3/w3.css">
 
 
-        <link rel="stylesheet" href="estilização.css">
+        <link rel="stylesheet" href="estilizar.css">
 </head>
 <body>
 <header>
