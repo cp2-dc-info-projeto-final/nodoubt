@@ -127,10 +127,10 @@ $nome = $usuario["usernameusuario"];
         <input type="hidden" name="operacao" value="Postar">
       <input type="hidden" name="user" value="<?php echo $coduser?>"></input>
       <input type="hidden" name="iduser" value="<?php echo $iduser?>"></input>
-      <i><h5>Tiulo</h5></i>
-      <input type="text" name="titulo" size="25" placeholder="titulo"><p>
+      <i><h5>Título</h5></i>
+      <input type="text" name="Título" size="25" placeholder="Título"><p>
       <i><h5>Postagem</h5></i>
-      <br><textarea type="text" name="post" placeholder="Qual sua duvida?" cols="55" rows="3"></textarea><br>
+      <br><textarea type="text" name="post" placeholder="Qual sua dúvida?" cols="55" rows="3"></textarea><br>
         <input type="submit" class="submit" value="Postar!">
     </form>
   </div>

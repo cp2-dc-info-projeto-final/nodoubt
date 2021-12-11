@@ -381,7 +381,7 @@ function Teste_edit($non1, $non2, $id, $eml, $erro, $data){
                             if($Globalpermiss != 1){
                             if($fml != $usuario ){
                                 
-                            echo "O email inserido ja esta cadastado!";
+                            echo "O email inserido já esta cadastado!";
                             $erro = 1;
                             }
                         }
@@ -398,7 +398,7 @@ function Teste_edit($non1, $non2, $id, $eml, $erro, $data){
                 if($linhas == 1){
                     if($Globalpermiss != 1){
                     if($fml != $username ){
-                echo "O Nome de usuário inserido já esta sendo usado!";
+                echo "O Nome de usuário inserido já está sendo usado!";
                 $erro = 1;
                 }
             }
