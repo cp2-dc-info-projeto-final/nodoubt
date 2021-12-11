@@ -11,13 +11,13 @@
  - [CDU 07](#CDU-07): Fazer postagem.
  - [CDU 08](#CDU-08): Editar postagem.
  - [CDU 09](#CDU-09): Excluir postagem.
- - [CDU 10](#CDU-09): Comentar postagem.
- - [CDU 11](#CDU-09): Editar comentario.
- - [CDU 12](#CDU-09): Excluir comentario.
- - [CDU 13](#CDU-09): Curtir posttagens.
- - [CDU 14](#CDU-09): Curtir comentarios.
- - [CDU 15](#CDU-09): Descurtir posttagens.
- - [CDU 16](#CDU-09): Descurtir comentarios.
+ - [CDU 10](#CDU-10): Comentar postagem.
+ - [CDU 11](#CDU-11): Editar comentario.
+ - [CDU 12](#CDU-12): Excluir comentario.
+ - [CDU 13](#CDU-13): Curtir posttagens.
+ - [CDU 14](#CDU-14): Curtir comentarios.
+ - [CDU 15](#CDU-15): Descurtir posttagens.
+ - [CDU 16](#CDU-16): Descurtir comentarios.
  
 
 
