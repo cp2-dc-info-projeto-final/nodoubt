@@ -42,7 +42,7 @@ Então, mais abaixo, é possivel ver uma indicação no fim da pagina, instruind
 então,já nessa tela, o usuario escreve as informações requisitadas, sendo elas: o nickname(O nome que o usuario usará no site), dois campos de senha (um para criação e outro para confirmação), nome do usuario (onde ficara o nome padra do usuario que esta se cadastrando), a data de nascimento (numerica e com barras de divisão) e o email do usuario para caso seja necessario um futuro contato.
 Após a inscrição, o sistema confirmará as informações digitadas para testar se foram digitadas corretamente. Se foram, o usuario poderá retornar a pagina de login, caso contrario, aparecerão mensagens de erro auto-explicativas indicando o que foi inserido errado, então o usuario é indicado de volta a tela de criação de usuario, porém os campos ja inscrito não serâo apagados( com exceção da senha e a confirmação), sendo possivel edita-las e fazer outra tentativa de cadastro.
 
-### mensagens de erro possiveis:
+### mensagens de erros possiveis:
 
 - [erro_cadastro]:
 
@@ -139,13 +139,52 @@ Abaixo das postagens encontradas, é indicado a quantidade de usuarios encontrad
 
 - foto de uma busca
 
-caso não encontre alguma das duas opções, sera exibido uma mensagem de que não foi encontrado nenhum perfil ou postagem e enr
+caso não encontre alguma das duas opções, sera exibido uma mensagem de que não foi encontrado nenhum perfil ou postagem e então mostrar o outro.
 
 ## Funcionalidade F
+
+
 ## Funcionalidade G
+
+Abaixo da postagem, será exibido o botão de comentário em formato de nuvem, onde o usuário ao clicar, poderá comentar a postagem de outro usuário. 
+
+- Foto de comentário feito.
+
+Os comentários feitos exibirá igualmente o botão de nuvem no qual possibilitará o comentário de ser respondido.
+
+- Foto de uma resposta ao comentário.
+
+
 ## Funcionalidade H
+
+Tanto os posts feitos, quanto os comentários e respostas aos comentários, exibirão um botão no formato de coração que possui a funcionalidade de curtir e descurtir.
+
+- Foto de curtida no post.
+
+- Foto de curtida nos comentários e respostas.
+
+
 ## Funcionalidade I
+
+Os posts e comentários feitos podem ser editados, ambos exibem um botão em formato de lapís que fica abaixo do botão de comentários. Ao clicar no botão será exibida uma tela no qual o usuário terá a opção de mudar o título e/ou o conteúdo da postagem ou comentário.
+
+- Foto de edição de postagem.
+
+- Foto de edição de comentário.
+
+
 ## Funcionalidade J
+
+Os posts e comentários feitos exibirão, abaixo do botão de edição, um botão no formato de lixeira no qual, o usuário ao clicar poderá, excluir sua postagem ou seu comentário se desejar,
+
+- Foto da área de exclusão.
+
 ## Funcionalidade K
 ## Funcionalidade L
+
+
+
 ## Funcionalidade M
+
+Na área que contem as informações do usuários, no canto superior esquerdo da timeline, exibirá o botão "sair" abaixo do botão "editar dados". O usuário, ao clicar sairá de sua conta quando desejar, e será encaminhado novamente para a página de login.
+
