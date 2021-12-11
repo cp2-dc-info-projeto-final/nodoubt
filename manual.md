@@ -14,21 +14,27 @@
  - [Funcionalidade A](#Cadastro)
  - [Funcionalidade B](#Login)
  - [Funcionalidade C](#Editar-dados)
- - [Funcionalidade D](#Busca-de-usuário-e-posts)
- - [Funcionalidade E](#Timeline)
- - [Funcionalidade F](#Conceder-e-retirar-privilégios-de-administrador)
- - [Funcionalidade G](#Editar-Usuário)
- - [Funcionalidade H](#Postar)
- - [Funcionalidade I](#Comentar)
- - [Funcionalidade J](#Curtir-e-descurtir-posts-e-comentários)
- - [Funcionalidade K](#Editar-posts-e-comentários)
- - [Funcionalidade L](#Excluir-posts-e-comentários)
- - [Funcionalidade M](#Controle-de-acessos)
+ - [Funcionalidade D](#Postar)
+ - [Funcionalidade E](#Busca-de-usuário-e-posts)
+ - [Funcionalidade F](#Timeline)
+ - [Funcionalidade G](#Comentar)
+ - [Funcionalidade H](#Curtir-e-descurtir-posts-e-comentários)
+ - [Funcionalidade I](#Editar-posts-e-comentários)
+ - [Funcionalidade J](#Excluir-posts-e-comentários)
+ - [Funcionalidade K](#Controle-de-acessos)
+ - [Funcionalidade L](#Editar-Usuário)
+ - [Funcionalidade M](#Conceder-e-retirar-privilégios-de-administrador)
  - [Funcionalidade N](#logout)
 
 ## Funcionalidade A
 
-Para começar, após passar pelas areás de login, é possivel ver uma indicação no fim da pagina, instruindo quem não possui conta ainda, para ir a tela de criação de usuario
+Ao entrar no site o usuario se depara com uma tela composta por uma barra de navegação no topo, uma imagem ao centro, e no fim uma grande área contendo informações dos criadores.
+Na navbar, há alguns botões visiveis, sendo o primeiro o nome do site "No doubt", que lhe retorna para essa mesama pagina, em seguida, um botão escrito "Sobre nóe", onde você é levado para uma pagina, com informações sobre o objetivo do projeto, seus criaddores e etc, em sequencia um botão escrito "Fale conosco" que lhe direciona para a área no fim da pagina, depois é possivel ver um campo onde esta escrito "Buscar...", sendo ele a barra de busca, e por fim mais ao canto direito, um botão escrito "Login" com um icone de entrar.
+
+- foto do index
+
+O usuario, após cliclar, é direcionado para uma pagina de login, onde podem ser prenchidos dois campos e grande botão escrito "login", porém, supondo que seja a primeira vez que o usuario entra no site, essa área não sera usada agora, e caso seja, exibira mensagens de erro, que indicam que o usuario ainda não tem um perfil.
+Então, mais abaixo, é possivel ver uma indicação no fim da pagina, instruindo quem não possui conta ainda, para ir a tela de criação de usuario
 
 - foto do login
 - foto da tela de cadastro
@@ -85,11 +91,42 @@ a partir daqui, caso o usuario queira, é possivel editar as informações antes
 
 - foto da tela de edição apos enviar alterações
 
-Caso o usuario deseje alterar a senha, é possivel ver na mesma tela onde estão as informações alteraveis do usuario, logo abaixo do botão de editar, um botão menor, escrito "editar senha", onde após ser clicado, o usuario é redirecionado para outra pagina, com 3 campos: um sendo para escrever novamente a sua senha atual, o segundo sendo para confirmar a mesma
+Caso o usuario deseje alterar a senha, é possivel ver na mesma tela onde estão as informações alteraveis do usuario, logo abaixo do botão de editar, um botão menor, escrito "editar senha". Onde, após ser clicado, o usuario é redirecionado para outra pagina, com 3 campos: um sendo para escrever novamente a sua senha atual, o segundo sendo para escrever a nova senha e o terceiro para escrever novamente a nova senha para que sejam confirmadas. Após escrever as informações, o usuario clica no botão escrito enviar, e então, caso o sistema confirme essas informações, é indicado a mesma messagem de que os dados foram atualizados corretamente, podendo agora retornar ao perfil
 
+- foto do botão
+
+- foto dos campos
 
 ## Funcionalidade D
+
+De volta ao perfil do usuario, mais ao centro superior da pagina é possivel ver uma grande area, com dois campos de tamanhos relativos, um para Titulo e outro para postagem.
+
+- foto da area da postagem
+
+Nesses campos é onde o usuario fará as postagens, sendo o primeiro, o titulo, onde devera ir o titulo da sua duvida, tendo um limite de 30 caracteres, é onde ficara um resumo, ou o topico principal da sua postagem, o assunto que ela abrange, ou uma frase que descreva a situação, caso não preenchido esse campo, o titulo ira ser inserido automaticamente como "particular".
+No segundo campo, é a onde devera ir a postagem do usuario, onde o usuario escreve sua duvida ou o que deseja, com um limite de 350 caracteres. Caso não seja prenchido, o sistema indicará um erro, dizendo que não é possivel fazer um post vazio.
+
+- mensagem de erro de campo vazio
+
+Se todos os campos forem preenchidos corretamente, a pagina do perfil atualizará, e um pouco abaixo da area de criação de postagem, será possivel ver o post feito pelo usuario, com sua foto, o titulo mais acima e abaixo o conteudo da postagem.
+Abaixo a alguns botões que serão comentados futuramente.
+
+- Foto de uma postagem
+
 ## Funcionalidade E
+
+Na barra de navegação no topo da pagina, onde ja foi comentado que havia uma barra de busca, é possivel escrever nela.
+
+- Foto da barra
+
+Nela, o usuario, caso conheça outros usuarios do site, pode tentar digitar o nickname desses usuarios, e ao clicar no simbolo de lupa ainda na barra de busca, o mesmo será direcionado a outra pagina, onde o sistema indicara se algum perfil com o que foi inserido foi encontrado, e ainda se o que foi digitado é encontrado em algum titulo de postagem.
+Caso encontre ammbos, mostrará primeiro a quantidade de postagens encontradas, exibindo em seguida o titulo das postagens encontradas e o nome do usuario que postou em baixo, ambas as inscrições clicaveis, direcionando o usuario para a pagina dessa postagem ou o perfil do usuario respectivamente.
+Abaixo das postagens encontradas, é indicado a quantidade de usuarios encontrados, abaixo exibindo os nicknames e fotos cinzas para sinalizar um perfil. os mesmos sendo clicaveis, então sendo direcionado ao perfil do usuario com o nickname encontrado.
+
+- foto de uma busca
+
+caso não encontre alguma das duas opções, sera exibido uma mensagem de que não foi encontrado nenhum perfil ou postagem e enr
+
 ## Funcionalidade F
 ## Funcionalidade G
 ## Funcionalidade H
