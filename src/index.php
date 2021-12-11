@@ -10,6 +10,7 @@
 <script src="https://kit.fontawesome.com/785c80f02e.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" href="https://www.w3schools.com/w3css/3/w3.css">
 
+
 </head>
 
 <body>
@@ -52,7 +53,7 @@
                           ?>
           
                             <li>
-                              <a href="Login.html"> <button><i class="fas fa-sign-in-alt"></i><button>
+                              <a href="Login.html"><i class="fas fa-sign-in-alt"></i>
                             </li>
 
                             <?php
