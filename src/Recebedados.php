@@ -23,12 +23,12 @@ function Teste_form($non1, $sen, $sen2, $non2, $id, $eml, $erro, $data){
 
             //impede nomes de usuario menores que 5
             if(strlen($non1) < 5){       
-            echo "O campo: Nome de Usuario deve possuir no mínimo 5 caracteres.<br>";
+            echo "O campo: Nome de Usuário deve possuir no mínimo 5 caracteres.<br>";
             $erro = 1;
             }
             // impede nomes de usuario maiores que 12
             if(strlen($non1) > 12){
-            echo "O campo: Nome de Usuario deve possuir no maximo 12 caracteres.<br>";
+            echo "O campo: Nome de Usuário deve possuir no maximo 12 caracteres.<br>";
             $erro = 1;
             }
             #impede senhas menores que 5 ou vazias
@@ -38,12 +38,12 @@ function Teste_form($non1, $sen, $sen2, $non2, $id, $eml, $erro, $data){
             }
             #verifica se as senhas são iguais
             if($sen !== $sen2 ){
-            echo "Os campos de Senha não podem ser diferentes.<br>";
+            echo "Os campos de senha não podem ser diferentes.<br>";
             $erro = 1;
             }
             // impede nomes de usuario iguais a senha
             if($non1 == $sen){
-            echo "O campo: Nome de Usuario e Senha devem ser diferentes.<br>";
+            echo "O campo: Nome de Usuário e senha devem ser diferentes.<br>";
             $erro = 1;
             }
             // impede nomes vazios ou sem espaço
@@ -53,7 +53,7 @@ function Teste_form($non1, $sen, $sen2, $non2, $id, $eml, $erro, $data){
             }
             // impede escrita de idade menor que 8
             if ( strlen($id) < 8){
-            echo "O campo: Data de Nascimento deve possui no minimo 8 digitos.<br>";
+            echo "O campo: Data de Nascimento deve possuir no mínimo 8 dígitos.<br>";
             $erro = 1;
             }
             else{
@@ -97,7 +97,7 @@ function Teste_form($non1, $sen, $sen2, $non2, $id, $eml, $erro, $data){
             }
             // verifica se o email possui menos de 8 letras
             if(strlen($eml) < 8){
-            echo "O campo: E-mail esta muito curto ou não foi digitado corretamente.<br>";
+            echo "O campo: E-mail está muito curto ou não foi digitado corretamente.<br>";
             $erro = 1;
             }
             // impede email sem @  
@@ -107,18 +107,20 @@ function Teste_form($non1, $sen, $sen2, $non2, $id, $eml, $erro, $data){
             }
             return array ($erro, $id, $data);
 }
-function Teste_edit($non1, $non2, $id, $eml, $erro, $data){
+
+function Teste_form_Edicao($non1, $non2, $id, $eml, $erro, $data){
 
     //impede nomes de usuario menores que 5
     if(strlen($non1) < 5){       
-    echo "O campo: Nome de Usuario deve possuir no mínimo 5 caracteres.<br>";
+    echo "O campo: Nome de Usuário deve possuir no mínimo 5 caracteres.<br>";
     $erro = 1;
     }
     // impede nomes de usuario maiores que 12
     if(strlen($non1) > 12){
-    echo "O campo: Nome de Usuario deve possuir no maximo 12 caracteres.<br>";
+    echo "O campo: Nome de Usuário deve possuir no maximo 12 caracteres.<br>";
     $erro = 1;
     }
+
     // impede nomes vazios ou sem espaço
     if(empty($non2) OR strstr($non2,' ') == FALSE){    
     echo "O campo: Nome esta vazio ou foi inserido de forma incorreta. <br>";
@@ -126,7 +128,7 @@ function Teste_edit($non1, $non2, $id, $eml, $erro, $data){
     }
     // impede escrita de idade menor que 8
     if ( strlen($id) < 8){
-    echo "O campo: Data de Nascimento deve possui no minimo 8 digitos.<br>";
+    echo "O campo: Data de Nascimento deve possuir no mínimo 8 dígitos.<br>";
     $erro = 1;
     }
     else{
@@ -170,7 +172,82 @@ function Teste_edit($non1, $non2, $id, $eml, $erro, $data){
     }
     // verifica se o email possui menos de 8 letras
     if(strlen($eml) < 8){
-    echo "O campo: E-mail esta muito curto ou não foi digitado corretamente.<br>";
+    echo "O campo: E-mail está muito curto ou não foi digitado corretamente.<br>";
+    $erro = 1;
+    }
+    // impede email sem @  
+    if(strstr($eml,'@') == FALSE){
+    echo "O campo: E-mail não foi digitado corretamente.<br>";
+    $erro = 1;
+    }
+    return array ($erro, $id, $data);
+}
+
+    
+function Teste_edit($non1, $non2, $id, $eml, $erro, $data){
+
+    //impede nomes de usuario menores que 5
+    if(strlen($non1) < 5){       
+    echo "O campo: Nome de Usuário deve possuir no mínimo 5 caracteres.<br>";
+    $erro = 1;
+    }
+    // impede nomes de usuario maiores que 12
+    if(strlen($non1) > 12){
+    echo "O campo: Nome de Usuário deve possuir no máximo 12 caracteres.<br>";
+    $erro = 1;
+    }
+    // impede nomes vazios ou sem espaço
+    if(empty($non2) OR strstr($non2,' ') == FALSE){    
+    echo "O campo: Nome está vazio ou foi inserido de forma incorreta. <br>";
+    $erro = 1;
+    }
+    // impede escrita de idade menor que 8
+    if ( strlen($id) < 8){
+    echo "O campo: Data de Nascimento deve possuir no mínimo 8 digitos.<br>";
+    $erro = 1;
+    }
+    else{
+        //impede idade de /
+       if(strpos($id, "/") !== FALSE){
+        
+            $partes = explode("/", $id);
+
+            $dia = $partes[0];
+
+            $mes = $partes[1];
+
+            $ano = isset($partes[2]) ? $partes[2] : 0;
+            $data = $id;
+            $id = $dia;
+            $id .= $mes;
+            $id .= $ano;
+            //impede idade com data do ano menor que 1000
+            if (strlen($ano) < 4) {
+                echo "O campo: Data de Nascimento exige um ano válido.<br>";
+                $erro = 1;
+            }
+            //impede idade nao numerica
+            if (!is_numeric($id)){
+
+                echo "O campo Data de nascimento só aceita números.";
+                $erro = 1;
+            }
+            else {
+                // verifica se a data é válida
+                if (!checkdate($mes, $dia, $ano)) {
+                    echo "O campo: Data de Nascimento não indentificou sua data como válida.<br>";
+                    $erro = 1;
+                }
+            }
+         }
+        else{
+            echo "O campo: Data de Nascimento deve possuir barras de separação.<br>";
+            $erro = 1;
+        }
+    }
+    // verifica se o email possui menos de 8 letras
+    if(strlen($eml) < 8){
+    echo "O campo: E-mail está muito curto ou não foi digitado corretamente.<br>";
     $erro = 1;
     }
     // impede email sem @  
@@ -213,7 +290,7 @@ function Teste_edit($non1, $non2, $id, $eml, $erro, $data){
                 $linhas = mysqli_num_rows($res);
         
                 if($linhas == 1){
-                echo "O Email inserido já esta cadastrado!!";
+                echo "O Email inserido já está cadastrado!!";
                 $erro = 1;
                 }
             }
@@ -224,7 +301,7 @@ function Teste_edit($non1, $non2, $id, $eml, $erro, $data){
                 $linhas = mysqli_num_rows($res);
         
                 if($linhas == 1){
-                echo "O Nome de usuario inserido já esta sendo usado!";
+                echo "O Nome de usuário inserido já está sendo usado!";
                 $erro = 1;
                 }
             }
@@ -243,14 +320,14 @@ function Teste_edit($non1, $non2, $id, $eml, $erro, $data){
                 ?>
                 <div class="card-footer">
                 
-                <p><a href="login.html"><input type="submit" value="Pagina de login" class="submit"></a></p>
+                <p><a href="login.html"><input type="submit" value="Página de login" class="submit"></a></p>
 
                 </div>
                  <?php
                 exit;
                 
         
-             }
+            }
 
              if($erro == 1) {
                  echo "<br>Cadastro incompleto.";
@@ -279,7 +356,6 @@ function Teste_edit($non1, $non2, $id, $eml, $erro, $data){
 
                 $emailusuario = $_POST["emailusuario"];
                 $username = $_POST["username"];
-                $senha = $_POST["senha"];
                 $nome = $_POST["nome"];
                 $idade = $_POST["idade"];
                 $usuario = $_POST["email"];
@@ -289,11 +365,11 @@ function Teste_edit($non1, $non2, $id, $eml, $erro, $data){
                 $fml;
                 $data = 0;
 
-                $funcao = Teste_form($username, $senha, $nome, $idade, $usuario, $erro, $data);
+            $funcao = Teste_form_Edicao($username, $nome, $idade, $usuario, $erro, $data);
 
-                $erro = $funcao[0];
-                $idade = $funcao[1];
-                $data = $funcao[2];
+            $erro = $funcao[0];
+            $idade = $funcao[1];
+            $data = $funcao[2];
 
                 if ($erro == 0){
                     $sql ="SELECT * FROM cadastrousuarios WHERE emailusuario ='$usuario';";
@@ -311,6 +387,7 @@ function Teste_edit($non1, $non2, $id, $eml, $erro, $data){
                         }
                     }
                 }
+                  
 
             if ($erro == 0){
                 $sql ="SELECT * FROM cadastrousuarios WHERE usernameusuario ='$username';";
@@ -321,7 +398,7 @@ function Teste_edit($non1, $non2, $id, $eml, $erro, $data){
                 if($linhas == 1){
                     if($Globalpermiss != 1){
                     if($fml != $username ){
-                echo "O Nome de usuario inserido já esta sendo usado!";
+                echo "O Nome de usuário inserido já esta sendo usado!";
                 $erro = 1;
                 }
             }
@@ -329,7 +406,7 @@ function Teste_edit($non1, $non2, $id, $eml, $erro, $data){
     }
                 
                 if($erro == 0) {
-                    $sql = "UPDATE cadastrousuarios SET usernameusuario ='$username', senhausuario ='$senha',";
+                    $sql = "UPDATE cadastrousuarios SET usernameusuario ='$username',";
                     $sql .= "nomeusuario = '$nome', idadeusuario = '$data', emailusuario = '$usuario', permissadm = $permiss ";
                     $sql .= "WHERE emailusuario = '$emailusuario';";
 
@@ -406,8 +483,8 @@ function Teste_edit($non1, $non2, $id, $eml, $erro, $data){
             }
 
             else{
-                echo "<br>Usuario excluido com exito!";
-                echo "<p><a href='Login.html'>Inicio";
+                echo "<br>Usuário excluido com êxito!";
+                echo "<p><a href='Login.html'>Início";
             } 
             mysqli_close ($mysqli);
 
@@ -481,7 +558,7 @@ function Teste_edit($non1, $non2, $id, $eml, $erro, $data){
 
                 }
                 else{
-                    echo "Nenhum resultado para sua busca foi encontrado :(";
+                    echo"Nenhum resultado para sua busca foi encontrado :(";
 
                 }
                 session_start();
