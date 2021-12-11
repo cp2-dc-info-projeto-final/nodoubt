@@ -27,7 +27,7 @@
 
 ## Funcionalidade A
 
-N
+
 
 ## Funcionalidade B
 
