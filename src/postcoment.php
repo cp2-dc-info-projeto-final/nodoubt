@@ -66,66 +66,72 @@ include "autentica.inc";
                                 </form>
                             </li>
                         </ul>
-                        <div>
-                        <ul class="nav navbar-nav navbar-right">
-                          <?php
-                          if(!isset($_SESSION["emailusuario"])){
-                          ?>
-                            <li>
-                              <a href="Login.html"> <button><i class="fas fa-sign-in-alt"></i><button>
-                            </li>
-                            <?php
+                    <div>
+                    <ul class="nav navbar-nav navbar-right">
+                        <?php
+                            if(!isset($_SESSION["emailusuario"])){
+                        ?>
+                        <li>
+                            <a href="Login.html"> <button><i class="fas fa-sign-in-alt"></i><button>
+                        </li>
+                        <?php
                           }
                           else{
                             $x = "perfis/";
                             $x .= $_SESSION["fotoperfil"];
                             $x .= ".jpeg"
-                            ?>
-                        <li><a href="perfil.php">
-                        <img src="<?php echo $x ?> " style="width:20px;">                         
-                         <?php echo $_SESSION["usernameusuario"];?>
-                          </a></li>
-                           <?php 
+                        ?>
+                        <li>
+                            <a href="perfil.php">
+                            <img src="<?php echo $x ?> " style="width:20px;">                         
+                            <?php echo $_SESSION["usernameusuario"];?>
+                            </a>
+                        </li>
+                        <?php 
                           }  
-                          ?>
-                        </ul>
-                      </div>
-                      </div>
+                        ?>
+                    </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<h1>
-<div id="contentt">
-
-    <?php
+<div id="content">
+   <h1>
+        <?php
+            echo $post["titulopost"];
     
-    echo $post["titulopost"];
-    
-    ?>
+        ?>
     </h1>
-
-<h4>
-    <?php echo "<a href='alterperfil.php?usernameusuario=". $user."'>-$user </a>";
-?>
-</h4>
-<h2>
-    <?php echo $conteudo;
-?>
-</h3>
+    <h4>
+        <?php echo "<a href='alterperfil.php?usernameusuario=". $user."'> - $user -  </a>";
+        ?>
+    </h4>
+</div>
+<div id="content">
+    <h1>
+        <?php
+            echo $conteudo;
+        ?>
+    </h1>
 </div>
 
 
 <?php
-
-        $sql = "SELECT * FROM comentusuarios WHERE codpostcoment = $idpost;";
-        $res = mysqli_query($mysqli,$sql);
-        $linhas = mysqli_num_rows($res);
+    $sql = "SELECT * FROM comentusuarios WHERE codpostcoment = $idpost;";
+    $res = mysqli_query($mysqli,$sql);
+    $linhas = mysqli_num_rows($res);
 
     if($linhas == 0){
-        echo "Não há nenhuma resposta ainda...";
+        ?>
+        <div id="alerta">
+        <?php
+        echo "Ainda não há respostas. Seja o primeiro a comentar! :)";
+        ?>
+        </div>
+        <?php 
     }
     else{
         for($i=0; $i < $linhas; $i++){
@@ -135,39 +141,41 @@ include "autentica.inc";
             $iddois = $comentario["codpostcoment"]
 
 
-        ?><h2><?php
-        echo "Re:". $post["titulopost"];
-        ?></h2><h6><?php
-        echo "<a href='alterperfil.php?usernameusuario=". $nome."'>-$nome</a>";
-        ?></h6><h4><?php
-        echo " ". $comentario["comentario"]."<br>";
+        ?>
         
-           $codugo = $idpost;
-
-        $idcoments = $comentario["idcoment"];
-        $title = "Re:";
-        $title .= $post["titulopost"];
         
-        $mysql = "SELECT * FROM curtirusuarios WHERE userlike ='$nomelogado' AND codpostlike ='$idpost' ;";
-        $resu = mysqli_query($mysqli,$mysql);
-        $linhass = mysqli_num_rows($resu);
-
-        if($linhass == 0){
-
-          $operacao = "curtir";
-
-        }
-
-        elseif($linhass >= 1){
-
-          $operacao = "ncurtir";
-
-        }
-
-        $ask = 1;
-        $pt = "coment";
-        
-        ?></h4>
+        <div id="exibedados">
+            <h2>
+                <?php
+                    //echo "Re:". $post["titulopost"];
+                ?>
+            </h2>
+            <h6>
+                <?php
+                    //echo "<a href='alterperfil.php?usernameusuario=". $nome."'>-$nome</a>";
+                ?>
+            </h6>
+            <h4>
+                <?php
+                    echo " ". $comentario["comentario"];
+                    $codugo = $idpost;
+                    $idcoments = $comentario["idcoment"];
+                    $title = "Re:";
+                    $title .= $post["titulopost"];
+                    $mysql = "SELECT * FROM curtirusuarios WHERE userlike ='$nomelogado' AND codpostlike ='$idpost' ;";
+                    $resu = mysqli_query($mysqli,$mysql);
+                    $linhass = mysqli_num_rows($resu);
+                    if($linhass == 0){
+                        $operacao = "curtir";
+                    }
+                    elseif($linhass >= 1){
+                        $operacao = "ncurtir";
+                    }
+                    $ask = 1;
+                    $pt = "coment";
+                ?>
+            </h4>
+            <div style="margin-left: 50px;">
                 <form action="Recebedados.php" method="POST">
                     <input type="hidden" name="operacao" value="<?php echo $operacao?>"></p>
                     <input type="hidden" name="postid" value="<?php echo $idcoments?>"></input>
@@ -177,55 +185,51 @@ include "autentica.inc";
                     <input type="hidden" name="cudugo" value="<?php echo $codugo?>"></input>          
                     <input type="hidden" name="laiki" value="<?php echo $ask?>"></input>          
                     <input type="hidden" name="post" value="<?php echo $pt?>"></input>   
-                    
                     <div style="white-space: nowrap;  hyphens: none;">
-                    <?php
-                    if( $operacao == "curtir"){
-                    ?>   
-
+                        <?php
+                            if( $operacao == "curtir"){
+                        ?>   
                         <button style="white-space: nowrap" type="submit" class="submit"><i class="far fa-heart" aria-hidden="true" title="Curtir"></i></button></a>
-
-                      <?php
-                    }
-                    elseif( $operacao == "ncurtir"){
-                    ?>
+                        <?php
+                            }
+                            elseif( $operacao == "ncurtir"){
+                        ?>
                         <button style="white-space: nowrap" type="submit" class="submit"><i class="fas fa-heart" aria-hidden="true" title="Descurtir"></i></button></a>
+                        <?php
+                            }            
+                        ?> 
+                    </div>
+                </form>
 
-                    <?php
-                    }            
-                      ?> 
-                      </form>
-        
-        <form action="editapost.php" method="POST" >
-        <input type="hidden" name="postid" value="<?php echo $id?>">
-        <input type="hidden" name="idcomen" value="<?php echo $iddois?>">              
-              <input type="hidden" name="operacao" value="editarcoment"></p>
-              <button type="submit" value="Editar"><i class="fas fa-pen" aria-hidden="true" title="editar postagem!"></i></button></a>
-              </form>
-          <form action="Recebedados.php" method="POST">
-              <input type="hidden" name="operacao" value="excluircoment"></p>
-              <input type="hidden" name="idcomen" value="<?php echo $iddois?>">              
-              <input type="hidden" name="postid" value="<?php echo $id?>"></input>
-              <button type="submit" value="Excluir"><i class="fas fa-trash-alt" title="excluir postagem!"></i></button>
-              </form>
-        
+                <form action="editapost.php" method="POST" >
+                    <input type="hidden" name="postid" value="<?php echo $id?>">
+                    <input type="hidden" name="idcomen" value="<?php echo $iddois?>">              
+                    <input type="hidden" name="operacao" value="editarcoment"></p>
+                    <button type="submit" value="Editar"><i class="fas fa-pen" aria-hidden="true" title="editar postagem!"></i></button></a>
+                </form>
+                <form action="Recebedados.php" method="POST">
+                    <input type="hidden" name="operacao" value="excluircoment"></p>
+                    <input type="hidden" name="idcomen" value="<?php echo $iddois?>">              
+                    <input type="hidden" name="postid" value="<?php echo $id?>"></input>
+                    <button type="submit" value="Excluir"><i class="fas fa-trash-alt" title="excluir postagem!"></i></button>
+                </form>
+            </div>
+        </div>
         <?php
-
-         }
+        }
     }
-?>
-</div>
-<br>
-<div>
+        ?>
 
+<div>
     <form action="Recebedados.php" method="POST">
         <input type="hidden" name="operacao" value="comentar">
         <input type="hidden" name="idusercomentou" value="<?php echo $codigin?>">
         <input type="hidden" name="idpostcomentou" value="<?php echo $idpost?>">
         <input type="hidden" name="usercomentou" value="<?php echo $nomelogado?> ">
-        <p><input type="text" size="23" placeholder="Comente aqui..." name="coment">
-</form>
-</div>
+        <textarea type="text" name="coment" placeholder="Comente aqui!" cols="55" rows="3" style="margin:15px; width: 682px; height: 68px;"></textarea>
+        <button type="submit" value="Enviar"><i class="fas fa-sign-in-alt" title="enviar comentário!"></i></button>
+    </form>
+
 
 <br>  <br>  <br>  <br>  <br>  <br>   <br>  <br>  <br>  <br> <br> 
   

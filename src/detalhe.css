@@ -5,18 +5,27 @@ body {
 }
 
 #content{
-
     background-color: rgba(224, 224, 243, 0.877);
     padding: 25px;
     border-width: thin;
     border-radius: 50px;
-    width:350px;
-    height: 400px;
+    margin: 10px;
+    width:auto;
+    height:auto;
     display: flex;
     align-items: left;
     justify-content: left;
     flex-direction: row;
+}
+#content h1{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+}
 
+#content h4{
+    font-family: 'Times New Roman', Times, serif;
+    float: right;
+    margin: 16px;
 }
 /* area de posategem */
 #content-post-a{
@@ -45,11 +54,12 @@ body {
     border-width: thin;
     border-radius: 90px;
     width: 800px;
-    height: 500px;
     display: flex;
     align-items: left;
     justify-content: right;
     flex-direction: column;
+    font-size: 24px;
+    margin-bottom: 10px;
     
 }
 
@@ -74,7 +84,7 @@ body {
 
 #content-post-position{
 
-    position: absolute;
+    position: inherit;
     top: 400px;
     left: 500px;
 
@@ -90,12 +100,90 @@ body {
 
 }
 
-footer{
-
-    justify-content: center;
-
-
-
+#alerta{
+    background-color: rgba(255, 162, 0, 0.877);
+    padding: 10px;
+    border-width: thin;
+    border-radius: 50px;
+    margin: 10px;
+    width:auto;
+    height:auto;
+    display: flex;
+    justify-content:center;
+    flex-direction: row;
+    font-family:cursive; 
+    font-size: 24px;
 }
 
+#exibedados{
+    background-color: rgba(218, 170, 240, 0.877);
+    padding: 10px;
+    border-width: thin;
+    border-radius: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 100px;
+    margin-left: 100px;
+    width:auto;
+    height:auto;
+    display: flex;
+    justify-content:left;
+    flex-direction: row;
+    font-family:cursive; 
+    font-size: 24px;
+}
+
+#linha{
+
+}
+#linha form{
+    margin:20px;
+    display: inline;
+}
+
+#footer{
+    background-color: rgba(0, 0, 0, 0.877);
+    padding: 10px;
+    border-width: thin;
+    width:auto;
+    height:auto;
+    display: flex;
+    justify-content:center;
+    flex-direction: row;
+    font-family:'Times New Roman', Times, serif; 
+    font-size: 16px;
+    color: white;
+}
+
+#footer a{
+    color: white;
+    font-size: 16px;
+}
+
+#sobrenos{
+    background-color: rgba(224, 224, 243, 0.877);
+    padding: 50px;
+    border-width: thin;
+    border-radius: 50px;
+    margin: 50px;
+    width:auto;
+    height:auto;
+    align-items: left;
+    justify-content: left;
+ 
+}
+
+#sobrenos h1{
+    font-size: 48px;
+    text-align: center;
+}
+
+#sobrenos h2{
+    font-size: 32px;
+    margin-top: 32px;
+}
+#sobrenos p{
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+}
 

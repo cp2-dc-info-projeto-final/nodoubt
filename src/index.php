@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    
 <script src="https://kit.fontawesome.com/785c80f02e.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" href="https://www.w3schools.com/w3css/3/w3.css">
-
+<link rel="stylesheet" href="detalhe.css">
 
 </head>
 
@@ -85,20 +85,19 @@
 
 <br>
 <div>
-  
-  <footer class="w3-container w3-padding-64 w3-center  w3-xlarge" style= "background-color: #343a40">
+<div id="footer">
+  <footer>
     <p class="w3-medium" style="color: white;">
          Desenvolvido por: <br>
-         Vicky Wingler<br>
-         Júlia Sena<br>
-         Vitoria Costa<br>
-         Caio Felipe <br>
-         Estudantes do <a href="https://www.cp2.g12.br/index.php" target="_blank"> Colégio Pedro II</a></p>
-  <p class="w3-medium" style="color: white;">
-  <section id="contactus"> Contato: <a href="#" target="_blank">nodoubttt0@gmail.com</a></p>
-    </section>
-
-</footer>
+         Vicky Wingler | Júlia Sena | Vitória Costa | Caio Felipe <br>
+         Estudantes do <a href="https://www.cp2.g12.br/index.php" target="_blank"> Colégio Pedro II</a>
+    </p>
+    <p class="w3-medium" style="color: white;">
+      <section id="contactus"> Contato: <a href="#" target="_blank">nodoubttt0@gmail.com</a>
+      </section>
+      </p>
+  </footer>
+</div>
 </div>
   </body>
 </html>
