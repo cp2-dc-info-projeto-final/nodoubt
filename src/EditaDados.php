@@ -10,6 +10,8 @@
     $usuario = mysqli_fetch_array($res);
     $permiss = $usuario["permissadm"];
 }
+
+
 ?>
 <div id="login">
             <div class="card">
@@ -19,7 +21,8 @@
             <div class="card-content">
                 <div class="card-content-area">
             <form action="Recebedados.php" method="POST">
-                <input type="hidden" name="emailusuario" value="<?php echo $emailuser?>">
+                  <input type="hidden" name="emailusuario" value="<?php echo $emailuser?>">
+                  <input type="hidden" name="nomepramudar" value="<?php echo $usuario["usernameusuario"]?>"> </p>
                 <p>Nickname: <input type="text" name="username" size="10" value="<?php echo $usuario["usernameusuario"]?>"> </p>
                 <p>Nome: <input type="text" name="nome" size="30" value="<?php echo $usuario["nomeusuario"]?>"> </p>
                 <p>Idade: <input type="text" name="idade" size="3" value="<?php echo $usuario["idadeusuario"]?>"> </p>
@@ -43,7 +46,7 @@
 
 <div class="card-header">
 
-
+<h5><a href="editasenha.php?emai=<?php echo $emailuser?>">editar senha</a>
 <h5><a href="Perfil.php">Voltar</a>
 </h5>
 
