@@ -909,6 +909,6 @@ function Teste_edit($non1, $non2, $id, $eml, $erro, $data){
 
     <html>
         <head>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="estilizar.css">
         <head>
     </html>
