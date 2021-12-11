@@ -1,7 +1,5 @@
 <?php
 
-
-
  include "autentica.inc";
  $email = $_SESSION["emailusuario"];
  $img = $_SESSION["fotoperfil"];
@@ -23,7 +21,7 @@ $nome = $usuario["usernameusuario"];
 <script src="https://kit.fontawesome.com/785c80f02e.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" href="https://www.w3schools.com/w3css/3/w3.css">
 
-    <link rel="stylesheet" href="detalhes.css">
+    <link rel="stylesheet" href="detalhe.css">
         <title><?php echo $nome;?></title>
 </head>
   <body>
@@ -109,40 +107,29 @@ $nome = $usuario["usernameusuario"];
   
     <?php echo"<p><a href='EditaDados.php?emailusuario=". $_SESSION["emailusuario"]."'>Editar Dados</a><br>";?> 
     <p><p><a href="Logout.php">Sair</a></p></p>
-  </div></h3></div>
+  </div></h3>
 
 
     <?php $iduser = $usuario["codusuario"];
-    $datinha = $usuario["idadeusuario"];
 
-    if(strpos($datinha, "/") !== FALSE){
-                
-      $partes = explode("/", $datinha);
-
-      $dia = $partes[0];
-
-      $mes = $partes[1];
-
-      $ano = isset($partes[2]) ? $partes[2] : 0;
-      $datinha = $dia;
-      $datinha .= $mes;
-      $datinha .= $ano;
-    }
-      $iduser .= $datinha;
     $coduser = $usuario["usernameusuario"];
 
+    $pt = "post";
 
+    $ask = 1;
     ?>
-
+</div>
 
       <div class="container">
 
-      <div id="content-post-a">
+      <div id="content-post-a" align-items="top">
     <form action="Recebedados.php" method="POST">
         <input type="hidden" name="operacao" value="Postar">
       <input type="hidden" name="user" value="<?php echo $coduser?>"></input>
       <input type="hidden" name="iduser" value="<?php echo $iduser?>"></input>
-      <input type="text" name="titulo" size="25" placeholder="titulo"><p>  
+      <i><h5>Tiulo</h5></i>
+      <input type="text" name="titulo" size="25" placeholder="titulo"><p>
+      <i><h5>Postagem</h5></i>
       <br><textarea type="text" name="post" placeholder="Qual sua duvida?" cols="55" rows="3"></textarea><br>
         <input type="submit" class="submit" value="Postar!">
     </form>
@@ -162,55 +149,98 @@ $nome = $usuario["usernameusuario"];
 
       else{
         ?> <div id="content-post-position"> <?php
+
         for($i=0; $i < $linhas; $i++){
-          $post = mysqli_fetch_array($res);
-          $idpost = $post["codpost"];          
+           $post = mysqli_fetch_array($res);
+          $idpost = $post["codpost"];  
+          $title = $post["titulopost"];
           ?>
-            <div class='container'>
-            <div id='content-post-b'>
-     
-            <img src="<?php echo $x ?>  " style="width:60px;">
-            <?php
-          echo "<h1>".$post["userpost"]."</h1>";
-          echo "<h2>".$post["titulopost"]."</h2>";
-          echo "<h3>".$post["postcontent"]."<br></h3";
-          echo "----------------------------------<br>";
-          ?>
-          
-          <div id="linha">
-          <?php echo "<a href='postcoment.php?idpost=". $idpost."' for='content-post-b'>";?>
-          <button><i class="fas fa-comments" title="Comentar!">           
-          </i></a></button>
+              <div id='content-post-b'>
+              
+                  <img src="<?php echo $x ?> " style="width:60px;">
+                  <?php
+                    echo "<h1>".$post["userpost"]."<br></h1>";
+                    echo "<h2>".$post["titulopost"]."<br></h2>";
+                    echo "<h3>".$post["postcontent"]."<br></h3";
+                    echo "----------------------------------<br>";
 
-          <form action="Recebedados.php" method="POST" >
-              <input type="hidden" name="postid" value="<?php echo $idpost?>"></input>
-              <input type="hidden" name="operacao" value="editar"></p>
-              <button type="submit" value="Editar"><i class="far fa-heart" aria-hidden="true" title="editar postagem!"></i></button></a>
-            </form>
 
-          <form action="editapost.php" method="POST" >
-              <input type="hidden" name="postid" value="<?php echo $idpost?>"></input>
-              <input type="hidden" name="operacao" value="editar"></p>
-              <button type="submit" value="Editar"><i class="fas fa-pen" aria-hidden="true" title="editar postagem!"></i></button></a>
-            </form>
-              <form action="Recebedados.php" method="POST">
-              <input type="hidden" name="operacao" value="Excluirpost"></p>
-              <input type="hidden" name="postid" value="<?php echo $idpost?>"></input>
-              <button type="submit" value="Excluir"><i class="fas fa-trash-alt" title="excluir postagem!"></i></button>
-              </form>
-       
-        </div>
-          </div>
-          </a><br>
-          <?php
-          }
+                    $mysql = "SELECT * FROM curtirusuarios WHERE userlike ='$nome' AND codpostlike ='$idpost' ;";
+                    $resu = mysqli_query($mysqli,$mysql);
+                    $linhass = mysqli_num_rows($resu);
 
-      }
+                    if($linhass == 0){
+
+                      $operacao = "curtir";
+
+                    }
+
+                    elseif($linhass >= 1){
+
+                      $operacao = "ncurtir";
+
+                    }
+
+
+                    ?>
+                    
+                    <div id="linha">
+
+                    <form action="Recebedados.php" method="POST">
+                    <input type="hidden" name="operacao" value="<?php echo $operacao?>"></p>
+                    <input type="hidden" name="postid" value="<?php echo $idpost?>"></input>
+                    <input type="hidden" name="usercod" value="<?php echo $iduser?>"></input>
+                    <input type="hidden" name="userrname" value="<?php echo $nome?>"></input>
+                    <input type="hidden" name="titre" value="<?php echo $title?>"></input>          
+                    <input type="hidden" name="laiki" value="<?php echo $ask?>"></input>          
+                    <input type="hidden" name="post" value="<?php echo $pt?>"></input>   
+                    
+                    <div style="white-space: nowrap;  hyphens: none;">
+                    <?php
+                    if( $operacao == "curtir"){
+                    ?>   
+
+                        <button style="white-space: nowrap" type="submit" class="submit"><i class="far fa-heart" aria-hidden="true" title="Curtir"></i></button></a>
+
+                      <?php
+                    }
+                    elseif( $operacao == "ncurtir"){
+                    ?>
+                        <button style="white-space: nowrap" type="submit" class="submit"><i class="fas fa-heart" aria-hidden="true" title="Descurtir"></i></button></a>
+
+                    <?php
+                    }            
+                      ?> 
+                      </form>
+                    
+                    <?php echo "<a href='postcoment.php?idpost=". $idpost."' for='content-post-b'>";?>
+                    <button><i class="fas fa-comments" title="Comentar!">           
+                    </i></a></button>
+                  </div><div  style="white-space: nowrap;  hyphens: none;">
+                    <form action="editapost.php" method="POST" >
+                        <input type="hidden" name="postid" value="<?php echo $idpost?>"></input>
+                        <input type="hidden" name="operacao" value="editar"></p>
+                        <button type="submit" value="Editar"><i class="fas fa-pen" aria-hidden="true" title="editar postagem!"></i></button></a>
+                      </form></div><div  style="white-space: nowrap;  hyphens: none;">
+                        <form action="Recebedados.php" method="POST">
+                        <input type="hidden" name="operacao" value="Excluirpost"></p>
+                        <input type="hidden" name="postid" value="<?php echo $idpost?>"></input>
+                        <button type="submit" value="Excluir"><i class="fas fa-trash-alt" title="excluir postagem!"></i></button>
+                        </form>
+                  </div>
+                    <br></br><br>
+                    <?php
+                   }
+            }
       mysqli_close($mysqli);
 ?>
   </div>
+                
+  </div>
+          </div>
+</div>
+  <br>  <br>  <br>  <br>  <br>  <br>   <br>  <br>  <br>  <br> <br>  <br>  <br>  <br>  <br>  <br>  <br>   <br>  <br>  <br>  <br> <br>
 
-  <br>  <br>  <br>  <br>  <br>  <br>   <br>  <br>  <br>  <br> <br>
   
   <footer class="w3-container w3-padding-64 w3-center  w3-xlarge" style= "background-color: #343a40">
     <p class="w3-medium" style="color: white;">

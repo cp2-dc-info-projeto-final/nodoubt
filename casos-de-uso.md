@@ -25,9 +25,10 @@
  - Usuario
  - Administrador 
 
-## Diagrama de Casos de Uso
+## Diagrama de![diagrama casos de uso]
 
-![Diagrama de Casos de Uso](diagrama-de-banco-de-dados.jpg)
+![Diagrama de Casos de Uso](https://user-images.githubusercontent.com/55743181/145641787-75e6173f-d31c-4657-8699-67df6e75aff2.jpg)
+
 
 ## Descrição dos Casos de Uso
 
