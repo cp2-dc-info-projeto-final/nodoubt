@@ -39,19 +39,33 @@ Após a inscrição, o sistema confirmará as informações digitadas para testa
 ### mensagens de erro possiveis:
 
 - [erro_cadastro]:
-- [erro_A]:
-- [erro_A]:
-- [erro_A]:
-- [erro_A]:
-- [erro_A]:
-- [erro_A]:
-- [erro_A]:
-- [erro_A]:
-- [erro_A]:
-- [erro_A]:
-- [erro_A]:
-- [erro_A]:
-- [erro_A]:
+
+- [erro_A]: "O campo: Nome de Usuário deve possuir no mínimo 5 caracteres.". Esse erro é exibido quando o nome de usuário digitado tem menos de 5 caracteres.
+
+- [erro_B]: "O campo: Nome de Usuário deve possuir no maximo 12 caracteres.". Esse erro é exibido quando o nome de usuário ultrapassa 12 caraceteres.
+
+- [erro_C]: "O campo: Senha deve possuir no mínimo 5 caracteres.". Esse erro é exibido pois O sistema impede senhas com menos de 5 caracteres.
+
+- [erro_D]: "Os campos de senha não podem ser diferentes.". Esse erro é exibido quando os campos de senha estão diferentes, é necessário que correspondam entre si.
+
+- [erro_E]: "O campo: Nome de Usuário e senha devem ser diferentes.". Esse erro alerta que o nome de usuário e senha não podem ser iguais.
+
+- [erro_F]: "O campo: Nome esta vazio ou foi inserido de forma incorreta.". Esse erro é exibido quando o campo Nome foi deixado vazio ou foi inserido de forma incorretamente.
+
+- [erro_G]:"O campo: Data de Nascimento deve possuir no mínimo 8 dígitos.". Esse erro é exibido pois é necessário que o campo Data de Nascimento possua mês, data e ano completos.
+
+- [erro_H]: "O campo: Data de Nascimento exige um ano válido.". Esse erro é exibido pois o sistema impede idade com data do ano menor que 1000.
+
+- [erro_I]: "O campo Data de Nascimento só aceita números.". Esse erro é exibido pois o sistema aceita apenas números no campo Data de Nascimento.
+
+- [erro_J]: "O campo: Data de Nascimento não indentificou sua data como válida.". Esse erro é exibido pois o sistema identificou a Data de Nascimento como inválida.
+
+- [erro_K]: "O campo: Data de Nascimento deve possuir barras de separação.". Esse erro é exibido pois é necessário que coloque barras de separação na data de nascimento separando dia/mês/ano.
+
+- [erro_L]: "O campo: Email está muito curto ou não foi digitado corretamente.". Esse erro é exibido quando o Email é digitado incorretamente ou não contem o número mínimo de caracteres necessários. 
+
+- [erro_M]: "O campo: E-mail não foi digitado corretamente.". Esse erro é exibido pois é necessário que o email contenha @.
+
 
 ## Funcionalidade B
 
