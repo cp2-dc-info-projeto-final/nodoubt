@@ -21,3 +21,23 @@ Projeto Final do Curso Técnico Integrado de Desenvolvimento de Sistemas - Colé
 **Modelagem do Banco de Dados**
 
 ![Diagrama Banco de Dados](https://user-images.githubusercontent.com/55743181/145641463-7033aa37-a9ca-4843-a12d-7b2faa588928.jpg)
+
+## informações do PHP e PHPMYADIMIN
+
+- Servidor: 127.0.0.1 via TCP/IP
+- Tipo de servidor: MariaDB
+- Versão do servidor: 10.4.21-MariaDB - mariadb.org binary distribution
+- versão do PHP: 7.3.31
+- Informação da versão: 5.1.1 (atualizada)
+
+## Instruções para usuarios de teste
+
+- Email do usuario padrão de teste
+testuser@gmail.com
+- Senha do usuario padrão de teste
+1425368
+
+- Email do usuario adiminstrador de teste
+nodoubttt0@gmail.com
+- Senha do usuario adiminstrador de teste
+36612206

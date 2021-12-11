@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 09-Dez-2021 às 23:44
+-- Tempo de geração: 12-Dez-2021 às 00:51
 -- Versão do servidor: 10.4.21-MariaDB
 -- versão do PHP: 7.3.31
 
@@ -44,14 +44,15 @@ CREATE TABLE IF NOT EXISTS `cadastrousuarios` (
   `emailusuario` varchar(30) NOT NULL,
   `permissadm` int(2) NOT NULL,
   PRIMARY KEY (`codusuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `cadastrousuarios`
 --
 
 INSERT INTO `cadastrousuarios` (`codusuario`, `usernameusuario`, `senhausuario`, `nomeusuario`, `idadeusuario`, `emailusuario`, `permissadm`) VALUES
-(1, 'NouAdm', '$2y$10$lKIKpG092z06WPwxIhDLK.qKMsipKDTCGpCHz.0cd/Gcl4BSXkG4e', 'vicky do nascimento ', '20/07/2004', 'nodoubttt0@gmail.com', 1);
+(1, 'NouAdm', '$2y$10$lKIKpG092z06WPwxIhDLK.qKMsipKDTCGpCHz.0cd/Gcl4BSXkG4e', 'vicky do nascimento ', '20/07/2004', 'nodoubttt0@gmail.com', 1),
+(2, 'Testuser', '$2y$10$YX72atSzDYQ5tLDpzZWC1urzsYTSMDy0lNQpflVLeXto0beYK54uO', 'User de teste nascimento ontem', '11/12/2021', 'testuser@gmail.com', 0);
 
 -- --------------------------------------------------------
 
