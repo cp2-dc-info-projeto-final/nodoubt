@@ -4,9 +4,9 @@ Projeto Final do Curso Técnico Integrado de Desenvolvimento de Sistemas - Colé
 
 **Integrantes:**
  - Vicky do nascimento wingler
- - Julia Sena da Costa
+ - JÚlia Sena da Costa
  - Caio Felipe de Oliveira Martins
- - Vitoria Maria Sousa Pinto da Costa
+ - VitÓria Maria Sousa Pinto da Costa
 
  ## Descrição do Projeto
 

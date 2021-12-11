@@ -6,7 +6,7 @@
 
         <meta name="viewport"content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="estilização.css">
+        <link rel="stylesheet" href="estilizar.css">
 
         <title>Cadastro</title>
 
@@ -183,80 +183,35 @@ function Teste_form_Edicao($non1, $non2, $id, $eml, $erro, $data){
     return array ($erro, $id, $data);
 }
 
-    
-function Teste_edit($non1, $non2, $id, $eml, $erro, $data){
+function teste_sen( $seinum, $seinscripiti, $seinova, $seindnv, $erru){
 
-    //impede nomes de usuario menores que 5
-    if(strlen($non1) < 5){       
-    echo "O campo: Nome de Usuário deve possuir no mínimo 5 caracteres.<br>";
-    $erro = 1;
-    }
-    // impede nomes de usuario maiores que 12
-    if(strlen($non1) > 12){
-    echo "O campo: Nome de Usuário deve possuir no máximo 12 caracteres.<br>";
-    $erro = 1;
-    }
-    // impede nomes vazios ou sem espaço
-    if(empty($non2) OR strstr($non2,' ') == FALSE){    
-    echo "O campo: Nome está vazio ou foi inserido de forma incorreta. <br>";
-    $erro = 1;
-    }
-    // impede escrita de idade menor que 8
-    if ( strlen($id) < 8){
-    echo "O campo: Data de Nascimento deve possuir no mínimo 8 digitos.<br>";
-    $erro = 1;
-    }
-    else{
-        //impede idade de /
-       if(strpos($id, "/") !== FALSE){
-        
-            $partes = explode("/", $id);
-
-            $dia = $partes[0];
-
-            $mes = $partes[1];
-
-            $ano = isset($partes[2]) ? $partes[2] : 0;
-            $data = $id;
-            $id = $dia;
-            $id .= $mes;
-            $id .= $ano;
-            //impede idade com data do ano menor que 1000
-            if (strlen($ano) < 4) {
-                echo "O campo: Data de Nascimento exige um ano válido.<br>";
-                $erro = 1;
-            }
-            //impede idade nao numerica
-            if (!is_numeric($id)){
-
-                echo "O campo Data de nascimento só aceita números.";
-                $erro = 1;
-            }
-            else {
-                // verifica se a data é válida
-                if (!checkdate($mes, $dia, $ano)) {
-                    echo "O campo: Data de Nascimento não indentificou sua data como válida.<br>";
-                    $erro = 1;
-                }
-            }
-         }
-        else{
-            echo "O campo: Data de Nascimento deve possuir barras de separação.<br>";
-            $erro = 1;
+        #impede senhas menores que 5 ou vazias
+        if(strlen($seinova) < 5 or empty($seinova)){
+            echo "O campo: da nova senha deve possuir no mínimo 5 caracteres.<br>";
+            $erru = 1;
         }
+        if(strlen($seinova) > 15){
+            echo "O campo: Nova senha deve possuir no maximo caracteres.<br>";
+            $erru = 1;
+        }
+        #verifica se as senhas são iguais
+        if($seinova !== $seindnv ){
+        echo "Os campos das novas senhas não podem ser diferentes.<br>";
+        $errou = 1;
+        }
+        if($seinova == $seinum ){
+            echo "Os campos Senha atual e Nova senha estão identicos.<br>";
+            $errou = 1;
+        }
+        if(!password_verify($seinum, $seinscripiti)){
+        echo "O campo: Senha atual não condiz com a sua senha de login.<br>";
+        $erru = 1;
+        }
+
+        return($erru);
     }
-    // verifica se o email possui menos de 8 letras
-    if(strlen($eml) < 8){
-    echo "O campo: E-mail está muito curto ou não foi digitado corretamente.<br>";
-    $erro = 1;
-    }
-    // impede email sem @  
-    if(strstr($eml,'@') == FALSE){
-    echo "O campo: E-mail não foi digitado corretamente.<br>";
-    $erro = 1;
-    }
-    return array ($erro, $id, $data);
-}
+
+
 
     $operacao = $_POST["operacao"];
         include "conecta_mysql.inc";
@@ -360,6 +315,7 @@ function Teste_edit($non1, $non2, $id, $eml, $erro, $data){
                 $idade = $_POST["idade"];
                 $usuario = $_POST["email"];
                 $permiss = $_POST["permiss"];
+                $var = $_POST["nomepramudar"];
                 $erro = 0;
                 $linhas = 0;
                 $fml;
@@ -406,12 +362,46 @@ function Teste_edit($non1, $non2, $id, $eml, $erro, $data){
     }
                 
                 if($erro == 0) {
+
+                    $sql ="SELECT * FROM postagemusuarios WHERE userpost ='$var';";
+                    $resulta = mysqli_query($mysqli, $sql);
+                    $linhaae = mysqli_num_rows($resulta);
+
+                    if($linhaae !== 0){
+                        for($i=0; $i < $linhaae; $i++){
+                            $sql = "UPDATE postagemusuarios SET userpost ='$username' ";
+                            $sql .= "WHERE userpost = '$var';";
+                            mysqli_query($mysqli,$sql);
+                        }
+                    }
+                    $sql ="SELECT * FROM comentusuarios WHERE usercoment ='$var';";
+                    $resulta = mysqli_query($mysqli, $sql);
+                    $linhaae = mysqli_num_rows($resulta);
+
+                    if($linhaae !== 0){
+                        for($i=0; $i < $linhaae; $i++){
+                            $sql = "UPDATE comentusuario SET usercoemnt ='$username' ";
+                            $sql .= "WHERE usercoment = '$var';";
+                            mysqli_query($mysqli,$sql);
+                        }
+                    }
+                    $sql ="SELECT * FROM curtirusuarios WHERE userlike ='$var';";
+                    $resulta = mysqli_query($mysqli, $sql);
+                    $linhaae = mysqli_num_rows($resulta);
+
+                    if($linhaae !== 0){
+                        for($i=0; $i < $linhaae; $i++){
+                            $sql = "UPDATE curtirusuarios SET userlike ='$username' ";
+                            $sql .= "WHERE userlike = '$var';";
+                            mysqli_query($mysqli,$sql);
+                        }
+                    }
                     $sql = "UPDATE cadastrousuarios SET usernameusuario ='$username',";
                     $sql .= "nomeusuario = '$nome', idadeusuario = '$data', emailusuario = '$usuario', permissadm = $permiss ";
                     $sql .= "WHERE emailusuario = '$emailusuario';";
 
-                    mysqli_query($mysqli,$sql);
-                    if (!mysqli_query($mysqli,$sql)) {
+                    $hj = mysqli_query($mysqli,$sql);
+                    if ($hj == FALSE) {
                         echo("Erro ao atualizar: " .mysqli_error($mysqli));
                         exit;
                     }
@@ -444,6 +434,47 @@ function Teste_edit($non1, $non2, $id, $eml, $erro, $data){
 
     
         }
+        elseif($operacao == "editasenha"){
+
+            $senveia = $_POST["senhaold"];
+            $senoinha = $_POST["senhanova"];
+            $sendenovo = $_POST["senhadnv"];
+            $remaiu = $_POST["remai"];
+            $seinhona = $_POST["seinha"];
+            $errou = 0;
+
+            $errou = teste_sen($senveia, $seinhona, $senoinha, $sendenovo, $errou);
+            
+            if($errou == 1){
+
+                echo "<br> Atualização de senha incompleta";
+
+            }
+
+
+            if($errou == 0){
+                $senhaencript = password_hash($senoinha, PASSWORD_DEFAULT);
+                $sql = "UPDATE cadastrousuarios SET senhausuario ='$senhaencript' ";
+                $sql .= "WHERE emailusuario = '$remaiu';";
+
+                $ve = mysqli_query($mysqli,$sql);
+                if($ve == FALSE){
+                    echo "erro ao salvar mudanças";
+                    exit;
+                }
+                else{
+                    echo "Senha atualizada com sucesso!";
+                }
+
+            }
+            ?>
+            <div class="card-footer">
+            <p><a href="Perfil.php"><input type="submit" value="Retornar ao perfil" class="submit"></a></p>
+            </div>
+            <?php
+
+        }
+
         elseif($operacao == "Excluir"){
             include "autentica.inc";
             include "conecta_mysql.inc";
@@ -456,22 +487,28 @@ function Teste_edit($non1, $non2, $id, $eml, $erro, $data){
 
             if( $linhas != 0){
                 for($i=0; $i < $linhas; $i++){
-                    $array = mysqli_fetch_array($res);
-                    $postex = $array["codpost"];
-
-                    $sql ="DELETE FROM postagemusuarios WHERE codpost ='$postex'";
+                    $sql ="DELETE FROM postagemusuarios WHERE userpost ='$user'";
                     mysqli_query($mysqli,$sql);
-                    
-                    $sql ="SELECT * FROM comentusuarios WHERE codpostcoment ='$postex';";
-                    $resu = mysqli_query($mysqli, $sql);
-                    $linhass = mysqli_num_rows($resu);     
+                }
+            }
+            $sql ="SELECT * FROM comentusuarios WHERE usercoment ='$user';";
+            $resu = mysqli_query($mysqli, $sql);
+            $linhass = mysqli_num_rows($resu);     
 
-                    if( $linhass != 0){
+            if( $linhass != 0){
+                for($i=0; $i < $linhas; $i++){
+                $sql ="DELETE FROM comentusuarios WHERE usercoment ='$user'";
+                mysqli_query($mysqli,$sql);
+                }
+            }
+            $sql ="SELECT * FROM curtirusuarios WHERE userlike ='$user';";
+            $resu = mysqli_query($mysqli, $sql);
+            $linhass = mysqli_num_rows($resu);     
 
-                        $sql ="DELETE FROM comentusuarios WHERE codpostcoment ='$postex'";
-                        mysqli_query($mysqli,$sql);
-
-                    }
+            if( $linhass != 0){
+                for($i=0; $i < $linhas; $i++){
+                $sql ="DELETE FROM comentusuarios WHERE userlike ='$user'";
+                mysqli_query($mysqli,$sql);
                 }
             }
 
@@ -663,6 +700,16 @@ function Teste_edit($non1, $non2, $id, $eml, $erro, $data){
                 mysqli_query($mysqli,$sql);
 
             }
+            $sql ="SELECT * FROM curtirusuarios WHERE codpostlike = $codigopost ;";
+            $resu = mysqli_query($mysqli, $sql);
+            $linhass = mysqli_num_rows($resu);     
+
+            if( $linhass != 0){
+
+                $sql ="DELETE FROM curtirusuarios WHERE codpostlike ='$codigopost'";
+                mysqli_query($mysqli,$sql);
+
+            }
 
             $sql ="DELETE FROM postagemusuarios WHERE codpost ='$codigopost'";
             mysqli_query($mysqli,$sql);
@@ -739,6 +786,17 @@ function Teste_edit($non1, $non2, $id, $eml, $erro, $data){
             $codigocoment = $_POST["postid"];
             $coder = $_POST["idcomen"];
             
+            $sql ="SELECT * FROM curtirusuarios WHERE codpostlike = $codigocoment ;";
+            $resu = mysqli_query($mysqli, $sql);
+            $linhass = mysqli_num_rows($resu);     
+
+            if( $linhass != 0){
+
+                $sql ="DELETE FROM curtirusuarios WHERE codpostlike ='$codigocoment'";
+                mysqli_query($mysqli,$sql);
+
+            }
+
             $sql ="DELETE FROM comentusuarios WHERE idcoment ='$codigocoment'";
             mysqli_query($mysqli,$sql);
 
@@ -909,6 +967,6 @@ function Teste_edit($non1, $non2, $id, $eml, $erro, $data){
 
     <html>
         <head>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="estilizar.css">
         <head>
     </html>

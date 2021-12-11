@@ -11,13 +11,13 @@
  - [CDU 07](#CDU-07): Fazer postagem.
  - [CDU 08](#CDU-08): Editar postagem.
  - [CDU 09](#CDU-09): Excluir postagem.
- - [CDU 10](#CDU-09): Comentar postagem.
- - [CDU 11](#CDU-09): Editar comentario.
- - [CDU 12](#CDU-09): Excluir comentario.
- - [CDU 13](#CDU-09): Curtir posttagens.
- - [CDU 14](#CDU-09): Curtir comentarios.
- - [CDU 15](#CDU-09): Descurtir posttagens.
- - [CDU 16](#CDU-09): Descurtir comentarios.
+ - [CDU 10](#CDU-10): Comentar postagem.
+ - [CDU 11](#CDU-11): Editar comentario.
+ - [CDU 12](#CDU-12): Excluir comentario.
+ - [CDU 13](#CDU-13): Curtir posttagens.
+ - [CDU 14](#CDU-14): Curtir comentarios.
+ - [CDU 15](#CDU-15): Descurtir posttagens.
+ - [CDU 16](#CDU-16): Descurtir comentarios.
  
 
 
@@ -149,7 +149,7 @@ Busca
 **Fluxo Alternativo B**
 
 1. O usuário entra site e ve o icone da barra de busca.
-2. O usuário se direciona até a barra de busca e digita um caracter que acha que esta presente no nome de usuario ou no post que deseja.
+2. O usuário se direciona até a barra de busca e digita um caracter que acha que esta presente no nickname ou no post que deseja.
 3. O sistema exibe todos os perfil e posts com os caracteres digitado..
 
 
