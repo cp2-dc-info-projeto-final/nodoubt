@@ -228,7 +228,7 @@ $nome = $usuario["usernameusuario"];
                         <button type="submit" value="Excluir"><i class="fas fa-trash-alt" title="excluir postagem!"></i></button>
                         </form>
                   </div>
-                    <br></br><br>
+                    <br></br><br><br><br>
                     <?php
                    }
             }
