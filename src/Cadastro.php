@@ -63,7 +63,7 @@
                 <div class="card-content-area">
                     <form action="Recebedados.php" method="POST">
                     <input type="hidden" name="operacao" value="cadastrar">                       
-                    <p>Nome de usuario: <input type="text" placeholder="limite de 12 caracteres..." name="username" size="25" value="<?php echo $user;?>"> </p>
+                    <p>Nickname: <input type="text" placeholder="limite de 12 caracteres..." name="username" size="25" value="<?php echo $user;?>"> </p>
                     <p>Senha:<br> <input type="password" placeholder="Ex: 1a2b3c4d5e " name="senha" size="25"> </p>
                     <p>Confirmar senha:<br> <input type="password" placeholder=" Digite aqui sua senha novamente..." name="senhadois" size="25"> </p>
                     <p>Nome: <input type="text" placeholder="Deve possuir entre 5 a 40 caracteres" name="nome" size="40" value="<?php echo $nome;?>"> </p>
