@@ -117,7 +117,7 @@ No segundo campo, é a onde devera ir a postagem do usuario, onde o usuario escr
 Se todos os campos forem preenchidos corretamente, a pagina do perfil atualizará, e um pouco abaixo da area de criação de postagem, será possivel ver o post feito pelo usuario, com sua foto, o titulo mais acima e abaixo o conteudo da postagem.
 Abaixo a alguns botões que serão comentados futuramente.
 
-- Foto de uma postagem
+![exibiçao post](https://user-images.githubusercontent.com/55743181/145697926-7afa0b79-9af4-43e1-92fb-a1eebb281669.png)
 
 ## Funcionalidade E
 
@@ -141,29 +141,22 @@ Na timeline é exibida as postagens de todos os usuários, que podem ser encontr
 
 Abaixo da postagem, será exibido o botão de comentário em formato de nuvem, onde o usuário ao clicar, poderá comentar a postagem de outro usuário. 
 
-- Foto de comentário feito.
+![comentarios](https://user-images.githubusercontent.com/55743181/145697943-f071f242-f206-41c1-b052-c473efd58fe8.png)
 
 Os comentários feitos exibirá igualmente o botão de nuvem no qual possibilitará o comentário de ser respondido.
-
-- Foto de uma resposta ao comentário.
 
 
 ## Funcionalidade H
 
 Tanto os posts feitos, quanto os comentários e respostas aos comentários, exibirão um botão no formato de coração que possui a funcionalidade de curtir e descurtir.
 
-- Foto de curtida no post.
-
-- Foto de curtida nos comentários e respostas.
-
+![botões](https://user-images.githubusercontent.com/55743181/145697971-b2240449-19f7-40ad-91de-f5c97924ebeb.png)
 
 ## Funcionalidade I
 
 Os posts e comentários feitos podem ser editados, ambos exibem um botão em formato de lapís que fica abaixo do botão de comentários. Ao clicar no botão será exibida uma tela no qual o usuário terá a opção de mudar o título e/ou o conteúdo da postagem ou comentário.
 
-- Foto de edição de postagem.
-
-- Foto de edição de comentário.
+![ediçao postagem](https://user-images.githubusercontent.com/55743181/145697997-2e651bac-ef2e-4f33-b354-91b239a90302.png)
 
 
 ## Funcionalidade J
