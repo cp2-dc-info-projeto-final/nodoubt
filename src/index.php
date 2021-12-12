@@ -80,7 +80,7 @@
 </header>
 
 <div class="container">
-<img src="imagem/logo.jpeg" left="0px"display="flex" height="100%" width="1270px" >           
+<img src="imagem/logo.jpg" left="50x"display="flex" height="60%" width="1270px" >           
 </div>
 
 <br>
