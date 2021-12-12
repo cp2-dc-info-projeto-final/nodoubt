@@ -171,7 +171,7 @@ Os posts e comentários feitos podem ser editados, ambos exibem um botão em for
 
 Os posts e comentários feitos exibirão, abaixo do botão de edição, um botão no formato de lixeira no qual, o usuário ao clicar poderá, excluir sua postagem ou seu comentário se desejar,
 
-- Foto da área de exclusão.
+![botões](https://user-images.githubusercontent.com/55743181/145696712-e2710416-beeb-4489-a5b7-48dfefc1d2f4.png)
 
 ## Funcionalidade K
 
@@ -180,7 +180,7 @@ Na pagina de perfil é o primeiro lugar que é possivel ver se o usuario é um a
 Logo no perfil, se o usuario for um adiministrador, será possivel ver acima do botão de editar usuario, um botão chamado "usuarios".
 Ao cliclar no mesmo, o usuario adiministrador, será direcionado para uma tela no estilo do cadastro, porém apenas com uma grande lista de todos os usuarios cadastrados no site, tendo acesso a seus perfis e podendo mudar informações e excluir os mesmos se for necessario
 
-- Foto da tela de usuarios
+![tela de usuarios](https://user-images.githubusercontent.com/55743181/145696733-33e5d630-a4a8-4372-9e4b-a09e3a128a45.png)
 
 ## Funcionalidade L
 
