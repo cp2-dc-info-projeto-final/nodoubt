@@ -30,8 +30,8 @@ Na navbar, há alguns botões visiveis, sendo o primeiro o nome do site "No doub
 O usuario, após cliclar, é direcionado para uma pagina de login, onde podem ser prenchidos dois campos e grande botão escrito "login", porém, supondo que seja a primeira vez que o usuario entra no site, essa área não sera usada agora, e caso seja, exibira mensagens de erro, que indicam que o usuario ainda não tem um perfil.
 Então, mais abaixo, é possivel ver uma indicação no fim da pagina, instruindo quem não possui conta ainda, para ir a tela de criação de usuario
 
-- foto do login
-- foto da tela de cadastro
+![cadastro](https://user-images.githubusercontent.com/55743181/145696024-5ddd7ba4-25d4-459d-aeb0-c5b6d09bfd77.png)
+
 
 então,já nessa tela, o usuario escreve as informações requisitadas, sendo elas: o nickname(O nome que o usuario usará no site), dois campos de senha (um para criação e outro para confirmação), nome do usuario (onde ficara o nome padra do usuario que esta se cadastrando), a data de nascimento (numerica e com barras de divisão) e o email do usuario para caso seja necessario um futuro contato.
 Após a inscrição, o sistema confirmará as informações digitadas para testar se foram digitadas corretamente. Se foram, o usuario poderá retornar a pagina de login, caso contrario, aparecerão mensagens de erro auto-explicativas indicando o que foi inserido errado, então o usuario é indicado de volta a tela de criação de usuario, porém os campos ja inscrito não serâo apagados( com exceção da senha e a confirmação), sendo possivel edita-las e fazer outra tentativa de cadastro.
@@ -71,7 +71,7 @@ Após a inscrição, o sistema confirmará as informações digitadas para testa
 
 Caso ja tenha feito o cadastro, o usuario virá para a tela de login, onde é possvei ver dois campos, um para o email, e outro para a senha.
 
-- foto da pagina de login
+![login](https://user-images.githubusercontent.com/55743181/145696088-a2f0aef0-afb0-41f7-944f-59864d930883.png)
 
 O usuario já cadastrado só precisa escrever o mesmo email e as senhas utilizadas na inscrição e clicar em entrar, então, o sistema confirma se as informações condizem com as salvas no cadastro, e se condizerem, o usuario é direcionado a pagina do site que mostra o perfil do usuario.
 
@@ -93,7 +93,7 @@ Nessa pagina, é possivel ver a area onde ficam as informações do usuario em u
 
 logo abaixo na ultima informaçao do usuario, é possivel ver um botão escrito "editar dados", apartir dele, o usuario é redirecionado para uma pagina muito semelhante a de cadastro, onde é possivel ver diversos campos alteraveis, com informações do usuario (com exceção da senha).
 
-- foto da area de edição
+![edição de dados](https://user-images.githubusercontent.com/55743181/145696098-b30ebcf5-fb6e-43ee-a145-71bba8d200e8.png)
 
 a partir daqui, caso o usuario queira, é possivel editar as informações antes cadastradas pelo mesmo, tendo abaixo desses campos, um botão indicando "editar" para enviar as mudanças feitas ao sistema, assim, caso não haja nenhum erro no prenchimento desses campos, o sistema guardará as informações alteradas e atualizará no banco, assim alterando as informações do usuario. Após isso, é mostrado uma mensagem na tela, indicando que os dados foram atualizados, podendo levar o usuario de volta ao perfil
 
@@ -125,7 +125,7 @@ Abaixo a alguns botões que serão comentados futuramente.
 
 Na barra de navegação no topo da pagina, onde ja foi comentado que havia uma barra de busca, é possivel escrever nela.
 
-- Foto da barra
+![barra de busca](https://user-images.githubusercontent.com/55743181/145696120-a48754f2-fbd9-4cf7-be55-e795aae68f77.png)
 
 Nela, o usuario, caso conheça outros usuarios do site, pode tentar digitar o nickname desses usuarios, e ao clicar no simbolo de lupa ainda na barra de busca, o mesmo será direcionado a outra pagina, onde o sistema indicara se algum perfil com o que foi inserido foi encontrado, e ainda se o que foi digitado é encontrado em algum titulo de postagem.
 Caso encontre ammbos, mostrará primeiro a quantidade de postagens encontradas, exibindo em seguida o titulo das postagens encontradas e o nome do usuario que postou em baixo, ambas as inscrições clicaveis, direcionando o usuario para a pagina dessa postagem ou o perfil do usuario respectivamente.
