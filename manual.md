@@ -25,7 +25,7 @@ Em conjunto com as explicações das funcionalidades do mesmo.
 Ao entrar no site o usuario se depara com uma tela composta por uma barra de navegação no topo, uma imagem ao centro, e no fim uma grande área contendo informações dos criadores.
 Na navbar, há alguns botões visiveis, sendo o primeiro o nome do site "No doubt", que lhe retorna para essa mesama pagina, em seguida, um botão escrito "Sobre nóe", onde você é levado para uma pagina, com informações sobre o objetivo do projeto, seus criaddores e etc, em sequencia um botão escrito "Fale conosco" que lhe direciona para a área no fim da pagina, depois é possivel ver um campo onde esta escrito "Buscar...", sendo ele a barra de busca, e por fim mais ao canto direito, um botão escrito "Login" com um icone de entrar.
 
-- foto do index
+![index](https://user-images.githubusercontent.com/55743181/145697486-d7a9baa8-fc52-4d89-8aa5-5a56bd90722e.png)
 
 O usuario, após cliclar, é direcionado para uma pagina de login, onde podem ser prenchidos dois campos e grande botão escrito "login", porém, supondo que seja a primeira vez que o usuario entra no site, essa área não sera usada agora, e caso seja, exibira mensagens de erro, que indicam que o usuario ainda não tem um perfil.
 Então, mais abaixo, é possivel ver uma indicação no fim da pagina, instruindo quem não possui conta ainda, para ir a tela de criação de usuario
@@ -75,21 +75,20 @@ Caso ja tenha feito o cadastro, o usuario virá para a tela de login, onde é po
 
 O usuario já cadastrado só precisa escrever o mesmo email e as senhas utilizadas na inscrição e clicar em entrar, então, o sistema confirma se as informações condizem com as salvas no cadastro, e se condizerem, o usuario é direcionado a pagina do site que mostra o perfil do usuario.
 
-- foto do perfil de um usuario com informações borradas
-
  Caso contrario, o sistema exibirá mensagens de erro, indicando quais campos não condizem com as indormações salvas, sendo elas "email invalido", "senha invalida", ambos ou caso o usuario tente acessar site via link, surgirá "Você não fez login" e as duas mensagens possiveis ja escritas aqui.
 
- - foto das mensagens de erro
+![senha invalida ](https://user-images.githubusercontent.com/55743181/145696846-f25e3325-611e-4b80-a9ab-3378967606e3.png)
+![email invalido](https://user-images.githubusercontent.com/55743181/145696839-7e9d4854-1b45-438c-b5a6-666b5f42eb12.png)
 
 ## Funcionalidade C
 
 Após o usuario fazer login, ja é possivel umas das partes principais do site, a pagina do perfil.
 
-- foto do perfil de um usuario exemplo
+![fotoexemplo](https://user-images.githubusercontent.com/55743181/145696403-69b04baf-adc3-4603-9183-a292b0c88ae6.png)
 
 Nessa pagina, é possivel ver a area onde ficam as informações do usuario em uma area mais a esquerda, junto a uma foto temporaria e alguns botões que serão explicados futuramente.
 
-- foto da area das informações do usuario no perfil do usuario de exemplo
+![informaçoes do usuario](https://user-images.githubusercontent.com/55743181/145696417-234db5e1-7645-45d9-ae3d-3d99f58220f7.png)
 
 logo abaixo na ultima informaçao do usuario, é possivel ver um botão escrito "editar dados", apartir dele, o usuario é redirecionado para uma pagina muito semelhante a de cadastro, onde é possivel ver diversos campos alteraveis, com informações do usuario (com exceção da senha).
 
@@ -97,24 +96,23 @@ logo abaixo na ultima informaçao do usuario, é possivel ver um botão escrito 
 
 a partir daqui, caso o usuario queira, é possivel editar as informações antes cadastradas pelo mesmo, tendo abaixo desses campos, um botão indicando "editar" para enviar as mudanças feitas ao sistema, assim, caso não haja nenhum erro no prenchimento desses campos, o sistema guardará as informações alteradas e atualizará no banco, assim alterando as informações do usuario. Após isso, é mostrado uma mensagem na tela, indicando que os dados foram atualizados, podendo levar o usuario de volta ao perfil
 
-- foto da tela de edição apos enviar alterações
+![tela de mudanças](https://user-images.githubusercontent.com/55743181/145696435-11aa834c-a6ce-4495-9442-11c90d4cfea9.png)
 
 Caso o usuario deseje alterar a senha, é possivel ver na mesma tela onde estão as informações alteraveis do usuario, logo abaixo do botão de editar, um botão menor, escrito "editar senha". Onde, após ser clicado, o usuario é redirecionado para outra pagina, com 3 campos: um sendo para escrever novamente a sua senha atual, o segundo sendo para escrever a nova senha e o terceiro para escrever novamente a nova senha para que sejam confirmadas. Após escrever as informações, o usuario clica no botão escrito enviar, e então, caso o sistema confirme essas informações, é indicado a mesma messagem de que os dados foram atualizados corretamente, podendo agora retornar ao perfil
 
-- foto do botão
-
-- foto dos campos
+![botao senha](https://user-images.githubusercontent.com/55743181/145696480-98540910-ab16-4bf8-8330-7a5f6eb8ba99.png)
+![campos senha](https://user-images.githubusercontent.com/55743181/145696481-8df64683-0bbd-4f60-a45e-1471c5b97bcd.png)
 
 ## Funcionalidade D
 
 De volta ao perfil do usuario, mais ao centro superior da pagina é possivel ver uma grande area, com dois campos de tamanhos relativos, um para Titulo e outro para postagem.
 
-- foto da area da postagem
+![postagem](https://user-images.githubusercontent.com/55743181/145696498-2a4c2f13-c0e0-4889-ad8e-3dc9fed00541.png)
 
 Nesses campos é onde o usuario fará as postagens, sendo o primeiro, o titulo, onde devera ir o titulo da sua duvida, tendo um limite de 30 caracteres, é onde ficara um resumo, ou o topico principal da sua postagem, o assunto que ela abrange, ou uma frase que descreva a situação, caso não preenchido esse campo, o titulo ira ser inserido automaticamente como "particular".
 No segundo campo, é a onde devera ir a postagem do usuario, onde o usuario escreve sua duvida ou o que deseja, com um limite de 350 caracteres. Caso não seja prenchido, o sistema indicará um erro, dizendo que não é possivel fazer um post vazio.
 
-- mensagem de erro de campo vazio
+![campo vazio](https://user-images.githubusercontent.com/55743181/145696523-5f40dcf9-f5a4-4cf2-8666-715dff271b2e.png)
 
 Se todos os campos forem preenchidos corretamente, a pagina do perfil atualizará, e um pouco abaixo da area de criação de postagem, será possivel ver o post feito pelo usuario, com sua foto, o titulo mais acima e abaixo o conteudo da postagem.
 Abaixo a alguns botões que serão comentados futuramente.
@@ -131,7 +129,7 @@ Nela, o usuario, caso conheça outros usuarios do site, pode tentar digitar o ni
 Caso encontre ammbos, mostrará primeiro a quantidade de postagens encontradas, exibindo em seguida o titulo das postagens encontradas e o nome do usuario que postou em baixo, ambas as inscrições clicaveis, direcionando o usuario para a pagina dessa postagem ou o perfil do usuario respectivamente.
 Abaixo das postagens encontradas, é indicado a quantidade de usuarios encontrados, abaixo exibindo os nicknames e fotos cinzas para sinalizar um perfil. os mesmos sendo clicaveis, então sendo direcionado ao perfil do usuario com o nickname encontrado.
 
-- foto de uma busca
+![busca](https://user-images.githubusercontent.com/55743181/145696772-34512c20-31ea-4db4-aac9-ced067be9190.png)
 
 caso não encontre alguma das duas opções, sera exibido uma mensagem de que não foi encontrado nenhum perfil ou postagem e então mostrar o outro.
 
@@ -172,7 +170,7 @@ Os posts e comentários feitos podem ser editados, ambos exibem um botão em for
 
 Os posts e comentários feitos exibirão, abaixo do botão de edição, um botão no formato de lixeira no qual, o usuário ao clicar poderá, excluir sua postagem ou seu comentário se desejar,
 
-- Foto da área de exclusão.
+![botões](https://user-images.githubusercontent.com/55743181/145696712-e2710416-beeb-4489-a5b7-48dfefc1d2f4.png)
 
 ## Funcionalidade K
 
@@ -181,21 +179,21 @@ Na pagina de perfil é o primeiro lugar que é possivel ver se o usuario é um a
 Logo no perfil, se o usuario for um adiministrador, será possivel ver acima do botão de editar usuario, um botão chamado "usuarios".
 Ao cliclar no mesmo, o usuario adiministrador, será direcionado para uma tela no estilo do cadastro, porém apenas com uma grande lista de todos os usuarios cadastrados no site, tendo acesso a seus perfis e podendo mudar informações e excluir os mesmos se for necessario
 
-- Foto da tela de usuarios
+![tela de usuarios](https://user-images.githubusercontent.com/55743181/145696733-33e5d630-a4a8-4372-9e4b-a09e3a128a45.png)
 
 ## Funcionalidade L
 
 A edição de usuário é uma função própria do usuário admnistrador, que poderá fazer mudanças nos perfis dos usuários.
 Na lista de usuarios registrados, ao clicar em editar usuario em um dos perfis dos usuarios, o adiministrador será direcionado para a tela de edição de dados, porém, com as informações do usuario selecionado.
 
--foto da edição de dados vista por adimin
+![vista adm](https://user-images.githubusercontent.com/55743181/145696633-de01cd6f-ca69-4d59-9747-cc44b2a9ab0e.png)
 
 ## Funcionalidade M
 
 Nessa mesma tela, é possivel notar um campo a mais, que não é visto por usuarios normais, o mesmo é um campo chamado Permissão, e naturalmente leva o numero 0
 Porém o adiministrador pode mudar esse numero para 1, assim tornando o usuario selecionado, um adiministrador
 
-- foto da tela de usuarios com usuario selecionado, agora como adimin
+![botao permissao](https://user-images.githubusercontent.com/55743181/145696619-35b17d97-479f-444f-a728-9fd3ae121899.png)
 
 ## Funcionalidade N
 Na área que contem as informações do usuários, no canto superior esquerdo da timeline, exibirá o botão "sair" abaixo do botão "editar dados". O usuário, ao clicar sairá de sua conta quando desejar, e será encaminhado novamente para a página de login.

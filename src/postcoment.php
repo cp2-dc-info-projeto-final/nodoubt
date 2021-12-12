@@ -17,8 +17,8 @@ include "autentica.inc";
     for($i=0; $i < $linhas; $i++){
     $usuario = mysqli_fetch_array($res);
     $codigin = $usuario["codusuario"];
-
-}
+    }
+    
 ?>
 <html>
 <head>
@@ -160,6 +160,7 @@ include "autentica.inc";
                     echo " ". $comentario["comentario"];
                     $codugo = $idpost;
                     $idcoments = $comentario["idcoment"];
+                    $h = $comentario["idusercoment"];
                     $title = "Re:";
                     $title .= $post["titulopost"];
                     $mysql = "SELECT * FROM curtirusuarios WHERE userlike ='$nomelogado' AND codpostlike ='$idpost' ;";
@@ -200,22 +201,33 @@ include "autentica.inc";
                         ?> 
                     </div>
                 </form>
+                    <?php 
 
+                    if($h == $_SESSION["coder"]){
+                        ?>
                 <form action="editapost.php" method="POST" >
                     <input type="hidden" name="postid" value="<?php echo $id?>">
                     <input type="hidden" name="idcomen" value="<?php echo $iddois?>">              
                     <input type="hidden" name="operacao" value="editarcoment"></p>
                     <button type="submit" value="Editar"><i class="fas fa-pen" aria-hidden="true" title="editar postagem!"></i></button></a>
                 </form>
+                <?php
+                }
+                if ($h == $_SESSION["usernameusuario"] or $_SESSION["permiss"] == 1 or $user == $_SESSION["usernameusuario"]){
+                ?>
                 <form action="Recebedados.php" method="POST">
                     <input type="hidden" name="operacao" value="excluircoment"></p>
                     <input type="hidden" name="idcomen" value="<?php echo $iddois?>">              
                     <input type="hidden" name="postid" value="<?php echo $id?>"></input>
                     <button type="submit" value="Excluir"><i class="fas fa-trash-alt" title="excluir postagem!"></i></button>
                 </form>
+                <?php
+                }
+                ?>
             </div>
         </div>
         <?php
+
         }
     }
         ?>

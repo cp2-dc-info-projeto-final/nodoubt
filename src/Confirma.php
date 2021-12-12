@@ -34,6 +34,7 @@
                 $usuario = mysqli_fetch_array($res);
                 $username = $usuario["usernameusuario"];
                 $permiss = $usuario["permissadm"];
+                $z = $usuario["codusuario"];
                 if(!password_verify($senha, $usuario["senhausuario"])){
                     echo "Senha inválida!";
                     echo "<p><a href='login.html'>Página de login</a></p>";
@@ -46,6 +47,7 @@
             $img = rand(1, 10);
             $_SESSION["fotoperfil"] = $img;
             $_SESSION["permiss"] = $permiss;
+            $_SESSION["coder"] = $z;
             header("Location:Perfil.php");
             }
         }
