@@ -13,8 +13,11 @@
 
 </head>
 
-<body>
+<body style="backgroud-color:rgb(148,0,211)>
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    
+
+
 
 <header>
   <div class="navbar navbar-inverse">
@@ -53,7 +56,7 @@
                           ?>
           
                             <li>
-                              <a href="Login.html"><i class="fas fa-sign-in-alt"></i>
+                              <a href="Login.html"><i class="fas fa-sign-in-alt"></i> Login
                             </li>
 
                             <?php
