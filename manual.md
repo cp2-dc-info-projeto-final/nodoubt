@@ -79,7 +79,8 @@ O usuario já cadastrado só precisa escrever o mesmo email e as senhas utilizad
 
  Caso contrario, o sistema exibirá mensagens de erro, indicando quais campos não condizem com as indormações salvas, sendo elas "email invalido", "senha invalida", ambos ou caso o usuario tente acessar site via link, surgirá "Você não fez login" e as duas mensagens possiveis ja escritas aqui.
 
- - foto das mensagens de erro
+![senha invalida ](https://user-images.githubusercontent.com/55743181/145696846-f25e3325-611e-4b80-a9ab-3378967606e3.png)
+![email invalido](https://user-images.githubusercontent.com/55743181/145696839-7e9d4854-1b45-438c-b5a6-666b5f42eb12.png)
 
 ## Funcionalidade C
 
