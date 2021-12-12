@@ -130,7 +130,7 @@ Nela, o usuario, caso conheça outros usuarios do site, pode tentar digitar o ni
 Caso encontre ammbos, mostrará primeiro a quantidade de postagens encontradas, exibindo em seguida o titulo das postagens encontradas e o nome do usuario que postou em baixo, ambas as inscrições clicaveis, direcionando o usuario para a pagina dessa postagem ou o perfil do usuario respectivamente.
 Abaixo das postagens encontradas, é indicado a quantidade de usuarios encontrados, abaixo exibindo os nicknames e fotos cinzas para sinalizar um perfil. os mesmos sendo clicaveis, então sendo direcionado ao perfil do usuario com o nickname encontrado.
 
-- foto de uma busca
+![busca](https://user-images.githubusercontent.com/55743181/145696772-34512c20-31ea-4db4-aac9-ced067be9190.png)
 
 caso não encontre alguma das duas opções, sera exibido uma mensagem de que não foi encontrado nenhum perfil ou postagem e então mostrar o outro.
 
