@@ -25,7 +25,7 @@ Em conjunto com as explicações das funcionalidades do mesmo.
 Ao entrar no site o usuario se depara com uma tela composta por uma barra de navegação no topo, uma imagem ao centro, e no fim uma grande área contendo informações dos criadores.
 Na navbar, há alguns botões visiveis, sendo o primeiro o nome do site "No doubt", que lhe retorna para essa mesama pagina, em seguida, um botão escrito "Sobre nóe", onde você é levado para uma pagina, com informações sobre o objetivo do projeto, seus criaddores e etc, em sequencia um botão escrito "Fale conosco" que lhe direciona para a área no fim da pagina, depois é possivel ver um campo onde esta escrito "Buscar...", sendo ele a barra de busca, e por fim mais ao canto direito, um botão escrito "Login" com um icone de entrar.
 
-- foto do index
+![index](https://user-images.githubusercontent.com/55743181/145697486-d7a9baa8-fc52-4d89-8aa5-5a56bd90722e.png)
 
 O usuario, após cliclar, é direcionado para uma pagina de login, onde podem ser prenchidos dois campos e grande botão escrito "login", porém, supondo que seja a primeira vez que o usuario entra no site, essa área não sera usada agora, e caso seja, exibira mensagens de erro, que indicam que o usuario ainda não tem um perfil.
 Então, mais abaixo, é possivel ver uma indicação no fim da pagina, instruindo quem não possui conta ainda, para ir a tela de criação de usuario
@@ -74,8 +74,6 @@ Caso ja tenha feito o cadastro, o usuario virá para a tela de login, onde é po
 ![login](https://user-images.githubusercontent.com/55743181/145696088-a2f0aef0-afb0-41f7-944f-59864d930883.png)
 
 O usuario já cadastrado só precisa escrever o mesmo email e as senhas utilizadas na inscrição e clicar em entrar, então, o sistema confirma se as informações condizem com as salvas no cadastro, e se condizerem, o usuario é direcionado a pagina do site que mostra o perfil do usuario.
-
-- foto do perfil de um usuario com informações borradas
 
  Caso contrario, o sistema exibirá mensagens de erro, indicando quais campos não condizem com as indormações salvas, sendo elas "email invalido", "senha invalida", ambos ou caso o usuario tente acessar site via link, surgirá "Você não fez login" e as duas mensagens possiveis ja escritas aqui.
 
