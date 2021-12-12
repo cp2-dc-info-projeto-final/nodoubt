@@ -75,8 +75,6 @@ Caso ja tenha feito o cadastro, o usuario virá para a tela de login, onde é po
 
 O usuario já cadastrado só precisa escrever o mesmo email e as senhas utilizadas na inscrição e clicar em entrar, então, o sistema confirma se as informações condizem com as salvas no cadastro, e se condizerem, o usuario é direcionado a pagina do site que mostra o perfil do usuario.
 
-- foto do perfil de um usuario com informações borradas
-
  Caso contrario, o sistema exibirá mensagens de erro, indicando quais campos não condizem com as indormações salvas, sendo elas "email invalido", "senha invalida", ambos ou caso o usuario tente acessar site via link, surgirá "Você não fez login" e as duas mensagens possiveis ja escritas aqui.
 
 ![senha invalida ](https://user-images.githubusercontent.com/55743181/145696846-f25e3325-611e-4b80-a9ab-3378967606e3.png)
