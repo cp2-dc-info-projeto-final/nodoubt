@@ -143,6 +143,7 @@ caso não encontre alguma das duas opções, sera exibido uma mensagem de que n�
 
 ## Funcionalidade F
 
+Na timeline é exibida as postagens de todos os usuários, que podem ser encontrados através da busca por palavras chaves na barra de pesquisa.
 
 ## Funcionalidade G
 
@@ -180,11 +181,14 @@ Os posts e comentários feitos exibirão, abaixo do botão de edição, um botã
 - Foto da área de exclusão.
 
 ## Funcionalidade K
+
 ## Funcionalidade L
 
-
+A edição de usuário é uma função própria do usuário admnistrador, que poderá fazer mudanças nos perfis dos usuários.
 
 ## Funcionalidade M
 
-Na área que contem as informações do usuários, no canto superior esquerdo da timeline, exibirá o botão "sair" abaixo do botão "editar dados". O usuário, ao clicar sairá de sua conta quando desejar, e será encaminhado novamente para a página de login.
 
+
+## Funcionalidade N
+Na área que contem as informações do usuários, no canto superior esquerdo da timeline, exibirá o botão "sair" abaixo do botão "editar dados". O usuário, ao clicar sairá de sua conta quando desejar, e será encaminhado novamente para a página de login.
