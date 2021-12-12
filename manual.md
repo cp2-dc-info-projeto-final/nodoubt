@@ -1,13 +1,7 @@
 # Manual do Usuário
 
-
-
-
-
-
-
-
-
+A seguir, um tutorial escrito de todas as funcionalidades do site No doubt
+Em conjunto com as explicações das funcionalidades do mesmo.
 
 **Lista das Funcionalidades:**
 
@@ -182,13 +176,26 @@ Os posts e comentários feitos exibirão, abaixo do botão de edição, um botã
 
 ## Funcionalidade K
 
+No site, há usuarios que possuem uma permissão especial, são os adiminstradores.
+Na pagina de perfil é o primeiro lugar que é possivel ver se o usuario é um adiminstrador.
+Logo no perfil, se o usuario for um adiministrador, será possivel ver acima do botão de editar usuario, um botão chamado "usuarios".
+Ao cliclar no mesmo, o usuario adiministrador, será direcionado para uma tela no estilo do cadastro, porém apenas com uma grande lista de todos os usuarios cadastrados no site, tendo acesso a seus perfis e podendo mudar informações e excluir os mesmos se for necessario
+
+- Foto da tela de usuarios
+
 ## Funcionalidade L
 
 A edição de usuário é uma função própria do usuário admnistrador, que poderá fazer mudanças nos perfis dos usuários.
+Na lista de usuarios registrados, ao clicar em editar usuario em um dos perfis dos usuarios, o adiministrador será direcionado para a tela de edição de dados, porém, com as informações do usuario selecionado.
+
+-foto da edição de dados vista por adimin
 
 ## Funcionalidade M
 
+Nessa mesma tela, é possivel notar um campo a mais, que não é visto por usuarios normais, o mesmo é um campo chamado Permissão, e naturalmente leva o numero 0
+Porém o adiministrador pode mudar esse numero para 1, assim tornando o usuario selecionado, um adiministrador
 
+- foto da tela de usuarios com usuario selecionado, agora como adimin
 
 ## Funcionalidade N
 Na área que contem as informações do usuários, no canto superior esquerdo da timeline, exibirá o botão "sair" abaixo do botão "editar dados". O usuário, ao clicar sairá de sua conta quando desejar, e será encaminhado novamente para a página de login.
