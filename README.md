@@ -20,7 +20,7 @@ Projeto Final do Curso Técnico Integrado de Desenvolvimento de Sistemas - Colé
 
 **Modelagem do Banco de Dados**
 
-![Diagrama Banco de Dados](https://user-images.githubusercontent.com/55743181/145641463-7033aa37-a9ca-4843-a12d-7b2faa588928.jpg)
+![banco de dados](https://user-images.githubusercontent.com/55743181/146242297-87547968-809c-4e98-9317-e1e781f0e2c7.jpeg)
 
 ## informações do PHP e PHPMYADIMIN
 
