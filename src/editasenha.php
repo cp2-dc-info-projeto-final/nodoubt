@@ -6,10 +6,15 @@
 <body>
 <?php
     include "autentica.inc";
-
+    include "conecta_mysql.inc";
     $emai = $_GET["emai"];
-    $senhaatual = $_SESSION["senhacript"];
-
+    $sql = "SELECT * FROM cadastrousuarios WHERE emailusuario = '$emai';";
+    $res = mysqli_query($mysqli,$sql);
+    $linhas = mysqli_num_rows($res);
+    for($i=0; $i < $linhas; $i++){
+    $usur = mysqli_fetch_array($res);
+    $senhaatual = $usur["senhausuario"];
+}
 ?>
 
 <div id="login">

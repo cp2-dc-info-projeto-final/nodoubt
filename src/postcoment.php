@@ -162,8 +162,9 @@ include "autentica.inc";
                     $idcoments = $comentario["idcoment"];
                     $h = $comentario["idusercoment"];
                     $title = "Re:";
+                    $jota = $comentario["usercoment"];
                     $title .= $post["titulopost"];
-                    $mysql = "SELECT * FROM curtirusuarios WHERE userlike ='$nomelogado' AND codpostlike ='$idpost' ;";
+                    $mysql = "SELECT * FROM curtirusuarios WHERE userlike ='$nomelogado' AND codpostlike ='$idcoments' ;";
                     $resu = mysqli_query($mysqli,$mysql);
                     $linhass = mysqli_num_rows($resu);
                     if($linhass == 0){
@@ -212,8 +213,8 @@ include "autentica.inc";
                     <button type="submit" value="Editar"><i class="fas fa-pen" aria-hidden="true" title="editar postagem!"></i></button></a>
                 </form>
                 <?php
-                }
-                if ($h == $_SESSION["usernameusuario"] or $_SESSION["permiss"] == 1 or $user == $_SESSION["usernameusuario"]){
+                }        
+                if ($h == $_SESSION["coder"] or $_SESSION["permiss"] == 1 or $user == $_SESSION["usernameusuario"]){
                 ?>
                 <form action="Recebedados.php" method="POST">
                     <input type="hidden" name="operacao" value="excluircoment"></p>
