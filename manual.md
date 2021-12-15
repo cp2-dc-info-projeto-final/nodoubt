@@ -5,22 +5,22 @@ Em conjunto com as explicações das funcionalidades do mesmo.
 
 **Lista das Funcionalidades:**
 
- - [Funcionalidade A](#Cadastro)
- - [Funcionalidade B](#Login)
- - [Funcionalidade C](#Editar-dados)
- - [Funcionalidade D](#Postar)
- - [Funcionalidade E](#Busca-de-usuário-e-posts)
- - [Funcionalidade F](#Timeline)
- - [Funcionalidade G](#Comentar)
- - [Funcionalidade H](#Curtir-e-descurtir-posts-e-comentários)
- - [Funcionalidade I](#Editar-posts-e-comentários)
- - [Funcionalidade J](#Excluir-posts-e-comentários)
- - [Funcionalidade K](#Controle-de-acessos)
- - [Funcionalidade L](#Editar-Usuário)
- - [Funcionalidade M](#Conceder-e-retirar-privilégios-de-administrador)
- - [Funcionalidade N](#logout)
+ - [Cadastro](#Cadastro)
+ - [Login](#Login)
+ - [Editar-dados](#Editar-dados)
+ - [Postar](#Postar)
+ - [Busca de usuário e posts](#Busca-de-usuário-e-posts)
+ - [Timeline](#Timeline)
+ - [Comentar](#Comentar)
+ - [Curtir e descurtir posts e comentários](#Curtir-e-descurtir-posts-e-comentários)
+ - [Editar posts e comentários](#Editar-posts-e-comentários)
+ - [Excluir posts e comentários](#Excluir-posts-e-comentários)
+ - [Controle de acessos](#Controle-de-acessos)
+ - [Editar-Usuário](#Editar-Usuário)
+ - [Conceder e retirar privilégios de administrador](#Conceder-e-retirar-privilégios-de-administrador)
+ - [Logout](#Logout)
 
-## Funcionalidade A
+## Cadastro
 
 Ao entrar no site o usuario se depara com uma tela composta por uma barra de navegação no topo, uma imagem ao centro, e no fim uma grande área contendo informações dos criadores.
 Na navbar, há alguns botões visiveis, sendo o primeiro o nome do site "No doubt", que lhe retorna para essa mesama pagina, em seguida, um botão escrito "Sobre nóe", onde você é levado para uma pagina, com informações sobre o objetivo do projeto, seus criaddores e etc, em sequencia um botão escrito "Fale conosco" que lhe direciona para a área no fim da pagina, depois é possivel ver um campo onde esta escrito "Buscar...", sendo ele a barra de busca, e por fim mais ao canto direito, um botão escrito "Login" com um icone de entrar.
@@ -67,7 +67,7 @@ Após a inscrição, o sistema confirmará as informações digitadas para testa
 - [erro_M]: "O campo: E-mail não foi digitado corretamente.". Esse erro é exibido pois é necessário que o email contenha @.
 
 
-## Funcionalidade B
+## Login
 
 Caso ja tenha feito o cadastro, o usuario virá para a tela de login, onde é possvei ver dois campos, um para o email, e outro para a senha.
 
@@ -80,7 +80,7 @@ O usuario já cadastrado só precisa escrever o mesmo email e as senhas utilizad
 ![senha invalida ](https://user-images.githubusercontent.com/55743181/145696846-f25e3325-611e-4b80-a9ab-3378967606e3.png)
 ![email invalido](https://user-images.githubusercontent.com/55743181/145696839-7e9d4854-1b45-438c-b5a6-666b5f42eb12.png)
 
-## Funcionalidade C
+## Editar dados
 
 Após o usuario fazer login, ja é possivel umas das partes principais do site, a pagina do perfil.
 
@@ -103,7 +103,7 @@ Caso o usuario deseje alterar a senha, é possivel ver na mesma tela onde estão
 ![botao senha](https://user-images.githubusercontent.com/55743181/145696480-98540910-ab16-4bf8-8330-7a5f6eb8ba99.png)
 ![campos senha](https://user-images.githubusercontent.com/55743181/145696481-8df64683-0bbd-4f60-a45e-1471c5b97bcd.png)
 
-## Funcionalidade D
+## Postar
 
 De volta ao perfil do usuario, mais ao centro superior da pagina é possivel ver uma grande area, com dois campos de tamanhos relativos, um para Titulo e outro para postagem.
 
@@ -119,7 +119,7 @@ Abaixo a alguns botões que serão comentados futuramente.
 
 ![exibiçao post](https://user-images.githubusercontent.com/55743181/145697926-7afa0b79-9af4-43e1-92fb-a1eebb281669.png)
 
-## Funcionalidade E
+## Busca de usuário e posts
 
 Na barra de navegação no topo da pagina, onde ja foi comentado que havia uma barra de busca, é possivel escrever nela.
 
@@ -133,11 +133,11 @@ Abaixo das postagens encontradas, é indicado a quantidade de usuarios encontrad
 
 caso não encontre alguma das duas opções, sera exibido uma mensagem de que não foi encontrado nenhum perfil ou postagem e então mostrar o outro.
 
-## Funcionalidade F
+## Timeline
 
 Na timeline é exibida as postagens de todos os usuários, que podem ser encontrados através da busca por palavras chaves na barra de pesquisa.
 
-## Funcionalidade G
+## Comentar
 
 Abaixo da postagem, será exibido o botão de comentário em formato de nuvem, onde o usuário ao clicar, poderá comentar a postagem de outro usuário. 
 
@@ -146,26 +146,26 @@ Abaixo da postagem, será exibido o botão de comentário em formato de nuvem, o
 Os comentários feitos exibirá igualmente o botão de nuvem no qual possibilitará o comentário de ser respondido.
 
 
-## Funcionalidade H
+## Curtir e descurtir posts e comentários
 
 Tanto os posts feitos, quanto os comentários e respostas aos comentários, exibirão um botão no formato de coração que possui a funcionalidade de curtir e descurtir.
 
 ![botões](https://user-images.githubusercontent.com/55743181/145697971-b2240449-19f7-40ad-91de-f5c97924ebeb.png)
 
-## Funcionalidade I
+## Editar posts e comentários
 
 Os posts e comentários feitos podem ser editados, ambos exibem um botão em formato de lapís que fica abaixo do botão de comentários. Ao clicar no botão será exibida uma tela no qual o usuário terá a opção de mudar o título e/ou o conteúdo da postagem ou comentário.
 
 ![ediçao postagem](https://user-images.githubusercontent.com/55743181/145697997-2e651bac-ef2e-4f33-b354-91b239a90302.png)
 
 
-## Funcionalidade J
+## Excluir posts e comentários
 
 Os posts e comentários feitos exibirão, abaixo do botão de edição, um botão no formato de lixeira no qual, o usuário ao clicar poderá, excluir sua postagem ou seu comentário se desejar,
 
 ![botões](https://user-images.githubusercontent.com/55743181/145696712-e2710416-beeb-4489-a5b7-48dfefc1d2f4.png)
 
-## Funcionalidade K
+## Controle de acessos
 
 No site, há usuarios que possuem uma permissão especial, são os adiminstradores.
 Na pagina de perfil é o primeiro lugar que é possivel ver se o usuario é um adiminstrador.
@@ -174,19 +174,19 @@ Ao cliclar no mesmo, o usuario adiministrador, será direcionado para uma tela n
 
 ![tela de usuarios](https://user-images.githubusercontent.com/55743181/145696733-33e5d630-a4a8-4372-9e4b-a09e3a128a45.png)
 
-## Funcionalidade L
+## Editar-Usuário
 
 A edição de usuário é uma função própria do usuário admnistrador, que poderá fazer mudanças nos perfis dos usuários.
 Na lista de usuarios registrados, ao clicar em editar usuario em um dos perfis dos usuarios, o adiministrador será direcionado para a tela de edição de dados, porém, com as informações do usuario selecionado.
 
 ![vista adm](https://user-images.githubusercontent.com/55743181/145696633-de01cd6f-ca69-4d59-9747-cc44b2a9ab0e.png)
 
-## Funcionalidade M
+## Conceder e retirar privilégios de administrador
 
 Nessa mesma tela, é possivel notar um campo a mais, que não é visto por usuarios normais, o mesmo é um campo chamado Permissão, e naturalmente leva o numero 0
 Porém o adiministrador pode mudar esse numero para 1, assim tornando o usuario selecionado, um adiministrador
 
 ![botao permissao](https://user-images.githubusercontent.com/55743181/145696619-35b17d97-479f-444f-a728-9fd3ae121899.png)
 
-## Funcionalidade N
+## Logout
 Na área que contem as informações do usuários, no canto superior esquerdo da timeline, exibirá o botão "sair" abaixo do botão "editar dados". O usuário, ao clicar sairá de sua conta quando desejar, e será encaminhado novamente para a página de login.
