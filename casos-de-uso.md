@@ -27,7 +27,7 @@
 
 ## Diagrama de![diagrama casos de uso]
 
-![Diagrama de Casos de Uso](https://user-images.githubusercontent.com/55743181/145641787-75e6173f-d31c-4657-8699-67df6e75aff2.jpg)
+![casos de uso](https://user-images.githubusercontent.com/55743181/146242732-b4bf42a1-3f0e-48d3-ab3f-da0a862f5b0b.jpeg)
 
 
 ## Descrição dos Casos de Uso
