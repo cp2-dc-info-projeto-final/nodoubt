@@ -13,7 +13,7 @@
 
 </head>
 
-<body style="backgroud-color:rgb(148,0,211)>
+<body style="backgroud-color:rgb(109, 11, 189)>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    
 
@@ -83,7 +83,7 @@
 </header>
 
 <div class="container">
-<img src="imagem/logo.jpg" left="50x"display="flex" height="60%" width="1270px" >           
+<img src="imagem/index.png" left="50x"display="flex" height="60%" width="1270px" >           
 </div>
 
 <br>
