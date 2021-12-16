@@ -124,10 +124,20 @@ excluir dados
 
 **Fluxo Principal**
 
-1. O usuário precisa estar logado clica no botão de editar dados.
+1. O usuário logado clica no botão de editar dados.
 2. O usuário ao invez de editar alguma das informações, clica em excluir, logo abaixo de editar.
-3. O sistema informa que as informações foram excluidas.
+3. O sistema exibe uma mensagem no topo na tela, perguntando "tem certeza que deseja excluir seu perfil?".
+4. O usuario seleciona a opção "OK".
+5. O sistema o direciona para uma pagina exibindo a mensgaem que seus dados foram apagados com sucesso.
 4. O usuário retorna a pagina de login, com as informações excluidas.
+
+
+**Fluxo Alternativo A**
+
+1. O usuario, na tela de edição, clica no botão excluir, logo abaixo do botão "editar".
+2. O sistema exibe uma mensagem no topo da pagina, perguntando se o usuario deseja mesmo excluir o perfil.
+3. O usuario clica em "cancelar".
+4. O sistema oculta novamente a mensagem.
 
 ### CDU 06
 
@@ -223,8 +233,17 @@ Exluir postagem
 
 **Fluxo Principal**
 
-1. O usuario, em sua timeline, vê a postagem que deseja apagar e clica em excluir.
-2. O sistema atualiza a pagina, agora com aquela postagem excluida do sistema.
+1. O usuario, em sua timeline, vê a postagem que deseja apagar e clica no simbolo de lixeira.
+2. O sistema exibe uma mensagem no topo da pagina, perguntando se o usuario deseja mesmo excluir a postagem.
+4. o usuario clica em "OK".
+5. O sistema atualiza a pagina, agora com aquela postagem excluida do sistema.
+
+**Fluxo Alternativo A**
+
+1. O usuario, em sua timeline, vê a postagem que deseja apagar e clica no simbolo de lixeira.
+2. O sistema exibe uma mensagem no topo da pagina, perguntando se o usuario deseja mesmo excluir a postagem.
+4. o usuario clica em "Cancelar".
+5. O sistema oculta a mensagem e o usuario prossegue o site normalmente sem ter aquela postagem apagada.
 
 ### CDU 10
 
@@ -268,13 +287,22 @@ Editar comentario
 
 ### CDU 12
 
-Editar comentario
+Excluir comentario
 
 **Fluxo Principal**
 
 1. O usuario, ve prorprio comentario em uma postagem e deseja exclui-lo.
 2. O usuario clica no icone de lixeira dentro do balão do comentario.
-3. o sistema exibe uma mensagem dizendo quw o comentario foi excluido, e então retorna o usuario para a pagina da postagem após 2 segundos.
+3. O sistema exibe uma mensagem perguntando se o usuario quer mesmo apagar aquele comentario.
+4. O usuario clica em "OK".
+5. o sistema exibe uma mensagem dizendo quw o comentario foi excluido, e então retorna o usuario para a pagina da postagem após 2 segundos.
+
+**Fluxo Alternativo B**
+
+1. O usuario clica no icone de lixeira dentro do balão do comentario.
+2. O sistema exibe uma mensagem perguntando se o usuario quer mesmo apagar aquele comentario.
+3. O usuario clica em "Cancelar".
+4. o sistema oculta novamnete a mensagem e o usuario prossegue no site sem ter o comentario apagado.
 
 ### CDU 13
 
