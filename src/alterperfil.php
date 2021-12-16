@@ -231,7 +231,7 @@ else{
             if ($_SESSION["permiss"] == 1 or $_SESSION["usernameusuario"] == $nomeuser)
             {
                 ?>
-              <form action="Recebedados.php" method="POST">
+              <form action="Recebedados.php"  onSubmit="if(!confirm('Deseja mesmo excluir esta postagem??')){return false;}" method="POST">
               <input type="hidden" name="operacao" value="Excluirpost"></p>
               <input type="hidden" name="postid" value="<?php echo $idpost?>"></input>
               <button type="submit" value="Excluir"><i class="fas fa-trash-alt" title="excluir postagem!"></i></button>

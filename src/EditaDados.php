@@ -40,9 +40,16 @@
     
     <div class="card-footer">
     <p><input type="submit" name="operacao" class="submit" value="Editar!"> 
-    <input type="submit" name="operacao" class="submit" value="Excluir"></p>
-    </div>
 </form>
+
+<form action="Recebedados.php" onSubmit="if(!confirm('Deseja mesmo excluir seu perfil?')){return false;}" method="POST">
+<input type="hidden" name="username" size="10" value="<?php echo $usuario["usernameusuario"]?>">
+    <input type="submit" name="operacao" class="submit" value="Excluir"></p>
+</form>
+</div>
+
+
+
 
 <div class="card-header">
 

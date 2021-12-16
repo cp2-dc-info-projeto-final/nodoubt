@@ -211,7 +211,7 @@ $nome = $usuario["usernameusuario"];
     
 
                   <divx style="white-space: nowrap;  hyphens: none;">
-                    <form action="Recebedados.php" method="POST" style="margin:0px">
+                    <form action="Recebedados.php"  onSubmit="if(!confirm('Deseja mesmo excluir?')){return false;}" method="POST" style="margin:0px">
                       <input type="hidden" name="operacao" value="Excluirpost">
                       <input type="hidden" name="postid" value="<?php echo $idpost?>"></input>
                       <button type="submit" value="Excluir"><i class="fas fa-trash-alt" title="excluir postagem!"></i></button>
