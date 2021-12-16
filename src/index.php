@@ -13,7 +13,7 @@
 
 </head>
 
-<body style="backgroud-color:rgb(109, 11, 189)>
+<body style="backgroud-color:rgb(111, 0, 221)>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    
 
