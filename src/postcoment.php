@@ -216,7 +216,7 @@ include "autentica.inc";
                 }        
                 if ($h == $_SESSION["coder"] or $_SESSION["permiss"] == 1 or $user == $_SESSION["usernameusuario"]){
                 ?>
-                <form action="Recebedados.php" method="POST">
+                <form action="Recebedados.php" onSubmit="if(!confirm('Deseja mesmo excluir este comentario?')){return false;}" method="POST">
                     <input type="hidden" name="operacao" value="excluircoment"></p>
                     <input type="hidden" name="idcomen" value="<?php echo $iddois?>">              
                     <input type="hidden" name="postid" value="<?php echo $id?>"></input>
