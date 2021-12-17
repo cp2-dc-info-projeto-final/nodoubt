@@ -120,8 +120,8 @@ $nome = $usuario["usernameusuario"];
     ?>
 </div>
 
-<div class="container">
-  <div id="content-post-a" align-items="top">
+<div class="container" >
+  <div id="content-post-a"style="margin-left:70px;margin-right:70px;" align-items="top">
     <form action="Recebedados.php" method="POST">
       <input type="hidden" name="operacao" value="Postar">
       <input type="hidden" name="user" value="<?php echo $coduser?>"></input>

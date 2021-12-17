@@ -97,178 +97,135 @@
 </header>
 
 <div id="content">
-
-      <h4><?php 
-      
- $sql = "SELECT * FROM cadastrousuarios WHERE usernameusuario = '$nomeuser';";
- $res = mysqli_query($mysqli,$sql);
- $linhas = mysqli_num_rows($res);
-        for($i=0; $i < $linhas; $i++){
-        $usuario = mysqli_fetch_array($res);
-        }
-            $x = rand(1, 10);
-                ?> <div class="container">
-                    <?php echo "<p><img src='perfis/$x.jpeg' width='100' height='100'>";
-                    echo " ".$usuario["usernameusuario"]."<br>";?> 
-                    
-                </a></p></div>  <?php
-
-                echo "Nome: ".$usuario["nomeusuario"]."<br>";
-                echo "Idade: ".$usuario["idadeusuario"]."<br>";
-                echo "Email: ".$usuario["emailusuario"]."<br>";
-                echo "----------------------------------<br>";
-            
-                ?>
-            </div></h3>
-
-            <div id="content-post-position-alter">
-
-<?php
-    $sql = "SELECT * FROM postagemusuarios WHERE userpost ='$nomeuser';";
-    $res = mysqli_query($mysqli, $sql);
-    $linhas = mysqli_num_rows($res);
-
-
-        
-    if ($linhas == 0){
-
-    ?> 
-     
-        <div class="container" >
-            
-            
-     <?php
-    
-     echo"<h1>  Este usuario não fez nenhuma postagem</h1>";
-    ?></div>
-    <?php
-    }
-
-else{
-
+  <h4>
+  <?php 
+  $sql = "SELECT * FROM cadastrousuarios WHERE usernameusuario = '$nomeuser';";
+  $res = mysqli_query($mysqli,$sql);
+  $linhas = mysqli_num_rows($res);
   for($i=0; $i < $linhas; $i++){
-    $post = mysqli_fetch_array($res);
-    
-
-    ?><div id="content-post-b">
-        <?php
-
-    echo "<h1>".$post["userpost"]."<br></h1>";
-    echo "<h2>".$post["titulopost"]."<br></h2>";
-    echo "<h3>".$post["postcontent"]."<br></h3";
-    echo "----------------------------------<br>";
-    $idpost = $post["codpost"];
-    $usario = $post["userpost"];
-    $title = $post["titulopost"];
-    $pt = "post";
-    $ask = 1;
-    $mysql = "SELECT * FROM curtirusuarios WHERE userlike ='$nome' AND codpostlike ='$idpost' ;";
-    $resu = mysqli_query($mysqli,$mysql);
-    $linhass = mysqli_num_rows($resu);
-
-    if($linhass == 0){
-
-      $operacao = "curtir";
-
-    }
-
-    elseif($linhass >= 1){
-
-      $operacao = "ncurtir";
-
-    }
-
-
-        $alter = 1;
-    ?>
-    
-    
-    <form action="Recebedados.php" method="POST">
-            <input type="hidden" name="operacao" value="<?php echo $operacao?>"></p>
-            <input type="hidden" name="postid" value="<?php echo $idpost?>"></input>
-            <input type="hidden" name="usercod" value="<?php echo $iduser?>"></input>
-            <input type="hidden" name="userrname" value="<?php echo $nome?>"></input>
-            <input type="hidden" name="titre" value="<?php echo $title?>"></input>          
-            <input type="hidden" name="laiki" value="<?php echo $ask?>"></input>          
-            <input type="hidden" name="alter" value="<?php echo $alter?>"></input>          
-            <input type="hidden" name="nomi" value="<?php echo $usario?>"></input>          
-            <input type="hidden" name="post" value="<?php echo $pt?>"></input>      
-                    <?php
-                    if( $operacao == "curtir"){
-                    ?>    
-                        <button type="submit" class="submit"><i class="far fa-heart" aria-hidden="true" title="Curtir"></i></button></a>
-
-                      <?php
-                    }
-                    elseif( $operacao == "ncurtir"){
-                    ?>
-                        <button type="submit" class="submit"><i class="fas fa-heart" aria-hidden="true" title="Descurtir"></i></button></a>
-
-                    <?php
-                    }            
-                      ?> 
-                      </form>
-    
+    $usuario = mysqli_fetch_array($res);
+  }
+  $x = rand(1, 10);
+  ?> 
+  <div class="container" style="padding-left: 0;">
+    <?php 
+    echo "<p><img src='perfis/$x.jpeg' width='50' height='50'>";
+    echo " ".$usuario["usernameusuario"]."</p>";
+    ?> 
+  </div>  
     <?php
+  echo "<p>Nome: ".$usuario["nomeusuario"]." | "; 
+  echo "Data de Nascimento: ".$usuario["idadeusuario"]." | ";
+  echo "Email: ".$usuario["emailusuario"]."</p>";
+    ?>
+</div>
 
-
-    $idpost = $post["codpost"];
-
-    echo "<a href='postcoment.php?idpost=". $idpost."'>";
-    
-    echo"<button><i class='fas fa-comments' title='Comentar!'></i></button></a><br>";
-    
-    if($_SESSION["usernameusuario"] == $nomeuser){
+<div id="content-post-position"> 
+<?php
+  $sql = "SELECT * FROM postagemusuarios WHERE userpost ='$nomeuser';";
+  $res = mysqli_query($mysqli, $sql);
+  $linhas = mysqli_num_rows($res);
+  if ($linhas == 0){
+    ?> 
+    <div class="container" >
+    <?php
+      echo"<h1>  Este usuario não fez nenhuma postagem</h1>";
+    ?>
+    </div>
+    <?php
+  }
+  else{
+    for($i=0; $i < $linhas; $i++){
+      $post = mysqli_fetch_array($res);
+      ?>
+      <div id='content-post-b' style="display:block; width:auto; margin:30px;">
+        <?php
+        echo "<h1>".$post["userpost"]."<br></h1>";
+        echo "<h2>".$post["titulopost"]."<br></h2>";
+        echo "<h3>".$post["postcontent"]."<br></h3";
+        $idpost = $post["codpost"];
+        $usario = $post["userpost"];
+        $title = $post["titulopost"];
+        $pt = "post";
+        $ask = 1;
+        $mysql = "SELECT * FROM curtirusuarios WHERE userlike ='$nome' AND codpostlike ='$idpost' ;";
+        $resu = mysqli_query($mysqli,$mysql);
+        $linhass = mysqli_num_rows($resu);
+        if($linhass == 0){
+          $operacao = "curtir";
+        }
+        elseif($linhass >= 1){
+          $operacao = "ncurtir";
+        }
+        $alter = 1;
         ?>
-        
-          <form action="editapost.php" method="POST" >
-              <input type="hidden" name="postid" value="<?php echo $idpost?>"></input>
-              <input type="hidden" name="operacao" value="editar"></p>
-              <button type="submit" value="Editar"><i class="fas fa-pen" aria-hidden="true" title="editar postagem!"></i></button></a>
-            </form>
+        <form action="Recebedados.php" method="POST">
+          <input type="hidden" name="operacao" value="<?php echo $operacao?>"></p>
+          <input type="hidden" name="postid" value="<?php echo $idpost?>"></input>
+          <input type="hidden" name="usercod" value="<?php echo $iduser?>"></input>
+          <input type="hidden" name="userrname" value="<?php echo $nome?>"></input>
+          <input type="hidden" name="titre" value="<?php echo $title?>"></input>          
+          <input type="hidden" name="laiki" value="<?php echo $ask?>"></input>          
+          <input type="hidden" name="alter" value="<?php echo $alter?>"></input>          
+          <input type="hidden" name="nomi" value="<?php echo $usario?>"></input>          
+          <input type="hidden" name="post" value="<?php echo $pt?>"></input>      
+          <?php
+          if( $operacao == "curtir"){
+            ?>    
+            <button type="submit" class="submit"><i class="far fa-heart" aria-hidden="true" title="Curtir"></i></button></a>
             <?php
-    }
-            if ($_SESSION["permiss"] == 1 or $_SESSION["usernameusuario"] == $nomeuser)
-            {
-                ?>
-              <form action="Recebedados.php" method="POST">
-              <input type="hidden" name="operacao" value="Excluirpost"></p>
-              <input type="hidden" name="postid" value="<?php echo $idpost?>"></input>
-              <button type="submit" value="Excluir"><i class="fas fa-trash-alt" title="excluir postagem!"></i></button>
-              </form>
-            <br><br><br>
-            <?php
-        
-             
             }
+          elseif( $operacao == "ncurtir"){
             ?>
-             
-            <br> <br> <br> <br> <br> <br> <br> <br>
+            <button type="submit" class="submit"><i class="fas fa-heart" aria-hidden="true" title="Descurtir"></i></button></a>
             <?php
-    }   
+          }            
+          ?> 
+        </form>
+        <?php
+        $idpost = $post["codpost"];
+        echo "<a href='postcoment.php?idpost=". $idpost."'>";
+        echo"<button><i class='fas fa-comments' title='Comentar!'></i></button></a><br>";
+        if($_SESSION["usernameusuario"] == $nomeuser){
+        ?>
+          <form action="editapost.php" method="POST" >
+            <input type="hidden" name="postid" value="<?php echo $idpost?>"></input>
+            <input type="hidden" name="operacao" value="editar"></p>
+            <button type="submit" value="Editar"><i class="fas fa-pen" aria-hidden="true" title="editar postagem!"></i></button></a>
+          </form>
+          <?php
+        }
+        if ($_SESSION["permiss"] == 1 or $_SESSION["usernameusuario"] == $nomeuser){
+        ?>
+          <form action="Recebedados.php" method="POST">
+            <input type="hidden" name="operacao" value="Excluirpost"></p>
+            <input type="hidden" name="postid" value="<?php echo $idpost?>"></input>
+            <button type="submit" value="Excluir"><i class="fas fa-trash-alt" title="excluir postagem!"></i></button>
+          </form>
+          <?php
+        }
+        ?>
+      </div>
+      <?php
+    }  
+  }
+  mysqli_close($mysqli);
+  ?>
+</div> 
 
-}
-
-
-
-mysqli_close($mysqli);
-?></h3></div> 
-
-<br>  <br>  <br>  <br>  <br>  <br>   <br>  <br>  <br>  <br> <br>
-  
-<footer class="w3-container w3-padding-64 w3-center  w3-xlarge" style= "background-color: #343a40">
+<div id="footer">
+  <footer>
     <p class="w3-medium" style="color: white;">
          Desenvolvido por: <br>
-         Vicky Wingler<br>
-         Júlia Sena<br>
-         Vitória Costa<br>
-         Caio Felipe <br>
-         Estudantes do <a href="https://www.cp2.g12.br/index.php" target="_blank"> Colégio Pedro II</a></p>
-  <p class="w3-medium" style="color: white;">
-  <section id="contactus"> Contato: <a href="#" target="_blank">nodoubt@gmail.com</a></p>
-
-    </section>
-</footer>
+         Vicky Wingler | Júlia Sena | Vitória Costa | Caio Felipe <br>
+         Estudantes do <a href="https://www.cp2.g12.br/index.php" target="_blank"> Colégio Pedro II</a>
+    </p>
+    <p class="w3-medium" style="color: white;">
+      <section id="contactus"> Contato: <a href="#" target="_blank">nodoubttt0@gmail.com</a>
+      </section>
+      </p>
+  </footer>
+</div>
 
     </body>
 </html>
