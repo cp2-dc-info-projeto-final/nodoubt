@@ -16,7 +16,7 @@ Projeto Final do Curso Técnico Integrado de Desenvolvimento de Sistemas - Colé
 - [Manual do Usuário](manual.md)
 - [Requisitos](requisitos.md)
 - [Casos de Uso](casos-de-uso.md)
-- [Apresentação](apresentação.pdf)
+- [Apresentação](Apresentação.pdf)
 
 **Modelagem do Banco de Dados**
 
